@@ -14,6 +14,7 @@
 		BFE66B162B013C4600EC9AAB /* MTG_all_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B152B013C4600EC9AAB /* MTG_all_swiftUITests.swift */; };
 		BFE66B202B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */; };
 		BFE66B222B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */; };
+		BFE66B302B013CC000EC9AAB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B2F2B013CC000EC9AAB /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		BFE66B1B2B013C4600EC9AAB /* MTG_all_swiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTG_all_swiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITests.swift; sourceTree = "<group>"; };
 		BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BFE66B2F2B013CC000EC9AAB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		BFE66B032B013C4400EC9AAB /* MTG_all_swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BFE66B2E2B013CAC00EC9AAB /* Model */,
 				BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */,
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
 				BFE66B082B013C4600EC9AAB /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */,
 			);
 			path = MTG_all_swiftUIUITests;
+			sourceTree = "<group>";
+		};
+		BFE66B2E2B013CAC00EC9AAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B2F2B013CC000EC9AAB /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
+				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
 				BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
