@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
 		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
 		BFE66B092B013C4600EC9AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE66B082B013C4600EC9AAB /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BFC82E972B01472E00B23006 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIApp.swift; sourceTree = "<group>"; };
 		BFE66B062B013C4400EC9AAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFC82E962B01471C00B23006 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BFC82E972B01472E00B23006 /* NetworkManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		BFE66AF82B013C4400EC9AAB = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +108,13 @@
 		BFE66B032B013C4400EC9AAB /* MTG_all_swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BFC82E962B01471C00B23006 /* Helpers */,
 				BFE66B2E2B013CAC00EC9AAB /* Model */,
 				BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */,
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
+				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
 				BFE66B082B013C4600EC9AAB /* Assets.xcassets */,
 				BFE66B0A2B013C4600EC9AAB /* Preview Content */,
-				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
 			);
 			path = MTG_all_swiftUI;
 			sourceTree = "<group>";
@@ -273,6 +284,7 @@
 			files = (
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
 				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
+				BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */,
 				BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */,
 				BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */,
 			);
@@ -446,6 +458,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,6 +488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
