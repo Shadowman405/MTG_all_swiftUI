@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
+		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
+		BFE66B092B013C4600EC9AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE66B082B013C4600EC9AAB /* Assets.xcassets */; };
+		BFE66B0C2B013C4600EC9AAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE66B0B2B013C4600EC9AAB /* Preview Assets.xcassets */; };
+		BFE66B162B013C4600EC9AAB /* MTG_all_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B152B013C4600EC9AAB /* MTG_all_swiftUITests.swift */; };
+		BFE66B202B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */; };
+		BFE66B222B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFE66B122B013C4600EC9AAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFE66AF92B013C4400EC9AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFE66B002B013C4400EC9AAB;
+			remoteInfo = MTG_all_swiftUI;
+		};
+		BFE66B1C2B013C4600EC9AAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFE66AF92B013C4400EC9AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFE66B002B013C4400EC9AAB;
+			remoteInfo = MTG_all_swiftUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIApp.swift; sourceTree = "<group>"; };
+		BFE66B062B013C4400EC9AAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BFE66B082B013C4600EC9AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFE66B0B2B013C4600EC9AAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFE66B112B013C4600EC9AAB /* MTG_all_swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTG_all_swiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFE66B152B013C4600EC9AAB /* MTG_all_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUITests.swift; sourceTree = "<group>"; };
+		BFE66B1B2B013C4600EC9AAB /* MTG_all_swiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTG_all_swiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITests.swift; sourceTree = "<group>"; };
+		BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFE66AFE2B013C4400EC9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFE66B0E2B013C4600EC9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFE66B182B013C4600EC9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFE66AF82B013C4400EC9AAB = {
+			isa = PBXGroup;
+			children = (
+				BFE66B032B013C4400EC9AAB /* MTG_all_swiftUI */,
+				BFE66B142B013C4600EC9AAB /* MTG_all_swiftUITests */,
+				BFE66B1E2B013C4600EC9AAB /* MTG_all_swiftUIUITests */,
+				BFE66B022B013C4400EC9AAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFE66B022B013C4400EC9AAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */,
+				BFE66B112B013C4600EC9AAB /* MTG_all_swiftUITests.xctest */,
+				BFE66B1B2B013C4600EC9AAB /* MTG_all_swiftUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFE66B032B013C4400EC9AAB /* MTG_all_swiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */,
+				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
+				BFE66B082B013C4600EC9AAB /* Assets.xcassets */,
+				BFE66B0A2B013C4600EC9AAB /* Preview Content */,
+			);
+			path = MTG_all_swiftUI;
+			sourceTree = "<group>";
+		};
+		BFE66B0A2B013C4600EC9AAB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B0B2B013C4600EC9AAB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BFE66B142B013C4600EC9AAB /* MTG_all_swiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B152B013C4600EC9AAB /* MTG_all_swiftUITests.swift */,
+			);
+			path = MTG_all_swiftUITests;
+			sourceTree = "<group>";
+		};
+		BFE66B1E2B013C4600EC9AAB /* MTG_all_swiftUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */,
+				BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */,
+			);
+			path = MTG_all_swiftUIUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFE66B002B013C4400EC9AAB /* MTG_all_swiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFE66B252B013C4600EC9AAB /* Build configuration list for PBXNativeTarget "MTG_all_swiftUI" */;
+			buildPhases = (
+				BFE66AFD2B013C4400EC9AAB /* Sources */,
+				BFE66AFE2B013C4400EC9AAB /* Frameworks */,
+				BFE66AFF2B013C4400EC9AAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MTG_all_swiftUI;
+			productName = MTG_all_swiftUI;
+			productReference = BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFE66B102B013C4600EC9AAB /* MTG_all_swiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFE66B282B013C4600EC9AAB /* Build configuration list for PBXNativeTarget "MTG_all_swiftUITests" */;
+			buildPhases = (
+				BFE66B0D2B013C4600EC9AAB /* Sources */,
+				BFE66B0E2B013C4600EC9AAB /* Frameworks */,
+				BFE66B0F2B013C4600EC9AAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFE66B132B013C4600EC9AAB /* PBXTargetDependency */,
+			);
+			name = MTG_all_swiftUITests;
+			productName = MTG_all_swiftUITests;
+			productReference = BFE66B112B013C4600EC9AAB /* MTG_all_swiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BFE66B1A2B013C4600EC9AAB /* MTG_all_swiftUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFE66B2B2B013C4600EC9AAB /* Build configuration list for PBXNativeTarget "MTG_all_swiftUIUITests" */;
+			buildPhases = (
+				BFE66B172B013C4600EC9AAB /* Sources */,
+				BFE66B182B013C4600EC9AAB /* Frameworks */,
+				BFE66B192B013C4600EC9AAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFE66B1D2B013C4600EC9AAB /* PBXTargetDependency */,
+			);
+			name = MTG_all_swiftUIUITests;
+			productName = MTG_all_swiftUIUITests;
+			productReference = BFE66B1B2B013C4600EC9AAB /* MTG_all_swiftUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFE66AF92B013C4400EC9AAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BFE66B002B013C4400EC9AAB = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					BFE66B102B013C4600EC9AAB = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = BFE66B002B013C4400EC9AAB;
+					};
+					BFE66B1A2B013C4600EC9AAB = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = BFE66B002B013C4400EC9AAB;
+					};
+				};
+			};
+			buildConfigurationList = BFE66AFC2B013C4400EC9AAB /* Build configuration list for PBXProject "MTG_all_swiftUI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFE66AF82B013C4400EC9AAB;
+			productRefGroup = BFE66B022B013C4400EC9AAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFE66B002B013C4400EC9AAB /* MTG_all_swiftUI */,
+				BFE66B102B013C4600EC9AAB /* MTG_all_swiftUITests */,
+				BFE66B1A2B013C4600EC9AAB /* MTG_all_swiftUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFE66AFF2B013C4400EC9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE66B0C2B013C4600EC9AAB /* Preview Assets.xcassets in Resources */,
+				BFE66B092B013C4600EC9AAB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFE66B0F2B013C4600EC9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFE66B192B013C4600EC9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFE66AFD2B013C4400EC9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
+				BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFE66B0D2B013C4600EC9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE66B162B013C4600EC9AAB /* MTG_all_swiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFE66B172B013C4600EC9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFE66B202B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift in Sources */,
+				BFE66B222B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFE66B132B013C4600EC9AAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFE66B002B013C4400EC9AAB /* MTG_all_swiftUI */;
+			targetProxy = BFE66B122B013C4600EC9AAB /* PBXContainerItemProxy */;
+		};
+		BFE66B1D2B013C4600EC9AAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFE66B002B013C4400EC9AAB /* MTG_all_swiftUI */;
+			targetProxy = BFE66B1C2B013C4600EC9AAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BFE66B232B013C4600EC9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFE66B242B013C4600EC9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFE66B262B013C4600EC9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MTG_all_swiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = HGNXB64TGD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmg.MTG-all-swiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFE66B272B013C4600EC9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MTG_all_swiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = HGNXB64TGD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmg.MTG-all-swiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFE66B292B013C4600EC9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HGNXB64TGD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmg.MTG-all-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTG_all_swiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MTG_all_swiftUI";
+			};
+			name = Debug;
+		};
+		BFE66B2A2B013C4600EC9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HGNXB64TGD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmg.MTG-all-swiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MTG_all_swiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MTG_all_swiftUI";
+			};
+			name = Release;
+		};
+		BFE66B2C2B013C4600EC9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HGNXB64TGD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmg.MTG-all-swiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MTG_all_swiftUI;
+			};
+			name = Debug;
+		};
+		BFE66B2D2B013C4600EC9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HGNXB64TGD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mmg.MTG-all-swiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MTG_all_swiftUI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFE66AFC2B013C4400EC9AAB /* Build configuration list for PBXProject "MTG_all_swiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFE66B232B013C4600EC9AAB /* Debug */,
+				BFE66B242B013C4600EC9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFE66B252B013C4600EC9AAB /* Build configuration list for PBXNativeTarget "MTG_all_swiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFE66B262B013C4600EC9AAB /* Debug */,
+				BFE66B272B013C4600EC9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFE66B282B013C4600EC9AAB /* Build configuration list for PBXNativeTarget "MTG_all_swiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFE66B292B013C4600EC9AAB /* Debug */,
+				BFE66B2A2B013C4600EC9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFE66B2B2B013C4600EC9AAB /* Build configuration list for PBXNativeTarget "MTG_all_swiftUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFE66B2C2B013C4600EC9AAB /* Debug */,
+				BFE66B2D2B013C4600EC9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFE66AF92B013C4400EC9AAB /* Project object */;
+}
