@@ -9,16 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Color(.black)
-                .ignoresSafeArea()
+        NavigationView {
             ZStack {
-                Image("logo")
-                    //.imageScale(.small)
-                    //.foregroundStyle(.tint)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                Text("Hello, world!")
+                Color(.black)
+                    .ignoresSafeArea()
+                ZStack {
+                    Image("logo")
+                        //.imageScale(.small)
+                        //.foregroundStyle(.tint)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    Text("Hello, world!")
+                }
+                
+                
+                NavigationLink {
+                    CardsView()
+                } label: {
+                    Text("Cards")
+                        .font(.system(size: 30))
+                        .foregroundStyle(.orange)
+                        .fontWeight(.bold)
+                }
+
             }
         }
     }

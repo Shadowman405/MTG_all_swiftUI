@@ -15,6 +15,7 @@
 		BFE66B202B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */; };
 		BFE66B222B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */; };
 		BFE66B302B013CC000EC9AAB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B2F2B013CC000EC9AAB /* Card.swift */; };
+		BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B312B0141AA00EC9AAB /* CardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		BFE66B1F2B013C4600EC9AAB /* MTG_all_swiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITests.swift; sourceTree = "<group>"; };
 		BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BFE66B2F2B013CC000EC9AAB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		BFE66B312B0141AA00EC9AAB /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
 				BFE66B082B013C4600EC9AAB /* Assets.xcassets */,
 				BFE66B0A2B013C4600EC9AAB /* Preview Content */,
+				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
 			);
 			path = MTG_all_swiftUI;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
 				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
+				BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */,
 				BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
