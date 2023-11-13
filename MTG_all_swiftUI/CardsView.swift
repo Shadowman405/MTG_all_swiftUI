@@ -22,7 +22,10 @@ struct CardsView: View {
                                 //.padding()
                                 .border(.gray, width: 3)
                     } placeholder: {
-                        ProgressView()
+                        Image("card_placeholder")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .border(.gray, width: 3)
                     }
 
                 }
