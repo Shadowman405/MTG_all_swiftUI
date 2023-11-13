@@ -9,19 +9,19 @@ import Foundation
 import SwiftUI
 
 struct Card: Codable, Identifiable {
-    let name, manaCost: String
-    let cmc: Int
-    let colors, colorIdentity: [String]
-    let type: String
-    let types, subtypes: [String]
-    let rarity, setCode, setName, text: String
-    let flavor, artist, number, power: String
-    let toughness, layout, multiverseid: String
-    let imageURL: String
-    let printings: [String]
-    let originalText, originalType: String
-    let legalities: [LegalityElement]
-    let id: String
+    let name, manaCost: String?
+    let cmc: Int?
+    let colors, colorIdentity: [String]?
+    let type: String?
+    let types, subtypes: [String]?
+    let rarity, setCode, setName, text: String?
+    let flavor, artist, number, power: String?
+    let toughness, layout, multiverseid: String?
+    let imageURL: String?
+    let printings: [String]?
+    let originalText, originalType: String?
+    let legalities: [LegalityElement]?
+    let id: String?
 
     enum CodingKeys: String, CodingKey {
         case name, manaCost, cmc, colors, colorIdentity, type, types, subtypes, rarity
@@ -34,8 +34,8 @@ struct Card: Codable, Identifiable {
 
 // MARK: - LegalityElement
 struct LegalityElement: Codable {
-    let format: String
-    let legality: LegalityEnum
+    let format: String?
+    let legality: LegalityEnum?
 }
 
 enum LegalityEnum: String, Codable {

@@ -22,7 +22,9 @@ class WebService{
             let (data,response) = try await URLSession.shared.data(from: url)
             guard let response = response as? HTTPURLResponse else {throw NetworkError.badResponse}
             guard response.statusCode >= 200 && response.statusCode < 300 else { throw NetworkError.badStatus}
-            guard let decodedResponse = try? JSONDecoder().decode(T.self, from: data) else {throw NetworkError.failedToDecodeResponse}
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let decodedResponse = try? decoder.decode(T.self, from: data)
             
             return decodedResponse
             
@@ -35,7 +37,7 @@ class WebService{
         } catch NetworkError.failedToDecodeResponse{
             print("Cant decode data")
         } catch {
-            print("failure")
+            debugPrint(error.localizedDescription)
         }
         
         return nil

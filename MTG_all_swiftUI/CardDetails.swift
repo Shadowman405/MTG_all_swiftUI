@@ -13,7 +13,7 @@ struct CardDetails: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                AsyncImage(url: URL(string: card.imageURL)) { image in
+                AsyncImage(url: URL(string: card.imageURL!)) { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
                 } placeholder: {
@@ -23,15 +23,15 @@ struct CardDetails: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Name: " + card.name)
-                    Text("Set: " + card.setName)
-                    Text("Mana Cost: " + card.manaCost)
-                    Text(card.text)
+                    Text("Name: " + card.name!)
+                    Text("Set: " + card.setName!)
+                    Text("Mana Cost: " + card.manaCost!)
+                    Text(card.text!)
                 }
             }
             .padding()
         }
-        .navigationTitle(card.name)
+        .navigationTitle(card.name ?? "Card")
     }
 }
 

@@ -21,7 +21,7 @@ struct CardsView: View {
                     NavigationLink {
                         CardDetails(card: card)
                     } label: {
-                        AsyncImage(url: URL(string: card.imageURL)) { image in
+                        AsyncImage(url: URL(string: card.imageURL!)) { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fill)
                             //.padding()
