@@ -16,18 +16,21 @@ struct CardsView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(cards) { card in
-                    AsyncImage(url: URL(string: card.imageURL)) { image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fill)
-                                //.padding()
+                    NavigationLink {
+                        CardDetails(card: card)
+                    } label: {
+                        AsyncImage(url: URL(string: card.imageURL)) { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fill)
+                            //.padding()
                                 .border(.gray, width: 3)
-                    } placeholder: {
-                        Image("card_placeholder")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .border(.gray, width: 3)
+                        } placeholder: {
+                            Image("card_placeholder")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .border(.gray, width: 3)
+                        }
                     }
-
                 }
             }
             .padding()
