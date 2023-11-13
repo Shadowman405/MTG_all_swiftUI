@@ -18,14 +18,16 @@ struct CardsView: View {
                 ForEach(cards) { card in
                     AsyncImage(url: URL(string: card.imageURL)) { image in
                         image.resizable()
-                            .aspectRatio(contentMode: .fit)
-                                .padding()
+                            .aspectRatio(contentMode: .fill)
+                                //.padding()
+                                .border(.gray, width: 3)
                     } placeholder: {
                         ProgressView()
                     }
 
                 }
             }
+            .padding()
         }
         .navigationTitle("Cards")
     }

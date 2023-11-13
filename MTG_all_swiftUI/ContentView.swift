@@ -15,11 +15,8 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 ZStack {
                     Image("logo")
-                        //.imageScale(.small)
-                        //.foregroundStyle(.tint)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                    Text("Hello, world!")
                 }
                 
                 
