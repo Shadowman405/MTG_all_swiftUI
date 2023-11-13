@@ -21,7 +21,7 @@ struct CardsView: View {
                     NavigationLink {
                         CardDetails(card: card)
                     } label: {
-                        AsyncImage(url: URL(string: card.imageURL!)) { image in
+                        AsyncImage(url: URL(string: card.imageURL ?? "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card")) { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fill)
                             //.padding()
@@ -38,6 +38,11 @@ struct CardsView: View {
             .padding()
         }
         .navigationTitle("Cards")
+//        .onAppear(perform: {
+//            NetworkCall().loadCardsData { cards in
+//                self.cards = cards.cards
+//            }
+//        })
         .onAppear {
             if vm.cardData.isEmpty {
                 Task{

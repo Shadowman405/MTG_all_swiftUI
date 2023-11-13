@@ -13,7 +13,7 @@ struct CardDetails: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                AsyncImage(url: URL(string: card.imageURL!)) { image in
+                AsyncImage(url: URL(string: card.imageURL ?? "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card")) { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
                 } placeholder: {

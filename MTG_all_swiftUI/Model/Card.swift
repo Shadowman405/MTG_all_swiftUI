@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+struct CardsMTG: Codable {
+    let cards: [Card]
+}
+
 struct Card: Codable, Identifiable {
     let name, manaCost: String?
     let cmc: Int?

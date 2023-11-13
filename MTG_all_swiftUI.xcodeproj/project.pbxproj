@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1109232B025570009158BE /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1109222B025570009158BE /* NetworkCall.swift */; };
 		BFC2C97F2B02119400B5A2C1 /* CardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */; };
 		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF1109222B025570009158BE /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetails.swift; sourceTree = "<group>"; };
 		BFC82E972B01472E00B23006 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC82E972B01472E00B23006 /* NetworkManager.swift */,
+				BF1109222B025570009158BE /* NetworkCall.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF1109232B025570009158BE /* NetworkCall.swift in Sources */,
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
 				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
 				BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */,
