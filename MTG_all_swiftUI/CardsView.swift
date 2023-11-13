@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardsView: View {
-    
+    @StateObject var vm = CardViewModel()
     
     @State private var cards = [Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", legalities: [LegalityElement(format: "Commander", legality: .legal)], id: "18468b64-37ef-5e4d-b95a-781265b533a2"),Card(name: "Doomed Traveler", manaCost: "{W}", cmc: 1, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: [""], subtypes: [""], rarity: "Rare", setCode: "2X2", setName: "Double Masters 2022", text: "", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571342&type=card", printings: [""], originalText: "", originalType: "", legalities: [LegalityElement(format: "Commander", legality: .legal)], id: "270cb060-9fcf-5a5a-b87e-6ec5a0e278b5")]
     
@@ -17,7 +17,7 @@ struct CardsView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(cards) { card in
+                ForEach(vm.cardData) { card in
                     NavigationLink {
                         CardDetails(card: card)
                     } label: {
@@ -38,6 +38,13 @@ struct CardsView: View {
             .padding()
         }
         .navigationTitle("Cards")
+        .onAppear {
+            if vm.cardData.isEmpty {
+                Task{
+                    await vm.fetchCards()
+                }
+            }
+        }
     }
 }
 
