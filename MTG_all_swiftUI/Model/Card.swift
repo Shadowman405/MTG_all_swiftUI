@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct CardsMTG: Codable {
-    let cards: [Card]
+    var cards: [Card]
 }
 
 struct Card: Codable, Identifiable {
