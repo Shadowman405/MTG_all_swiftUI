@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF1109232B025570009158BE /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1109222B025570009158BE /* NetworkCall.swift */; };
 		BFC2C97F2B02119400B5A2C1 /* CardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */; };
+		BFC344D02B0383EF00CBAF1D /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = BFC344CF2B0383EF00CBAF1D /* CachedAsyncImage */; };
 		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
 		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC344D02B0383EF00CBAF1D /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +178,9 @@
 			dependencies = (
 			);
 			name = MTG_all_swiftUI;
+			packageProductDependencies = (
+				BFC344CF2B0383EF00CBAF1D /* CachedAsyncImage */,
+			);
 			productName = MTG_all_swiftUI;
 			productReference = BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -248,6 +253,9 @@
 				Base,
 			);
 			mainGroup = BFE66AF82B013C4400EC9AAB;
+			packageReferences = (
+				BFC344CE2B0383EF00CBAF1D /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = BFE66B022B013C4400EC9AAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -469,7 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +508,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +638,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFC344CE2B0383EF00CBAF1D /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFC344CF2B0383EF00CBAF1D /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFC344CE2B0383EF00CBAF1D /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFE66AF92B013C4400EC9AAB /* Project object */;
 }

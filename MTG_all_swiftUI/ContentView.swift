@@ -26,7 +26,7 @@ struct ContentView: View {
                     Text("Cards")
                         .font(.system(size: 30))
                         .foregroundStyle(.orange)
-                        .fontWeight(.bold)
+                       // .fontWeight(.bold)
                 }
 
             }
