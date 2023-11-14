@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct CollectionsView: View {
+    var collections: [Collection] = []
+    
     var body: some View {
-        HStack{
-            Text("Collections")
-            Image("W")
-                .resizable()
-                .frame(width: 40, height: 40)
+//        HStack{
+//            Text("Collections")
+//            Image("W")
+//                .resizable()
+//                .frame(width: 40, height: 40)
+//        }
+//        
+        List(collections) { collection in
+            Text(collection.name)
         }
     }
 }

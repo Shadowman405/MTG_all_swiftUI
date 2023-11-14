@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct Collection: Codable {
+struct Collection: Codable, Identifiable {
+    var id = UUID()
+    var name = ""
     var cards: [Card]
 }
