@@ -20,7 +20,12 @@ struct CollectionsView: View {
 //        }
 //        
         List(collections) { collection in
-            Text(collection.name)
+            NavigationLink {
+                CardsInCollectionView(cardsInCollection: collection.cards)
+            } label: {
+                Text(collection.name)
+            }
+
         }
         .navigationTitle("Collections")
         .onAppear(perform: {
