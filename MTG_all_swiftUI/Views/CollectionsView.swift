@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CollectionsView: View {
-    var collections: [Collection] = []
+    @State private var collections: [Collection] = []
+    @StateObject var vm = CardViewModel()
     
     var body: some View {
 //        HStack{
@@ -21,6 +22,10 @@ struct CollectionsView: View {
         List(collections) { collection in
             Text(collection.name)
         }
+        .navigationTitle("Collections")
+        .onAppear(perform: {
+            collections = [Collection(name: "Mono White",cards: vm.mockCards), Collection(name: "Mono Black",cards: vm.mockCards)]
+        })
     }
 }
 
