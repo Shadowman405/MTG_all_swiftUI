@@ -10,6 +10,8 @@
 		BF1109232B025570009158BE /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1109222B025570009158BE /* NetworkCall.swift */; };
 		BFC2C97F2B02119400B5A2C1 /* CardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */; };
 		BFC344D02B0383EF00CBAF1D /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = BFC344CF2B0383EF00CBAF1D /* CachedAsyncImage */; };
+		BFC344D32B038C0700CBAF1D /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344D22B038C0700CBAF1D /* CollectionsView.swift */; };
+		BFC344D52B038C2300CBAF1D /* HpCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344D42B038C2300CBAF1D /* HpCounterView.swift */; };
 		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
 		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
@@ -43,6 +45,8 @@
 		BF1109222B025570009158BE /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MTG-all-swiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetails.swift; sourceTree = "<group>"; };
+		BFC344D22B038C0700CBAF1D /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
+		BFC344D42B038C2300CBAF1D /* HpCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpCounterView.swift; sourceTree = "<group>"; };
 		BFC82E972B01472E00B23006 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIApp.swift; sourceTree = "<group>"; };
@@ -84,6 +88,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFC344D12B038BE700CBAF1D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
+				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
+				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
+				BFC344D22B038C0700CBAF1D /* CollectionsView.swift */,
+				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BFC82E962B01471C00B23006 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,15 +132,13 @@
 		BFE66B032B013C4400EC9AAB /* MTG_all_swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BFC344D12B038BE700CBAF1D /* Views */,
 				BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */,
 				BFC82E962B01471C00B23006 /* Helpers */,
 				BFE66B2E2B013CAC00EC9AAB /* Model */,
 				BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */,
-				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
-				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
 				BFE66B082B013C4600EC9AAB /* Assets.xcassets */,
 				BFE66B0A2B013C4600EC9AAB /* Preview Content */,
-				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
 			);
 			path = MTG_all_swiftUI;
 			sourceTree = "<group>";
@@ -300,6 +314,8 @@
 			files = (
 				BF1109232B025570009158BE /* NetworkCall.swift in Sources */,
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
+				BFC344D52B038C2300CBAF1D /* HpCounterView.swift in Sources */,
+				BFC344D32B038C0700CBAF1D /* CollectionsView.swift in Sources */,
 				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
 				BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */,
 				BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */,
