@@ -38,11 +38,7 @@ struct CardDetails: View {
                                 "AmericanTypewriter",
                                 fixedSize: 24))
                     Divider()
-//                    Text("Card description: \n" + card.text!)
-//                        .font(.custom(
-//                                "AmericanTypewriter",
-//                                fixedSize: 24))
-                    Text(AttributedString("\(vm.addManaImages(someString: card.text))"))
+                    Text("Card description: \n" + card.text!)
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
