@@ -17,7 +17,7 @@ struct CardsView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(vm.cardData) { card in
+                ForEach(cards) { card in
                     NavigationLink {
                         CardDetails(card: card)
                     } label: {
@@ -44,9 +44,10 @@ struct CardsView: View {
 //            }
 //        })
         .onAppear {
-            if vm.cardData.isEmpty {
+            if vm.fileteredCardData.isEmpty {
                 Task{
                     await vm.fetchCards()
+                    cards = vm.fileteredCardData
                 }
             }
         }
