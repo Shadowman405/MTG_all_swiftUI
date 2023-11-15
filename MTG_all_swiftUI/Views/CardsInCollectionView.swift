@@ -12,7 +12,12 @@ struct CardsInCollectionView: View {
     
     var body: some View {
         List(cardsInCollection) { card in
-            Text(card.name ?? "")
+            NavigationLink {
+                CardDetails(card: card)
+            } label: {
+                Text(card.name ?? "")
+            }
+
         }
     }
 }
