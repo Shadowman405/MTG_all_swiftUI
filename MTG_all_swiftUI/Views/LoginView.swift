@@ -11,8 +11,18 @@ import Firebase
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var isLogedIn = false
     
     var body: some View {
+        if isLogedIn {
+           // ContentView()
+            ContentView()
+        } else {
+            content
+        }
+    }
+    
+    var content: some View {
         ZStack {
             Color(.black)
                 .ignoresSafeArea()
@@ -77,13 +87,20 @@ struct LoginView: View {
                 }
             }
             .navigationTitle("Login")
+            .onAppear {
+                FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
+                    if user != nil {
+                        isLogedIn.toggle()
+                    }
+                }
+            }
         }
     }
     
     func register() {
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Error reg")
             }
         }
     }
@@ -91,7 +108,7 @@ struct LoginView: View {
     func login() {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Error log")
             }
         }
     }
