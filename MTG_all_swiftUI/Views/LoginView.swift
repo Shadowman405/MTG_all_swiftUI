@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
     @State private var email = ""
@@ -55,7 +56,7 @@ struct LoginView: View {
                 
                 VStack {
                     Button {
-                        
+                        register()
                     } label: {
                         Text("Sign Up")
                             .bold()
@@ -68,7 +69,7 @@ struct LoginView: View {
                     }
                     
                     Button {
-                        
+                        login()
                     } label: {
                         Text("Already have an account? Login")
                     }
@@ -76,6 +77,22 @@ struct LoginView: View {
                 }
             }
             .navigationTitle("Login")
+        }
+    }
+    
+    func register() {
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    
+    func login() {
+        FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print(error?.localizedDescription)
+            }
         }
     }
 }
