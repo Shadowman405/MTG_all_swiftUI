@@ -9,12 +9,13 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
+    @Binding var logedIn: Bool
     @State private var email = ""
     @State private var password = ""
-    @State private var isLogedIn = false
+    //@State private var isLogedIn = false
     
     var body: some View {
-        if isLogedIn {
+        if logedIn {
            // ContentView()
             ContentView()
         } else {
@@ -90,7 +91,7 @@ struct LoginView: View {
             .onAppear {
                 FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
                     if user != nil {
-                        isLogedIn.toggle()
+                        logedIn.toggle()
                     }
                 }
             }
@@ -115,5 +116,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    LoginView(logedIn: .constant(false))
 }

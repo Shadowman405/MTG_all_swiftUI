@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var logedInUser: isLogedInUser
+    @State var isUserLoggedIn : Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
