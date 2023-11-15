@@ -11,7 +11,8 @@ import SwiftUI
 struct MTG_all_swiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            LoginView()
         }
     }
 }

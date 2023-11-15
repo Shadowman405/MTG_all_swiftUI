@@ -9,7 +9,21 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color(.black)
+            
+            VStack{
+                Image("mtg_login_logo-removebg")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .offset(y: -150)
+                
+                Text("Email")
+                    .foregroundColor(.white)
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                    .offset(x: -100,y: -100)
+            }
+        }
     }
 }
 
