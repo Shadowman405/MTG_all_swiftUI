@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CardsView: View {
     @StateObject var vm = CardViewModel()
-    
     @State private var cards = [MockDataManager().mockCard]
+    @State private var searchText = ""
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -27,6 +27,7 @@ struct CardsView: View {
             }
             .padding()
         }
+        .searchable(text: $searchText)
         .navigationTitle("Cards")
         .onAppear {
             if vm.fileteredCardData.isEmpty {
