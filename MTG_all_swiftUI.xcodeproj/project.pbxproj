@@ -27,8 +27,8 @@
 		BFC344F22B04EAC400CBAF1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFC344F12B04EAC400CBAF1D /* GoogleService-Info.plist */; };
 		BFC344F42B04EAE700CBAF1D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344F32B04EAE700CBAF1D /* LoginView.swift */; };
 		BFC344F62B04F44800CBAF1D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344F52B04F44800CBAF1D /* FirebaseManager.swift */; };
-		BFC344F82B04FABB00CBAF1D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344F72B04FABB00CBAF1D /* Route.swift */; };
 		BFC344FA2B062F1000CBAF1D /* NavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344F92B062F1000CBAF1D /* NavBarExtension.swift */; };
+		BFC344FC2B06318700CBAF1D /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344FB2B06318700CBAF1D /* MockDataManager.swift */; };
 		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
 		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
@@ -68,8 +68,8 @@
 		BFC344F12B04EAC400CBAF1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFC344F32B04EAE700CBAF1D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BFC344F52B04F44800CBAF1D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		BFC344F72B04FABB00CBAF1D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		BFC344F92B062F1000CBAF1D /* NavBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtension.swift; sourceTree = "<group>"; };
+		BFC344FB2B06318700CBAF1D /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		BFC82E972B01472E00B23006 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIApp.swift; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 			children = (
 				BFC82E972B01472E00B23006 /* NetworkManager.swift */,
 				BFC344F52B04F44800CBAF1D /* FirebaseManager.swift */,
-				BFC344F72B04FABB00CBAF1D /* Route.swift */,
 				BFC344F92B062F1000CBAF1D /* NavBarExtension.swift */,
+				BFC344FB2B06318700CBAF1D /* MockDataManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -368,8 +368,8 @@
 				BFC344F62B04F44800CBAF1D /* FirebaseManager.swift in Sources */,
 				BFC344D72B038D2D00CBAF1D /* Collection.swift in Sources */,
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,
+				BFC344FC2B06318700CBAF1D /* MockDataManager.swift in Sources */,
 				BFC344D52B038C2300CBAF1D /* HpCounterView.swift in Sources */,
-				BFC344F82B04FABB00CBAF1D /* Route.swift in Sources */,
 				BFC344D32B038C0700CBAF1D /* CollectionsView.swift in Sources */,
 				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
 				BFC344FA2B062F1000CBAF1D /* NavBarExtension.swift in Sources */,

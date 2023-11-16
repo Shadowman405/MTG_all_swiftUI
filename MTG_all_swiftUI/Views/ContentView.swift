@@ -9,7 +9,6 @@ import SwiftUI
 import Firebase
 
 struct ContentView: View {
-    //@EnvironmentObject var logedInUser: isLogedInUser
     @Binding var logedIn : Bool
     
     var body: some View {
