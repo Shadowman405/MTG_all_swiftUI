@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var logedInUser: isLogedInUser
+    //@EnvironmentObject var logedInUser: isLogedInUser
     @State var isUserLoggedIn : Bool = false
     
     var body: some View {
@@ -48,6 +48,11 @@ struct ContentView: View {
                             .font(.system(size: 30))
                             .foregroundStyle(.orange)
                     }
+                }
+            }
+            .toolbar {
+                Button("Singout") {
+                    print("signout")
                 }
             }
         }
