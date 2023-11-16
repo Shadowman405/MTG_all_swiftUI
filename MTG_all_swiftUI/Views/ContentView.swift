@@ -59,6 +59,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Main menu")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -66,6 +67,8 @@ struct ContentView: View {
                     } label: {
                         Text("Signout")
                             .foregroundStyle(.orange)
+                        Label("Signout", systemImage: "person.crop.circle.badge.xmark")
+                            .foregroundColor(.orange)
                     }
 
                 }
@@ -86,5 +89,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(logedIn: .constant(false))
+    ContentView(logedIn: .constant(true))
 }
