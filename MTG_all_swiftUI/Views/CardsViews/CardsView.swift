@@ -11,13 +11,14 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards = [MockDataManager().mockCard]
     @State private var searchText = ""
+
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(cards) { card in
+                ForEach(searchResults) { card in
                     NavigationLink {
                         CardDetails(card: card)
                     } label: {
@@ -36,6 +37,14 @@ struct CardsView: View {
                     cards = vm.fileteredCardData
                 }
             }
+        }
+    }
+    
+    var searchResults: [Card] {
+        if searchText.isEmpty {
+            return cards
+        } else {
+            return cards.filter{$0.name!.contains(searchText) }
         }
     }
 }
