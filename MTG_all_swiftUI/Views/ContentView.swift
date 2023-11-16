@@ -59,6 +59,8 @@ struct ContentView: View {
                     }
                 }
             }
+            //.navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleTextColor(.orange)
             .navigationTitle("Main menu")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

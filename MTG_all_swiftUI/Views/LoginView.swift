@@ -88,7 +88,6 @@ struct LoginView: View {
                         .offset(y: 10)
                     }
                 }
-                .navigationTitle("Login")
                 .onAppear {
                     FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
                         if user != nil {
