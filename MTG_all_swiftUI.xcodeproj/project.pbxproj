@@ -127,12 +127,11 @@
 		BFC344D12B038BE700CBAF1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BFC344FD2B06334000CBAF1D /* CardsViews */,
 				BFC344F32B04EAE700CBAF1D /* LoginView.swift */,
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
-				BFC344D22B038C0700CBAF1D /* CollectionsView.swift */,
 				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
-				BFC344D82B03905E00CBAF1D /* CardsInCollectionView.swift */,
+				BFC345002B06362200CBAF1D /* CollectionViews */,
+				BFC344FD2B06334000CBAF1D /* CardsViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +144,15 @@
 				BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */,
 			);
 			path = CardsViews;
+			sourceTree = "<group>";
+		};
+		BFC345002B06362200CBAF1D /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				BFC344D82B03905E00CBAF1D /* CardsInCollectionView.swift */,
+				BFC344D22B038C0700CBAF1D /* CollectionsView.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		BFC82E962B01471C00B23006 /* Helpers */ = {
