@@ -27,6 +27,17 @@ struct CollectionsView: View {
             }
 
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    print("Add collection")
+                } label: {
+                    Label("Add", systemImage: "plus.circle")
+                        .foregroundColor(.orange)
+                }
+
+            }
+        }
         .navigationTitle("Collections")
         .onAppear(perform: {
             collections = [Collection(name: "Mono White",cards: vm.mockCards), Collection(name: "Mono Black",cards: vm.mockCards)]
