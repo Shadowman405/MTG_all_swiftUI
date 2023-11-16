@@ -139,8 +139,8 @@
 		BFC344FD2B06334000CBAF1D /* CardsViews */ = {
 			isa = PBXGroup;
 			children = (
-				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
 				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
+				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
 				BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */,
 			);
 			path = CardsViews;

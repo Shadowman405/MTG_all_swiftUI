@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CollectionsView: View {
     @State private var collections: [Collection] = []
+    @State private var showAlert = false
     @StateObject var vm = CardViewModel()
     
     var body: some View {
@@ -31,11 +32,15 @@ struct CollectionsView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     print("Add collection")
+                    showAlert = true
                 } label: {
                     Label("Add", systemImage: "plus.circle")
                         .foregroundColor(.orange)
                 }
-
+                .alert(Text("Save Collection"), isPresented: $showAlert) {
+                    Button("Save"){}
+                    Button("Cancel") {}
+                }
             }
         }
         .navigationTitle("Collections")
