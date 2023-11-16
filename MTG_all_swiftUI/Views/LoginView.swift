@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
-    @Binding var logedIn: Bool
+    @State var logedIn: Bool = false
     @State private var email = ""
     @State private var password = ""
     //@State private var isLogedIn = false
@@ -17,81 +17,83 @@ struct LoginView: View {
     var body: some View {
         if logedIn {
            // ContentView()
-            ContentView()
+            ContentView(logedIn: $logedIn)
         } else {
             content
         }
     }
     
     var content: some View {
-        ZStack {
-            Color(.black)
-                .ignoresSafeArea()
-            
-            VStack{
-                VStack {
-                    Image("mtg_login_logo-removebg")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .offset(y: -50)
-                }
+        NavigationView {
+            ZStack {
+                Color(.black)
+                    .ignoresSafeArea()
                 
-                VStack(alignment: .leading) {
-                    Text("Email")
-                        .foregroundColor(.white)
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                VStack{
+                    VStack {
+                        Image("mtg_login_logo-removebg")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .offset(y: -50)
+                    }
                     
-                    TextField("", text: $email, prompt: Text("Email...")
-                        .foregroundColor(.orange.opacity(0.4)))
-                    .textFieldStyle(.plain)
-                    .foregroundColor(.blue)
-                    
-                    Divider()
-                        .foregroundColor(.gray)
-                    
-                    
-                    Text("Password")
-                        .foregroundColor(.white)
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
-                    
-                    TextField("", text: $password, prompt: Text("Password...")
-                        .foregroundColor(.orange.opacity(0.4)))
-                    .textFieldStyle(.plain)
-                    .foregroundColor(.blue)
-                    
-                    Divider()
-                        .foregroundColor(.gray)
-                    
-                }
-                .padding()
-                
-                VStack {
-                    Button {
-                        register()
-                    } label: {
-                        Text("Sign Up")
-                            .bold()
-                            .frame(width: 300, height: 40)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .fill(LinearGradient(colors: [.brown, .orange], startPoint: .top, endPoint: .bottomTrailing))
-                            )
+                    VStack(alignment: .leading) {
+                        Text("Email")
                             .foregroundColor(.white)
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                        
+                        TextField("", text: $email, prompt: Text("Email...")
+                            .foregroundColor(.orange.opacity(0.4)))
+                        .textFieldStyle(.plain)
+                        .foregroundColor(.blue)
+                        
+                        Divider()
+                            .foregroundColor(.gray)
+                        
+                        
+                        Text("Password")
+                            .foregroundColor(.white)
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                        
+                        TextField("", text: $password, prompt: Text("Password...")
+                            .foregroundColor(.orange.opacity(0.4)))
+                        .textFieldStyle(.plain)
+                        .foregroundColor(.blue)
+                        
+                        Divider()
+                            .foregroundColor(.gray)
+                        
                     }
+                    .padding()
                     
-                    Button {
-                        login()
-                    } label: {
-                        Text("Already have an account? Login")
+                    VStack {
+                        Button {
+                            register()
+                        } label: {
+                            Text("Sign Up")
+                                .bold()
+                                .frame(width: 300, height: 40)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .fill(LinearGradient(colors: [.brown, .orange], startPoint: .top, endPoint: .bottomTrailing))
+                                )
+                                .foregroundColor(.white)
+                        }
+                        
+                        Button {
+                            login()
+                        } label: {
+                            Text("Already have an account? Login")
+                        }
+                        .offset(y: 10)
                     }
-                    .offset(y: 10)
                 }
-            }
-            .navigationTitle("Login")
-            .onAppear {
-                FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
-                    if user != nil {
-                        logedIn.toggle()
+                .navigationTitle("Login")
+                .onAppear {
+                    FirebaseManager.shared.auth.addStateDidChangeListener { auth, user in
+                        if user != nil {
+                            logedIn.toggle()
+                        }
                     }
                 }
             }
@@ -110,11 +112,13 @@ struct LoginView: View {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 print(error?.localizedDescription ?? "Error log")
+            }else {
+                logedIn = true
             }
         }
     }
 }
 
 #Preview {
-    LoginView(logedIn: .constant(false))
+    LoginView()
 }

@@ -10,7 +10,7 @@ import Firebase
 
 @main
 struct MTG_all_swiftUIApp: App {
-    @State var select = false
+    //@State var select = false
     
     init() {
         FirebaseApp.configure()
@@ -19,7 +19,7 @@ struct MTG_all_swiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            LoginView(logedIn: $select)
+            LoginView()
         }
     }
 }

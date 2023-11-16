@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum Route: Hashable {
+    case ContentView
+    case content
+}
+
+class isLogedInUser: ObservableObject {
+    @Published var logedIn = false
+}

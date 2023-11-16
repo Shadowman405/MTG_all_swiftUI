@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     //@EnvironmentObject var logedInUser: isLogedInUser
-    @State var isUserLoggedIn : Bool = false
+    @Binding var logedIn : Bool
     
     var body: some View {
+        if logedIn {
+            content
+        } else {
+            LoginView()
+        }
+    }
+    
+    var content: some View {
         NavigationView {
             ZStack {
                 Color(.black)
@@ -51,14 +60,31 @@ struct ContentView: View {
                 }
             }
             .toolbar {
-                Button("Singout") {
-                    print("signout")
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        signOut()
+                    } label: {
+                        Text("Signout")
+                            .foregroundStyle(.orange)
+                    }
+
                 }
             }
+        }
+    }
+    
+    func signOut() {
+        print("Status - \(logedIn)")
+        do {
+            try Auth.auth().signOut()
+            logedIn.toggle()
+            print("signed out")
+        } catch {
+            print("Error")
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(logedIn: .constant(false))
 }
