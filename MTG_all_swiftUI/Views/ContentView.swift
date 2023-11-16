@@ -75,6 +75,7 @@ struct ContentView: View {
                 }
             }
         }
+        .accentColor(.orange)
     }
     
     func signOut() {
