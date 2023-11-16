@@ -29,6 +29,7 @@
 		BFC344F62B04F44800CBAF1D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344F52B04F44800CBAF1D /* FirebaseManager.swift */; };
 		BFC344FA2B062F1000CBAF1D /* NavBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344F92B062F1000CBAF1D /* NavBarExtension.swift */; };
 		BFC344FC2B06318700CBAF1D /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344FB2B06318700CBAF1D /* MockDataManager.swift */; };
+		BFC344FF2B06336F00CBAF1D /* CardSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */; };
 		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
 		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
@@ -70,6 +71,7 @@
 		BFC344F52B04F44800CBAF1D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		BFC344F92B062F1000CBAF1D /* NavBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarExtension.swift; sourceTree = "<group>"; };
 		BFC344FB2B06318700CBAF1D /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSingleCell.swift; sourceTree = "<group>"; };
 		BFC82E972B01472E00B23006 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIApp.swift; sourceTree = "<group>"; };
@@ -125,15 +127,24 @@
 		BFC344D12B038BE700CBAF1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BFC344FD2B06334000CBAF1D /* CardsViews */,
 				BFC344F32B04EAE700CBAF1D /* LoginView.swift */,
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
-				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
-				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
 				BFC344D22B038C0700CBAF1D /* CollectionsView.swift */,
 				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
 				BFC344D82B03905E00CBAF1D /* CardsInCollectionView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BFC344FD2B06334000CBAF1D /* CardsViews */ = {
+			isa = PBXGroup;
+			children = (
+				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
+				BFE66B312B0141AA00EC9AAB /* CardsView.swift */,
+				BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */,
+			);
+			path = CardsViews;
 			sourceTree = "<group>";
 		};
 		BFC82E962B01471C00B23006 /* Helpers */ = {
@@ -365,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC344FF2B06336F00CBAF1D /* CardSingleCell.swift in Sources */,
 				BFC344F62B04F44800CBAF1D /* FirebaseManager.swift in Sources */,
 				BFC344D72B038D2D00CBAF1D /* Collection.swift in Sources */,
 				BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */,

@@ -21,17 +21,7 @@ struct CardsView: View {
                     NavigationLink {
                         CardDetails(card: card)
                     } label: {
-                        AsyncImage(url: URL(string: card.imageURL ?? "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card")) { image in
-                            image.resizable()
-                                .aspectRatio(contentMode: .fill)
-                            //.padding()
-                                .border(.gray, width: 3)
-                        } placeholder: {
-                            Image("card_placeholder")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .border(.gray, width: 3)
-                        }
+                        CardSingleCell(card: card)
                     }
                 }
             }
