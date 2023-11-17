@@ -13,7 +13,8 @@ struct CardsView: View {
     @State private var searchText = ""
 
     
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+//    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    let columns = [GridItem(.flexible())]
     
     var body: some View {
         ScrollView {
