@@ -44,11 +44,17 @@ struct CardsView: View {
         .searchable(text: $searchText)
         .navigationTitle("Cards")
         .onAppear {
-            if vm.fileteredCardData.isEmpty {
+            if vm.fileteredCardData.isEmpty  {
                 Task{
                     await vm.fetchCards()
                     cards = vm.fileteredCardData
                 }
+            }
+        }
+        .onSubmit(of: .search) {
+            Task {
+                await vm.fetchCardsSearch(searchString:searchText)
+                cards = vm.fileteredCardData
             }
         }
     }
