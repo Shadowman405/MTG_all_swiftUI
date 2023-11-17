@@ -51,12 +51,6 @@ struct CardsView: View {
                 }
             }
         }
-        .onSubmit(of: .search) {
-            Task {
-                await vm.fetchCardsSearch(searchString:searchText)
-                cards = vm.fileteredCardData
-            }
-        }
     }
     
     var searchResults: [Card] {
