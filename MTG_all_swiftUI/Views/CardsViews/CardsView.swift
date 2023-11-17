@@ -17,17 +17,26 @@ struct CardsView: View {
     let columns = [GridItem(.flexible())]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(searchResults) { card in
-                    NavigationLink {
-                        CardDetails(card: card)
-                    } label: {
-                        CardSingleCell(card: card)
-                    }
-                }
+//        ScrollView {
+//            LazyVGrid(columns: columns) {
+//                ForEach(searchResults) { card in
+//                    NavigationLink {
+//                        CardDetails(card: card)
+//                    } label: {
+//                        CardSingleCell(card: card)
+//                    }
+//                }
+//            }
+//            .padding()
+//        }
+        List(searchResults) {card  in
+            NavigationLink {
+                CardDetails(card: card)
+            } label: {
+               // CardSingleCell(card: card)
+                Text(card.name ?? "")
             }
-            .padding()
+
         }
         .searchable(text: $searchText)
         .navigationTitle("Cards")
