@@ -23,6 +23,7 @@ struct CardDetails: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 }
+                Divider()
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Name: " + card.name!)
@@ -33,10 +34,17 @@ struct CardDetails: View {
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
-                    Text("Mana Cost: " + card.manaCost!)
-                        .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
+//                    Text("Mana Cost: " + card.manaCost!)
+//                        .font(.custom(
+//                                "AmericanTypewriter",
+//                                fixedSize: 24))
+                    HStack {
+                        Text("Mana Cost: ")
+                            .font(.custom(
+                                    "AmericanTypewriter",
+                                    fixedSize: 24))
+                        CardManaCostView(card: card)
+                    }
                     Divider()
                     Text("Card description: \n" + card.text!)
                         .font(.custom(
