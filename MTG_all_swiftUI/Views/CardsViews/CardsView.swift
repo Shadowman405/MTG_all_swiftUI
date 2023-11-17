@@ -36,9 +36,7 @@ struct CardsView: View {
                 //CardSingleCell(card: card)
                 HStack {
                     Text(card.name ?? "")
-                    Image("{B}")
-                        .resizable()
-                        .frame(width: 20,height: 20)
+                    CardManaCostView(card: card)
                 }
             }
 
