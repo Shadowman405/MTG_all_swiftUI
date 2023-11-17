@@ -33,8 +33,13 @@ struct CardsView: View {
             NavigationLink {
                 CardDetails(card: card)
             } label: {
-               // CardSingleCell(card: card)
-                Text(card.name ?? "")
+                //CardSingleCell(card: card)
+                HStack {
+                    Text(card.name ?? "")
+                    Image("{B}")
+                        .resizable()
+                        .frame(width: 20,height: 20)
+                }
             }
 
         }

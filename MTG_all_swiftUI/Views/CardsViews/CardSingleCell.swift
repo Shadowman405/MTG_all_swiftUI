@@ -28,12 +28,15 @@ struct CardSingleCell: View {
                 .padding()
             
             ZStack {
-                VStack( alignment: .leading) {
+                HStack {
                     
                     Text(card.name ?? "")
                         .foregroundColor(.black)
-                    Text(card.manaCost ?? "")
-                        .foregroundColor(.black)
+//                    Text(card.manaCost ?? "")
+//                        .foregroundColor(.black)
+                    Image("{B}")
+                        .resizable()
+                        .frame(width: 20, height: 20)
                 }
                 
             }
