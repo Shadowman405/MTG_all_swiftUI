@@ -11,6 +11,7 @@ struct CollectionsView: View {
     @State private var collections: [Collection] = []
     @State private var showAlert = false
     @StateObject var vm = CardViewModel()
+    @State private var collectionName = ""
     
     var body: some View {
 //        HStack{
@@ -37,9 +38,11 @@ struct CollectionsView: View {
                     Label("Add", systemImage: "plus.circle")
                         .foregroundColor(.orange)
                 }
-                .alert(Text("Save Collection"), isPresented: $showAlert) {
+                .alert(Text("Add New Collection"), isPresented: $showAlert) {
+                    TextField("Collection name",text: $collectionName)
+                        .textInputAutocapitalization(.never)
                     Button("Save"){}
-                    Button("Cancel") {}
+                    Button("Cancel", role: .cancel) {}
                 }
             }
         }
