@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 struct CollectionsView: View {
     @State private var collections: [Collection] = []
@@ -41,7 +43,7 @@ struct CollectionsView: View {
                 .alert(Text("Add New Collection"), isPresented: $showAlert) {
                     TextField("Collection name",text: $collectionName)
                         .textInputAutocapitalization(.never)
-                    Button("Save"){}
+                    Button("Save"){saveCollection()}
                     Button("Cancel", role: .cancel) {}
                 }
             }
@@ -50,6 +52,18 @@ struct CollectionsView: View {
         .onAppear(perform: {
             collections = [Collection(name: "Mono White",cards: vm.mockCards), Collection(name: "Mono Black",cards: vm.mockCards)]
         })
+    }
+    
+    private func saveCollection() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let uniqueID = "\(uid)\(self.collectionName)"
+        let collectionData = ["name": collectionName]
+        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).setData(collectionData) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+            }
     }
 }
 
