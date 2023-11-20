@@ -49,6 +49,17 @@ struct CardDetails: View {
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
+
+                }
+                .padding()
+                
+                NavigationLink {
+                    CollectionsView()
+                } label: {
+                        HStack {
+                            Text("Add to Collection")
+                            Image(systemName: "rectangle.stack.fill.badge.plus")
+                        }
                 }
                 .padding()
             }
@@ -60,7 +71,7 @@ struct CardDetails: View {
                 NavigationLink {
                     CollectionsView()
                 } label: {
-                    Label("Add", systemImage: "plus.circle")
+                    Label("Add", systemImage: "rectangle.stack.fill.badge.plus")
                         .foregroundColor(.orange)
                 }
             }
