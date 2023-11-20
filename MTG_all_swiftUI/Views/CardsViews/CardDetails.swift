@@ -36,10 +36,6 @@ struct CardDetails: View {
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
-//                    Text("Mana Cost: " + card.manaCost!)
-//                        .font(.custom(
-//                                "AmericanTypewriter",
-//                                fixedSize: 24))
                     HStack {
                         Text("Mana Cost: ")
                             .font(.custom(
@@ -59,6 +55,16 @@ struct CardDetails: View {
             .padding()
         }
         .navigationTitle(card.name ?? "Card")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    print("Add to collection")
+                } label: {
+                    Label("Add", systemImage: "plus.circle")
+                        .foregroundColor(.orange)
+                }
+            }
+        }
     }
 }
 
