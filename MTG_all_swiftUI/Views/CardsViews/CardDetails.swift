@@ -46,7 +46,6 @@ struct CardDetails: View {
                                     "AmericanTypewriter",
                                     fixedSize: 24))
                         CardManaCostView(card: card)
-                            .padding()
                     }
                     
                     Divider()
