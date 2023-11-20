@@ -46,13 +46,16 @@ struct CardDetails: View {
                                     "AmericanTypewriter",
                                     fixedSize: 24))
                         CardManaCostView(card: card)
+                            .padding()
                     }
+                    
                     Divider()
                     Text("Card description: \n" + card.text!)
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
                 }
+                .padding()
             }
             .padding()
         }
