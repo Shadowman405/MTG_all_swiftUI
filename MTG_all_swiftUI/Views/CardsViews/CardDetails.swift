@@ -18,10 +18,12 @@ struct CardDetails: View {
                 CachedAsyncImage(url: URL(string: card.imageURL ?? "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card")) { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fit)
+                        .frame(width: 400 ,height: 400)
                 } placeholder: {
                     Image("card_placeholder")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 400 ,height: 400)
+                        .aspectRatio(contentMode: .fit)
                 }
                 Divider()
                 
