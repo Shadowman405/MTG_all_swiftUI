@@ -57,8 +57,8 @@ struct CardDetails: View {
         .navigationTitle(card.name ?? "Card")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    print("Add to collection")
+                NavigationLink {
+                    CollectionsView()
                 } label: {
                     Label("Add", systemImage: "plus.circle")
                         .foregroundColor(.orange)
