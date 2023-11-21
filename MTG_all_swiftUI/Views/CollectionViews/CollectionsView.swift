@@ -14,14 +14,17 @@ struct CollectionsView: View {
     @State private var showAlert = false
     @ObservedObject private var vm = CardViewModel()
     @State private var collectionName = ""
-    @State private var selection: String?
     
     var body: some View {
         List(vm.collectionData) { collection in
-            NavigationLink(tag: collection.name, selection: $selection) {
+            NavigationLink {
                 CardsInCollectionView(cardsInCollection: collection.cards)
             } label: {
-                Text(collection.name)
+                HStack {
+                    Text(collection.name)
+                    Spacer()
+                    Text("\(collection.cards.count)/60")
+                }
             }
 
         }
@@ -45,9 +48,6 @@ struct CollectionsView: View {
         .navigationTitle("Collections")
         .onAppear(perform: {
             vm.fetchCollectionFromDB()
-            if let selection = collections.first?.name {
-                self.selection = selection
-            }
         })
     }
     
