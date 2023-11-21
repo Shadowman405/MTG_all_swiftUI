@@ -19,9 +19,11 @@ struct SaveToCollection: View {
                     Text(collection.name)
                     Spacer()
                     Button(action: {
-                        print("Save")
+                        print("Saved to \(collection.name) collection")
                     }, label: {
-                        Text("Save")
+                        //Text("Save")
+                        Image(systemName: "plus.circle")
+                            .foregroundColor(.green)
                     })
                 }
         }
