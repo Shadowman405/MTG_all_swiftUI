@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 enum NetworkError: Error {
     case badUrl
@@ -52,6 +53,8 @@ class CardViewModel: ObservableObject {
     
     
     @Published var fileteredCardData = [Card]()
+    
+    //MARK: - CARDS
     private var cardsUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
     
     func fetchCards() async {
@@ -98,6 +101,22 @@ class CardViewModel: ObservableObject {
                 print(fileteredCardData.count)
                 print(cardData.count)
             }
+        }
+    }
+    
+    //MARK: - Collections
+    var collectionData = [Collection]()
+    
+    func fetchCollectionFromDB() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
+        FirebaseManager.shared.firestore.collection("Collecions").addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            let doc = snapshot!.documents
+            print(doc)
         }
     }
 }
