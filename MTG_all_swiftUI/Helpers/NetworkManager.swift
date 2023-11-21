@@ -105,18 +105,21 @@ class CardViewModel: ObservableObject {
     }
     
     //MARK: - Collections
-    var collectionData = [Collection]()
+    @Published var collectionData = [Collection]()
     
     func fetchCollectionFromDB() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
-        FirebaseManager.shared.firestore.collection("Collecions").addSnapshotListener { snapshot, error in
+        FirebaseManager.shared.firestore.collection("Collections").addSnapshotListener { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
             
             let doc = snapshot!.documents
-            print(doc)
+            for eachDoc in doc {
+                let data = eachDoc.data()
+                print("Data: \(data)")
+            }
         }
     }
 }
