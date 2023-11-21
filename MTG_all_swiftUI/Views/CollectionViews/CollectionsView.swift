@@ -51,6 +51,7 @@ struct CollectionsView: View {
         .navigationTitle("Collections")
         .onAppear(perform: {
             collections = [Collection(name: "Mono White",cards: vm.mockCards), Collection(name: "Mono Black",cards: vm.mockCards)]
+            vm.fetchCollectionFromDB()
         })
     }
     

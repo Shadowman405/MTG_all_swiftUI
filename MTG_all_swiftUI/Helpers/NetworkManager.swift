@@ -115,10 +115,23 @@ class CardViewModel: ObservableObject {
                 return
             }
             
-            let doc = snapshot!.documents
-            for eachDoc in doc {
-                let data = eachDoc.data()
-                print("Data: \(data)")
+//            let doc = snapshot!.documents
+//            for eachDoc in doc {
+//                let data = eachDoc.data()
+//                print("Data: \(data)")
+//            }
+            
+            guard let documents = snapshot?.documents else {return}
+            
+            self.collectionData = documents.map { (querrySnapshot) -> Collection in
+                let data = querrySnapshot.data()
+                
+                let name = data["name"] as? String ?? ""
+                let cards = data["cards"] as? [Card]
+                let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
+                print(newCollection)
+                
+                return newCollection
             }
         }
     }
