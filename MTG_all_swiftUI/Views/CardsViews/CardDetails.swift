@@ -54,7 +54,7 @@ struct CardDetails: View {
                 .padding()
                 
                 NavigationLink {
-                    CollectionsView()
+                    SaveToCollection()
                 } label: {
                         HStack {
                             Text("Add to Collection")
@@ -69,7 +69,7 @@ struct CardDetails: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    CollectionsView()
+                    SaveToCollection()
                 } label: {
                     Label("Add", systemImage: "rectangle.stack.fill.badge.plus")
                         .foregroundColor(.orange)
