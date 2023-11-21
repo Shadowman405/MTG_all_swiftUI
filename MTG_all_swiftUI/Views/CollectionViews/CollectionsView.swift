@@ -12,18 +12,11 @@ import FirebaseFirestore
 struct CollectionsView: View {
     @State private var collections: [Collection] = []
     @State private var showAlert = false
-    @StateObject var vm = CardViewModel()
+    @ObservedObject private var vm = CardViewModel()
     @State private var collectionName = ""
     
     var body: some View {
-//        HStack{
-//            Text("Collections")
-//            Image("W")
-//                .resizable()
-//                .frame(width: 40, height: 40)
-//        }
-//        
-        List(collections) { collection in
+        List(vm.collectionData) { collection in
             NavigationLink {
                 CardsInCollectionView(cardsInCollection: collection.cards)
             } label: {
@@ -50,7 +43,6 @@ struct CollectionsView: View {
         }
         .navigationTitle("Collections")
         .onAppear(perform: {
-            collections = [Collection(name: "Mono White",cards: vm.mockCards), Collection(name: "Mono Black",cards: vm.mockCards)]
             vm.fetchCollectionFromDB()
         })
     }
