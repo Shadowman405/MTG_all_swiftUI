@@ -126,6 +126,7 @@ class CardViewModel: ObservableObject {
                 //print(newCollection)
                 
                 //self.subCollectionCard(colName: colName)
+                self.subCollectionCard(colName: colName)
                 let newCollection = Collection(name: colName, cards: self.subCollectionCards)
                 print(self.subCollectionCards)
                 return newCollection
