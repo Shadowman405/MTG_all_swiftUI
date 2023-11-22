@@ -143,6 +143,8 @@ class CardViewModel: ObservableObject {
                     guard let docs = cardsSnapshot?.documents else { return}
                     //print("\(uid)\(name)")
                     
+                    var newCollectionCards = [Card]()
+                    
                     self.subCollectionCards = docs.map {(querrySnapshotCard) -> Card in
                         let cardData = querrySnapshotCard.data()
                         
@@ -176,6 +178,9 @@ class CardViewModel: ObservableObject {
                         
                         let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, legalities: newLegs, id: id)
                         
+                        //print(newCard)
+                        self.subCollectionCards.append(newCard)
+                        print("Cards coll: \(self.subCollectionCards)")
                         return newCard
                     }
                 }
