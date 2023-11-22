@@ -125,15 +125,33 @@ class CardViewModel: ObservableObject {
             
             self.collectionData = documents.map { (querrySnapshot) -> Collection in
                 let data = querrySnapshot.data()
+                //print(data)
                 
                 let name = data["name"] as? String ?? ""
                 let cards = data["cards"] as? [Card]
                 let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
-                print(newCollection)
+                //print(newCollection)
+                
+                
+                FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(name)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    guard let docs = cardsSnapshot?.documents else { return}
+                    //print(docs)
+                    
+                    for newDoc in docs {
+                        let data = newDoc.data()
+                        print(data)
+                    }
+                }
                 
                 return newCollection
             }
         }
+        
     }
 }
 
