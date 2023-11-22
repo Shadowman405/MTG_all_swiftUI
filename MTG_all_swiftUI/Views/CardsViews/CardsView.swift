@@ -57,7 +57,7 @@ struct CardsView: View {
         if searchText.isEmpty {
             return cards
         } else {
-            return cards.filter{$0.name.contains(searchText) }
+            return cards.filter{$0.name!.contains(searchText) }
         }
     }
 }
