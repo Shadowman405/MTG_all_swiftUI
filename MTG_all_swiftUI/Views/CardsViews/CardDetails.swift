@@ -28,11 +28,11 @@ struct CardDetails: View {
                 Divider()
                 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("Name: " + card.name!)
+                    Text("Name: " + card.name)
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
-                    Text("Set: " + card.setName!)
+                    Text("Set: " + card.setName)
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
@@ -45,7 +45,7 @@ struct CardDetails: View {
                     }
                     
                     Divider()
-                    Text("Card description: \n" + card.text!)
+                    Text("Card description: \n" + card.text)
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))
