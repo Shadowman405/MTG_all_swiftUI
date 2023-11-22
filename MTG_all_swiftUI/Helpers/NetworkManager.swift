@@ -128,13 +128,13 @@ class CardViewModel: ObservableObject {
                 let data = querrySnapshot.data()
                 //print(data)
                 
-                let name = data["name"] as? String ?? ""
+                let colName = data["colName"] as? String ?? ""
                 //let cards = data["cards"] as? [Card]
                 //let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
                 //print(newCollection)
                 
                 
-                FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(name)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
+                FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
                     if let error = error {
                         print(error.localizedDescription)
                         return
@@ -147,46 +147,47 @@ class CardViewModel: ObservableObject {
                     
                     self.subCollectionCards = docs.map {(querrySnapshotCard) -> Card in
                         let cardData = querrySnapshotCard.data()
+                        //print(cardData)
                         
-                        let name = data["name"] as? String ?? ""
-                        let manaCost = data["manaCost"] as? String ?? ""
-                        let cmc = data["cmc"] as? Int ?? 0
-                        let colors = ["colors"] as? [String] ?? [""]
-                        let colorIdentity = data["colorIdentity"] as? [String] ?? [""]
-                        let type = data["type"] as? String ?? ""
-                        let types = data["types"] as? [String] ?? [""]
-                        let subtypes = data["subtypes"] as? [String] ?? [""]
-                        let rarity = data["rarity"] as? String ?? ""
-                        let setCode = data["setCode"] as? String ?? ""
-                        let setName = data["setName"] as? String ?? ""
-                        let text = data["text"] as? String ?? ""
-                        let flavor = data["flavor"] as? String ?? ""
-                        let artist = data["artist"] as? String ?? ""
-                        let number = data["number"] as? String ?? ""
-                        let power = data["power"] as? String ?? ""
-                        let toughness = data["toughness"] as? String ?? ""
-                        let layout = data["layout"] as? String ?? ""
-                        let multiverseid = data["multiverseid"] as? String ?? ""
-                        let imageURL = data["imageURL"] as? String ?? ""
-                        let printings = data["printings"] as? [String] ?? [""]
-                        let originalText = data["originalText"] as? String ?? ""
-                        let originalType = data["originalType"] as? String ?? ""
-                        let legalities = data["legalities"] as? [String] ?? [""]
-                        let id = data["id"] as? String ?? ""
+                        let name = cardData["name"] as? String ?? ""
+                        let manaCost = cardData["manaCost"] as? String ?? ""
+                        let cmc = cardData["cmc"] as? Int ?? 0
+                        let colors = cardData["colors"] as? [String] ?? [""]
+                        let colorIdentity = cardData["colorIdentity"] as? [String] ?? [""]
+                        let type = cardData["type"] as? String ?? ""
+                        let types = cardData["types"] as? [String] ?? [""]
+                        let subtypes = cardData["subtypes"] as? [String] ?? [""]
+                        let rarity = cardData["rarity"] as? String ?? ""
+                        let setCode = cardData["setCode"] as? String ?? ""
+                        let setName = cardData["setName"] as? String ?? ""
+                        let text = cardData["text"] as? String ?? ""
+                        let flavor = cardData["flavor"] as? String ?? ""
+                        let artist = cardData["artist"] as? String ?? ""
+                        let number = cardData["number"] as? String ?? ""
+                        let power = cardData["power"] as? String ?? ""
+                        let toughness = cardData["toughness"] as? String ?? ""
+                        let layout = cardData["layout"] as? String ?? ""
+                        let multiverseid = cardData["multiverseid"] as? String ?? ""
+                        let imageURL = cardData["imageUrl"] as? String ?? ""
+                        let printings = cardData["printings"] as? [String] ?? [""]
+                        let originalText = cardData["originalText"] as? String ?? ""
+                        let originalType = cardData["originalType"] as? String ?? ""
+                        let legalities = cardData["legalities"] as? [String] ?? [""]
+                        let id = cardData["id"] as? String ?? ""
                         
                         let newLegs: [LegalityElement]?  = [LegalityElement(format: legalities[0] ?? "Commander", legality: .legal)]
                         
                         let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, legalities: newLegs, id: id)
                         
-                        //print(newCard)
+                        print(newCard)
                         self.subCollectionCards.append(newCard)
-                        print("Cards coll: \(self.subCollectionCards)")
+                        //print("Cards coll: \(self.subCollectionCards)")
                         return newCard
                     }
                 }
                 
-                let newCollection = Collection(name: name, cards: self.subCollectionCards)
                 print(self.subCollectionCards)
+                let newCollection = Collection(name: colName, cards: self.subCollectionCards)
                 return newCollection
             }
         }
