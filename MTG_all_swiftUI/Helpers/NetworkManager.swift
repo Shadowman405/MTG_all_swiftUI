@@ -125,7 +125,7 @@ class CardViewModel: ObservableObject {
                 //let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
                 //print(newCollection)
                 
-                self.subCollectionCard(colName: colName)
+                //self.subCollectionCard(colName: colName)
                 let newCollection = Collection(name: colName, cards: self.subCollectionCards)
                 print(self.subCollectionCards)
                 return newCollection
