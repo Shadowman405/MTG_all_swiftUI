@@ -140,7 +140,7 @@ class CardViewModel: ObservableObject {
                     }
                     
                     guard let docs = cardsSnapshot?.documents else { return}
-                    //print(docs)
+                    print("\(uid)\(name)")
                     
                     for newDoc in docs {
                         let data = newDoc.data()
