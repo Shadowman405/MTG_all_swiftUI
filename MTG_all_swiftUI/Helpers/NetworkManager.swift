@@ -129,8 +129,8 @@ class CardViewModel: ObservableObject {
                 //print(data)
                 
                 let name = data["name"] as? String ?? ""
-                let cards = data["cards"] as? [Card]
-                let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
+                //let cards = data["cards"] as? [Card]
+                //let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
                 //print(newCollection)
                 
                 
@@ -141,7 +141,7 @@ class CardViewModel: ObservableObject {
                     }
                     
                     guard let docs = cardsSnapshot?.documents else { return}
-                    print("\(uid)\(name)")
+                    //print("\(uid)\(name)")
                     
                     self.subCollectionCards = docs.map {(querrySnapshotCard) -> Card in
                         let cardData = querrySnapshotCard.data()
@@ -180,6 +180,8 @@ class CardViewModel: ObservableObject {
                     }
                 }
                 
+                let newCollection = Collection(name: name, cards: self.subCollectionCards)
+                print(self.subCollectionCards)
                 return newCollection
             }
         }
