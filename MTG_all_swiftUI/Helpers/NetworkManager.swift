@@ -106,6 +106,7 @@ class CardViewModel: ObservableObject {
     
     //MARK: - Collections
     @Published var collectionData = [Collection]()
+    @Published var subCollectionCards = [Card]()
     
     func fetchCollectionFromDB() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
@@ -142,9 +143,40 @@ class CardViewModel: ObservableObject {
                     guard let docs = cardsSnapshot?.documents else { return}
                     print("\(uid)\(name)")
                     
-                    for newDoc in docs {
-                        let data = newDoc.data()
-                        print(data)
+                    self.subCollectionCards = docs.map {(querrySnapshotCard) -> Card in
+                        let cardData = querrySnapshotCard.data()
+                        
+                        let name = data["name"] as? String ?? ""
+                        let manaCost = data["manaCost"] as? String ?? ""
+                        let cmc = data["cmc"] as? Int ?? 0
+                        let colors = ["colors"] as? [String] ?? [""]
+                        let colorIdentity = data["colorIdentity"] as? [String] ?? [""]
+                        let type = data["type"] as? String ?? ""
+                        let types = data["types"] as? [String] ?? [""]
+                        let subtypes = data["subtypes"] as? [String] ?? [""]
+                        let rarity = data["rarity"] as? String ?? ""
+                        let setCode = data["setCode"] as? String ?? ""
+                        let setName = data["setName"] as? String ?? ""
+                        let text = data["text"] as? String ?? ""
+                        let flavor = data["flavor"] as? String ?? ""
+                        let artist = data["artist"] as? String ?? ""
+                        let number = data["number"] as? String ?? ""
+                        let power = data["power"] as? String ?? ""
+                        let toughness = data["toughness"] as? String ?? ""
+                        let layout = data["layout"] as? String ?? ""
+                        let multiverseid = data["multiverseid"] as? String ?? ""
+                        let imageURL = data["imageURL"] as? String ?? ""
+                        let printings = data["printings"] as? [String] ?? [""]
+                        let originalText = data["originalText"] as? String ?? ""
+                        let originalType = data["originalType"] as? String ?? ""
+                        let legalities = data["legalities"] as? [String] ?? [""]
+                        let id = data["id"] as? String ?? ""
+                        
+                        let newLegs: [LegalityElement]?  = [LegalityElement(format: legalities[0] ?? "Commander", legality: .legal)]
+                        
+                        let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, legalities: newLegs, id: id)
+                        
+                        return newCard
                     }
                 }
                 
