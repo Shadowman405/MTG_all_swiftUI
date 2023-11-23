@@ -24,7 +24,7 @@ struct Card: Codable, Identifiable {
     let imageURL: String?
     let printings: [String]?
     let originalText, originalType: String?
-    let legalities: [LegalityElement]?
+    //let legalities: [LegalityElement]?
     let id: String?
 
     enum CodingKeys: String, CodingKey {
@@ -32,17 +32,18 @@ struct Card: Codable, Identifiable {
         case setCode = "set"
         case setName, text, flavor, artist, number, power, toughness, layout, multiverseid
         case imageURL = "imageUrl"
-        case printings, originalText, originalType, legalities, id
+//        case printings, originalText, originalType, legalities, id
+        case printings, originalText, originalType, id
     }
 }
 
-// MARK: - LegalityElement
-struct LegalityElement: Codable {
-    let format: String?
-    let legality: LegalityEnum?
-}
-
-enum LegalityEnum: String, Codable {
-    case legal = "Legal"
-    case restricted = "Restricted"
-}
+//// MARK: - LegalityElement
+//struct LegalityElement: Codable {
+//    let format: String?
+//    let legality: LegalityEnum?
+//}
+//
+//enum LegalityEnum: String, Codable {
+//    case legal = "Legal"
+//    case restricted = "Restricted"
+//}

@@ -49,7 +49,7 @@ class WebService{
 class CardViewModel: ObservableObject {
     var cardData = [Card]()
     
-    var mockCards = [Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", legalities: [LegalityElement(format: "Commander", legality: .legal)], id: "18468b64-37ef-5e4d-b95a-781265b533a2"), Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", legalities: [LegalityElement(format: "Commander", legality: .legal)], id: "18468b64-37ef-5e4d-b95a-781265b533a2")]
+    var mockCards = [Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", id: "18468b64-37ef-5e4d-b95a-781265b533a2"), Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", id: "18468b64-37ef-5e4d-b95a-781265b533a2")]
     
     
     @Published var fileteredCardData = [Card]()
@@ -67,7 +67,7 @@ class CardViewModel: ObservableObject {
             for card in cardData {
                 if card.imageURL != nil {
                     let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? ""
-                    fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, legalities: card.legalities, id: card.id))
+                    fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id))
                     print(cardString)
                 } else {
                     print(card.name)
@@ -91,7 +91,7 @@ class CardViewModel: ObservableObject {
             for card in cardData {
                 if card.imageURL != nil {
                     let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? ""
-                    fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, legalities: card.legalities, id: card.id))
+                    fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id))
                     print(cardString)
                 } else {
                     print(card.name)
@@ -107,7 +107,7 @@ class CardViewModel: ObservableObject {
     }
     
     //MARK: - Saving
-    func addCardToCollection(selectedCollection: String, cardName: String, cardMana: String, cardCMC: Int, cardColors: [String], cardColorIdent: [String], cardType: String, cardTypes: [String], cardSubtypes: [String], cardRarity: String, cardSetCode: String, cardSetName: String, cardText: String, cardFlavor: String, cardArtist: String, cardNumber: String, cardPower: String, cardTough: String, cardLayout: String, cardMulti: String, cardImgUrl: String, cardPrintings: [String], cardOriginTxt: String, cardOriginType: String, cardLegality: [LegalityElement], cardId: String) {
+    func addCardToCollection(selectedCollection: String, cardName: String, cardMana: String, cardCMC: Int, cardColors: [String], cardColorIdent: [String], cardType: String, cardTypes: [String], cardSubtypes: [String], cardRarity: String, cardSetCode: String, cardSetName: String, cardText: String, cardFlavor: String, cardArtist: String, cardNumber: String, cardPower: String, cardTough: String, cardLayout: String, cardMulti: String, cardImgUrl: String, cardPrintings: [String], cardOriginTxt: String, cardOriginType: String, cardId: String) {
         
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
         let uniqueID = "\(uid)\(selectedCollection)"
@@ -136,7 +136,6 @@ class CardViewModel: ObservableObject {
             "printings": cardPrintings,
             "originalText": cardText,
             "originalType": cardOriginType,
-            "legalities": cardLegality,
             "id": cardId
         ] as [String : Any]
         FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).setData(cardData) { error in
@@ -212,12 +211,10 @@ class CardViewModel: ObservableObject {
                 let printings = cardData["printings"] as? [String] ?? [""]
                 let originalText = cardData["originalText"] as? String ?? ""
                 let originalType = cardData["originalType"] as? String ?? ""
-                let legalities = cardData["legalities"] as? [String] ?? [""]
                 let id = cardData["id"] as? String ?? ""
                 
-                let newLegs: [LegalityElement]  = [LegalityElement(format: legalities[0] ?? "Commander", legality: .legal)]
                 
-                let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, legalities: newLegs, id: id)
+                let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, id: id)
                 //self.subCollectionCards.append(newCard)
                 //print("Cards coll: \(self.subCollectionCards)")
                 return newCard
