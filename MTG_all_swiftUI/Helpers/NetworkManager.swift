@@ -107,8 +107,44 @@ class CardViewModel: ObservableObject {
     }
     
     //MARK: - Saving
-    func addCardToCollection() {
+    func addCardToCollection(selectedCollection: Collection, cardName: String, cardMana: String, cardCMC: Int, cardColors: [String], cardColorIdent: [String], cardType: String, cardTypes: [String], cardSubtypes: [String], cardRarity: String, cardSetCode: String, cardSetName: String, cardText: String, cardFlavor: String, cardArtist: String, cardNumber: String, cardPower: String, cardTough: String, cardLayout: String, cardMulti: String, cardImgUrl: String, cardPrintings: [String], cardOriginTxt: String, cardOriginType: String, cardLegality: [LegalityElement], cardId: String) {
         
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let uniqueID = "\(uid)\(selectedCollection.name)"
+        let uniqueCard = "\(uid)\(Date().timeIntervalSinceNow)"
+        let cardData = [
+            "name": cardName,
+            "manaCost": cardMana,
+            "cmc": cardCMC,
+            "colors": cardColors,
+            "colorIdentity": cardColorIdent,
+            "type": cardType,
+            "types": cardTypes,
+            "subtypes": cardSubtypes,
+            "rarity": cardRarity,
+            "setCode": cardSetCode,
+            "setName": cardSetName,
+            "text": cardText,
+            "flavor": cardFlavor,
+            "artist": cardArtist,
+            "number": cardNumber,
+            "power": cardPower,
+            "toughness": cardTough,
+            "layout": cardLayout,
+            "multiverseid": cardMulti,
+            "imageUrl": cardImgUrl,
+            "printings": cardPrintings,
+            "originalText": cardText,
+            "originalType": cardOriginType,
+            "legalities": cardLegality,
+            "id": cardId
+        ] as [String : Any]
+        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).setData(cardData) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+        }
     }
     
     //MARK: - Collections
