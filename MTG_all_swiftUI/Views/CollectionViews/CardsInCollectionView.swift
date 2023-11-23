@@ -32,8 +32,8 @@ struct CardsInCollectionView: View {
                     }
                 }
             }
-            .listStyle(.insetGrouped)
         }
+        .listStyle(.sidebar)
     }
     
     func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
