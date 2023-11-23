@@ -11,14 +11,29 @@ struct CardsInCollectionView: View {
     var cardsInCollection: [Card] = []
     
     var body: some View {
-        List(cardsInCollection) { card in
-            NavigationLink {
-                CardDetails(card: card)
-            } label: {
-                Text(card.name ?? "")
+//        List(cardsInCollection) { card in
+//            NavigationLink {
+//                CardDetails(card: card)
+//            } label: {
+//                Text(card.name ?? "")
+//            }
+//        }
+//        .listStyle(.sidebar)
+        List{
+            ForEach(groupByName(cardsInCollection), id: \.0){ pair in
+                Section(header: Text(pair.0 ?? "")) {
+                    ForEach(pair.1) { card in
+                        NavigationLink {
+                            CardDetails(card: card)
+                        } label: {
+                            Text(card.name ?? "")
+                        }
+
+                    }
+                }
             }
+            .listStyle(.insetGrouped)
         }
-        .listStyle(.sidebar)
     }
     
     func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
