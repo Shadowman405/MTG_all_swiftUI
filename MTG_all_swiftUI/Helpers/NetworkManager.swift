@@ -57,6 +57,8 @@ class CardViewModel: ObservableObject {
     //MARK: - CARDS
     private var cardsUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
     
+    
+    //MARK: - Fetching
     func fetchCards() async {
         guard let downloadCard: CardsMTG = await WebService().downloadData(fromURL: cardsUrl) else { return }
         cardData = downloadCard.cards
@@ -102,6 +104,11 @@ class CardViewModel: ObservableObject {
                 print(cardData.count)
             }
         }
+    }
+    
+    //MARK: - Saving
+    func addCardToCollection() {
+        
     }
     
     //MARK: - Collections
