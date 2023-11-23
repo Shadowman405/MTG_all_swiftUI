@@ -111,7 +111,7 @@ class CardViewModel: ObservableObject {
         
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
         let uniqueID = "\(uid)\(selectedCollection)"
-        let uniqueCard = "\(uid)\(Date().timeIntervalSinceNow)"
+        let uniqueCard = "\(uid)\(UUID())"
         let cardData = [
             "name": cardName,
             "manaCost": cardMana,
