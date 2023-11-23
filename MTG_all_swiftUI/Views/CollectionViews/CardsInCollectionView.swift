@@ -20,6 +20,11 @@ struct CardsInCollectionView: View {
         }
         .listStyle(.sidebar)
     }
+    
+    func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
+        let grouped = Dictionary(grouping: cards, by: {$0.name})
+        return grouped.sorted(by: {$0.key! < $1.key!})
+    }
 }
 
 #Preview {
