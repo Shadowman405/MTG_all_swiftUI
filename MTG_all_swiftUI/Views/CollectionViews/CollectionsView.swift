@@ -26,7 +26,6 @@ struct CollectionsView: View {
                     Text("\(collection.cards.count)/60")
                 }
             }
-
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

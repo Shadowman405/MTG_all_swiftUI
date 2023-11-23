@@ -17,8 +17,8 @@ struct CardsInCollectionView: View {
             } label: {
                 Text(card.name ?? "")
             }
-
         }
+        .listStyle(.sidebar)
     }
 }
 
