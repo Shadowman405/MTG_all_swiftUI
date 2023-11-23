@@ -107,10 +107,10 @@ class CardViewModel: ObservableObject {
     }
     
     //MARK: - Saving
-    func addCardToCollection(selectedCollection: Collection, cardName: String, cardMana: String, cardCMC: Int, cardColors: [String], cardColorIdent: [String], cardType: String, cardTypes: [String], cardSubtypes: [String], cardRarity: String, cardSetCode: String, cardSetName: String, cardText: String, cardFlavor: String, cardArtist: String, cardNumber: String, cardPower: String, cardTough: String, cardLayout: String, cardMulti: String, cardImgUrl: String, cardPrintings: [String], cardOriginTxt: String, cardOriginType: String, cardLegality: [LegalityElement], cardId: String) {
+    func addCardToCollection(selectedCollection: String, cardName: String, cardMana: String, cardCMC: Int, cardColors: [String], cardColorIdent: [String], cardType: String, cardTypes: [String], cardSubtypes: [String], cardRarity: String, cardSetCode: String, cardSetName: String, cardText: String, cardFlavor: String, cardArtist: String, cardNumber: String, cardPower: String, cardTough: String, cardLayout: String, cardMulti: String, cardImgUrl: String, cardPrintings: [String], cardOriginTxt: String, cardOriginType: String, cardLegality: [LegalityElement], cardId: String) {
         
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
-        let uniqueID = "\(uid)\(selectedCollection.name)"
+        let uniqueID = "\(uid)\(selectedCollection)"
         let uniqueCard = "\(uid)\(Date().timeIntervalSinceNow)"
         let cardData = [
             "name": cardName,
