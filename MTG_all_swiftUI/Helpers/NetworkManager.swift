@@ -149,7 +149,7 @@ class CardViewModel: ObservableObject {
     //MARK: - Collections
     @Published var collectionData = [Collection]()
     @Published var subCollectionCards = [Card]()
-    var cardsTestSubColl = [Card]()
+    @Published var cardsTestSubColl = [Card]()
     
     func fetchCollectionFromDB() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
@@ -225,6 +225,7 @@ class CardViewModel: ObservableObject {
     }
     
     func returnSubCollectionCard(colName: String){
+        cardsTestSubColl = []
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
             if let error = error {
