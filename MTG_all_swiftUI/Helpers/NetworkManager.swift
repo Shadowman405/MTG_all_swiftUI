@@ -149,6 +149,7 @@ class CardViewModel: ObservableObject {
     //MARK: - Collections
     @Published var collectionData = [Collection]()
     @Published var subCollectionCards = [Card]()
+    var cardsTestSubColl = [Card]()
     
     func fetchCollectionFromDB() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
@@ -217,6 +218,54 @@ class CardViewModel: ObservableObject {
                 let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, id: id)
                 //self.subCollectionCards.append(newCard)
                 //print("Cards coll: \(self.subCollectionCards)")
+                return newCard
+            }
+            print(self.subCollectionCards)
+        }
+    }
+    
+    func returnSubCollectionCard(colName: String){
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let docs = cardsSnapshot?.documents else { return}
+            self.subCollectionCards = docs.map {(querrySnapshotCard) -> Card in
+                let cardData = querrySnapshotCard.data()
+                
+                let name = cardData["name"] as? String ?? ""
+                let manaCost = cardData["manaCost"] as? String ?? ""
+                let cmc = cardData["cmc"] as? Int ?? 0
+                let colors = cardData["colors"] as? [String] ?? [""]
+                let colorIdentity = cardData["colorIdentity"] as? [String] ?? [""]
+                let type = cardData["type"] as? String ?? ""
+                let types = cardData["types"] as? [String] ?? [""]
+                let subtypes = cardData["subtypes"] as? [String] ?? [""]
+                let rarity = cardData["rarity"] as? String ?? ""
+                let setCode = cardData["setCode"] as? String ?? ""
+                let setName = cardData["setName"] as? String ?? ""
+                let text = cardData["text"] as? String ?? ""
+                let flavor = cardData["flavor"] as? String ?? ""
+                let artist = cardData["artist"] as? String ?? ""
+                let number = cardData["number"] as? String ?? ""
+                let power = cardData["power"] as? String ?? ""
+                let toughness = cardData["toughness"] as? String ?? ""
+                let layout = cardData["layout"] as? String ?? ""
+                let multiverseid = cardData["multiverseid"] as? String ?? ""
+                let imageURL = cardData["imageUrl"] as? String ?? ""
+                let printings = cardData["printings"] as? [String] ?? [""]
+                let originalText = cardData["originalText"] as? String ?? ""
+                let originalType = cardData["originalType"] as? String ?? ""
+                let id = cardData["id"] as? String ?? ""
+                
+                
+                let newCard = Card(name: name, manaCost: manaCost, cmc: cmc, colors: colors, colorIdentity: colorIdentity, type: type, types: types, subtypes: subtypes, rarity: rarity, setCode: setCode, setName: setName, text: text, flavor: flavor, artist: artist, number: number, power: power, toughness: toughness, layout: layout, multiverseid: multiverseid, imageURL: imageURL, printings: printings, originalText: originalText, originalType: originalType, id: id)
+                //self.subCollectionCards.append(newCard)
+                //print("Cards coll: \(self.subCollectionCards)")
+                self.cardsTestSubColl.append(newCard)
                 return newCard
             }
             print(self.subCollectionCards)

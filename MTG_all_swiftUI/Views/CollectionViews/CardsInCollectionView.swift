@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardsInCollectionView: View {
+    @ObservedObject private var vm = CardViewModel()
+    var collectionName = ""
     var cardsInCollection: [Card] = []
     
     var body: some View {
@@ -20,7 +22,7 @@ struct CardsInCollectionView: View {
 //        }
 //        .listStyle(.sidebar)
         List{
-            ForEach(groupByName(cardsInCollection), id: \.0){ pair in
+            ForEach(groupByName(vm.cardsTestSubColl), id: \.0){ pair in
                 Section(header: Text(pair.0 ?? "")) {
                     ForEach(pair.1) { card in
                         NavigationLink {
@@ -34,6 +36,9 @@ struct CardsInCollectionView: View {
             }
         }
         .listStyle(.sidebar)
+        .onAppear{
+            vm.returnSubCollectionCard(colName: collectionName)
+        }
     }
     
     func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
