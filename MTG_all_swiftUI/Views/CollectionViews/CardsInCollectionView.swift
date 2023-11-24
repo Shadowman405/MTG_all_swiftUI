@@ -11,23 +11,14 @@ struct CardsInCollectionView: View {
     @ObservedObject private var vm = CardViewModel()
     var collectionName = ""
     var cardsInCollection: [Card] = []
-    @State private var cardsCounter: Int?
     
     var body: some View {
-//        List(cardsInCollection) { card in
-//            NavigationLink {
-//                CardDetails(card: card)
-//            } label: {
-//                Text(card.name ?? "")
-//            }
-//        }
-//        .listStyle(.sidebar)
         List{
             ForEach(groupByName(vm.cardsTestSubColl), id: \.0){ pair in
                 Section(header: Text(pair.0 ?? "")) {
                     ForEach(pair.1) { card in
                         NavigationLink {
-                            CardDetails(card: card)
+                            CardDetails(showButtons: false ,card: card)
                         } label: {
                             Text(card.name ?? "")
                                 .font(.custom(

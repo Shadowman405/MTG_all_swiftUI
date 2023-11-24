@@ -31,7 +31,7 @@ struct CardsView: View {
 //        }
         List(searchResults) {card  in
             NavigationLink {
-                CardDetails(card: card)
+                CardDetails(showButtons: true, card: card)
             } label: {
                 //CardSingleCell(card: card)
                 HStack {
