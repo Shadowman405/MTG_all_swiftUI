@@ -22,8 +22,6 @@ struct CollectionsView: View {
             } label: {
                 HStack {
                     Text(collection.name)
-                    Spacer()
-                    Text("\(collection.cards.count)/60")
                 }
             }
         }

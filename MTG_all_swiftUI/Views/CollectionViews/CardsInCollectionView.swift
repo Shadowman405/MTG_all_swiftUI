@@ -29,6 +29,7 @@ struct CardsInCollectionView: View {
                             CardDetails(card: card)
                         } label: {
                             Text(card.name ?? "")
+                                .foregroundColor(.orange)
                         }
 
                     }
