@@ -11,24 +11,9 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards = [MockDataManager().mockCard]
     @State private var searchText = ""
-
-    
-//    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     let columns = [GridItem(.flexible())]
     
     var body: some View {
-//        ScrollView {
-//            LazyVGrid(columns: columns) {
-//                ForEach(searchResults) { card in
-//                    NavigationLink {
-//                        CardDetails(card: card)
-//                    } label: {
-//                        CardSingleCell(card: card)
-//                    }
-//                }
-//            }
-//            .padding()
-//        }
         List(searchResults) {card  in
             NavigationLink {
                 CardDetails(showButtons: true, card: card)
@@ -39,7 +24,6 @@ struct CardsView: View {
                     CardManaCostView(card: card)
                 }
             }
-
         }
         .searchable(text: $searchText)
         .navigationTitle("Cards")
