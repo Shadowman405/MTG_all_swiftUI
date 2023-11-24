@@ -22,6 +22,10 @@ struct CollectionsView: View {
             } label: {
                 HStack {
                     Text(collection.name)
+                        .font(.custom(
+                                "AmericanTypewriter",
+                                fixedSize: 16))
+                        .foregroundColor(.orange)
                 }
             }
         }

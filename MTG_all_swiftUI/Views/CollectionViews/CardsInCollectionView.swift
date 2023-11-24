@@ -11,6 +11,7 @@ struct CardsInCollectionView: View {
     @ObservedObject private var vm = CardViewModel()
     var collectionName = ""
     var cardsInCollection: [Card] = []
+    @State private var cardsCounter: Int?
     
     var body: some View {
 //        List(cardsInCollection) { card in
@@ -29,6 +30,9 @@ struct CardsInCollectionView: View {
                             CardDetails(card: card)
                         } label: {
                             Text(card.name ?? "")
+                                .font(.custom(
+                                        "AmericanTypewriter",
+                                        fixedSize: 16))
                                 .foregroundColor(.orange)
                         }
 
@@ -36,6 +40,8 @@ struct CardsInCollectionView: View {
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Cards in collection - \(vm.cardsTestSubColl.count)")
         .listStyle(.sidebar)
         .onAppear{
             vm.returnSubCollectionCard(colName: collectionName)
