@@ -11,6 +11,7 @@ struct CardsInCollectionView: View {
     @ObservedObject private var vm = CardViewModel()
     var collectionName = ""
     var cardsInCollection: [Card] = []
+    @State private var onEdit = false
     
     var body: some View {
         List{
@@ -29,8 +30,18 @@ struct CardsInCollectionView: View {
 
                     }
                     .onDelete(perform: { indexSet in
-                        print("Delete")
+                        print(indexSet)
                     })
+                }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    onEdit.toggle()
+                } label: {
+                    Label("Edit", systemImage: "slider.horizontal.3")
+                        .foregroundColor(.orange)
                 }
             }
         }

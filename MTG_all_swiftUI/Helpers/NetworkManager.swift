@@ -147,6 +147,17 @@ class CardViewModel: ObservableObject {
         }
     }
     
+    //MARK: - Deleting
+    func deleteFromCollection(collectionName: String, cardUUID: String) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let uniqueID = "\(uid)\(collectionName)"
+        let uniqueCard = "\(uid)$\(cardUUID)"
+        
+        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).delete()
+    }
+    
+
+    
     //MARK: - Collections
     @Published var collectionData = [Collection]()
     @Published var subCollectionCards = [Card]()
