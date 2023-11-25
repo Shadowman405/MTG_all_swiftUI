@@ -154,6 +154,7 @@ class CardViewModel: ObservableObject {
         let uniqueCard = "\(uid)$\(cardUUID)"
         
         FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).delete()
+        print("Deleted - \(uniqueCard)")
     }
     
 
