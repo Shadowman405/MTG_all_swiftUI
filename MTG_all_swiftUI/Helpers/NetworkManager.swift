@@ -235,6 +235,9 @@ class CardViewModel: ObservableObject {
                 return newCard
             }
             print(self.subCollectionCards)
+            for card in self.subCollectionCards {
+                print("UUID: \(card.uuid)" ?? "UUID")
+            }
         }
     }
     
