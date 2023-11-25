@@ -163,7 +163,7 @@ class CardViewModel: ObservableObject {
             
             self.collectionData = documents.map { (querrySnapshot) -> Collection in
                 let data = querrySnapshot.data()
-                let colName = data["colName"] as? String ?? ""
+                let colName = data["name"] as? String ?? ""
                 //let cards = data["cards"] as? [Card]
                 //let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
                 //print(newCollection)
