@@ -111,6 +111,7 @@ class CardViewModel: ObservableObject {
         
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
         let uniqueID = "\(uid)\(selectedCollection)"
+        let uniqueCard = "\(uid)$\(UUID())"
         let cardData = [
             "name": cardName,
             "manaCost": cardMana,
@@ -137,7 +138,6 @@ class CardViewModel: ObservableObject {
             "originalType": cardOriginType,
             "id": cardId
         ] as [String : Any]
-        let uniqueCard = "\(uid)\(cardData["name"] ?? "cardName")"
         FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).setData(cardData) { error in
             if let error = error {
                 print(error.localizedDescription)
