@@ -70,7 +70,7 @@ class CardViewModel: ObservableObject {
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                     print(cardString)
                 } else {
-                    print(card.name)
+                    //print(card.name)
                 }
             }
             
@@ -234,7 +234,6 @@ class CardViewModel: ObservableObject {
                 //print("Cards coll: \(self.subCollectionCards)")
                 return newCard
             }
-            print(self.subCollectionCards)
             for card in self.subCollectionCards {
                 print("UUID: \(card.uuid)" ?? "UUID")
             }
@@ -286,7 +285,6 @@ class CardViewModel: ObservableObject {
                 self.cardsTestSubColl.append(newCard)
                 return newCard
             }
-            print(self.subCollectionCards)
         }
     }
 }
