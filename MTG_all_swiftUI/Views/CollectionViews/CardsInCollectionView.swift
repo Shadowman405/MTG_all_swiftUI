@@ -74,6 +74,10 @@ struct CardsInCollectionView: View {
                                 Spacer()
                                 
                                 Button {
+                                    let impactMed = UIImpactFeedbackGenerator(style: .heavy)
+                                    impactMed.impactOccurred()
+                                    
+                                    
                                     vm.deleteFromCollection(collectionName: collectionName, cardUUID: card.uuid ?? "")
                                     delaySwitch()
                                 } label: {
