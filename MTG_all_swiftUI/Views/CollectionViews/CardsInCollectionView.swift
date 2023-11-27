@@ -70,6 +70,9 @@ struct CardsInCollectionView: View {
                                             "AmericanTypewriter",
                                             fixedSize: 16))
                                 .foregroundColor(.orange)
+                                
+                                Spacer()
+                                
                                 Button {
                                     vm.deleteFromCollection(collectionName: collectionName, cardUUID: card.uuid ?? "")
                                     delaySwitch()
