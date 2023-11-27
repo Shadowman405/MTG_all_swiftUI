@@ -38,9 +38,6 @@ struct CardsInCollectionView: View {
                         }
 
                     }
-                    .onDelete(perform: { indexSet in
-                        print(indexSet)
-                    })
                 }
             }
         }
