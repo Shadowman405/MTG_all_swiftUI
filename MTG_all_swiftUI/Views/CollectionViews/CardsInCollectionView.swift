@@ -75,6 +75,7 @@ struct CardsInCollectionView: View {
                                 .foregroundColor(.orange)
                                 Button {
                                     vm.deleteFromCollection(collectionName: collectionName, cardUUID: card.uuid ?? "")
+                                    delaySwitch()
                                 } label: {
                                     Image(systemName: "minus.circle.fill")
                                         .foregroundColor(.red)
@@ -102,9 +103,17 @@ struct CardsInCollectionView: View {
         }
     }
     
-    func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
+    private func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
         let grouped = Dictionary(grouping: cards, by: {$0.name})
         return grouped.sorted(by: {$0.key! < $1.key!})
+    }
+    
+    private func delaySwitch() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            vm.returnSubCollectionCard(colName: collectionName)
+            onEdit.toggle()
+        }
+        onEdit.toggle()
     }
 }
 
