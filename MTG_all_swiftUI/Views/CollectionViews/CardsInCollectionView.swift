@@ -73,8 +73,7 @@ struct CardsInCollectionView: View {
                                             fixedSize: 16))
                                 .foregroundColor(.orange)
                                 Button {
-//                                    vm.deleteFromCollection(collectionName: collectionName, cardUUID: card.uuid ?? "")
-                                    print(card)
+                                    vm.deleteFromCollection(collectionName: collectionName, cardUUID: card.uuid ?? "")
                                 } label: {
                                     Image(systemName: "minus.circle.fill")
                                         .foregroundColor(.red)
