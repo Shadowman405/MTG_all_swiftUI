@@ -18,7 +18,7 @@ struct CollectionsView: View {
     var body: some View {
         List(vm.collectionData) { collection in
             NavigationLink {
-                CardsInCollectionView(collectionName: collection.name, cardsInCollection: collection.cards)
+                CardsInCollectionView(collectionName: collection.name)
             } label: {
                 HStack {
                     Text(collection.name)

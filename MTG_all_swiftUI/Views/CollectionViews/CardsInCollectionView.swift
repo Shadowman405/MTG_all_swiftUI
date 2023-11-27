@@ -10,9 +10,9 @@ import SwiftUI
 struct CardsInCollectionView: View {
     @ObservedObject private var vm = CardViewModel()
     var collectionName = ""
-    var cardsInCollection: [Card] = []
+    //var cardsInCollection: [Card] = []
     @State private var onEdit = false
-    @State private var counter = 0
+    
     
     var body: some View {
         if onEdit {
@@ -39,7 +39,7 @@ struct CardsInCollectionView: View {
 
                     }
                     .onDelete(perform: { indexSet in
-                        print("")
+                        print(indexSet)
                     })
                 }
             }
@@ -75,17 +75,12 @@ struct CardsInCollectionView: View {
                                 .foregroundColor(.orange)
                                 Button {
                                     vm.deleteFromCollection(collectionName: collectionName, cardUUID: card.uuid ?? "")
-                                    counter += 1
                                 } label: {
                                     Image(systemName: "minus.circle.fill")
                                         .foregroundColor(.red)
                                 }
-
                             }
                     }
-                    .onDelete(perform: { indexSet in
-                        print(indexSet)
-                    })
                 }
             }
         }
