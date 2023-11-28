@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardsView: View {
     @StateObject var vm = CardViewModel()
-    @State private var cards = [MockDataManager().mockCard]
+    @State private var cards: [Card] = []
     @State private var searchText = ""
     let columns = [GridItem(.flexible())]
     

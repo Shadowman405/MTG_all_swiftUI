@@ -32,7 +32,7 @@ struct CardDetails: View {
                 } placeholder: {
                     Image("card_placeholder")
                         .resizable()
-                        .frame(width: 400 ,height: 400)
+                        .frame(width: 265 ,height: 370)
                         .aspectRatio(contentMode: .fit)
                 }
                 Divider()
