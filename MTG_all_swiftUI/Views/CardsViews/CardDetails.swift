@@ -12,6 +12,7 @@ struct CardDetails: View {
     var showButtons = false
     var card = MockDataManager().mockCard
     @StateObject var vm = CardViewModel()
+    @State private var rotation: CGFloat = 0.0
     
     var body: some View {
         if showButtons {
@@ -30,10 +31,26 @@ struct CardDetails: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400 ,height: 400)
                 } placeholder: {
-                    Image("card_placeholder")
-                        .resizable()
-                        .frame(width: 265 ,height: 370)
-                        .aspectRatio(contentMode: .fit)
+//                    Image("card_placeholder")
+//                        .resizable()
+//                        .frame(width: 265 ,height: 370)
+//                        .aspectRatio(contentMode: .fit)
+                    ProgressView() {
+                        ZStack{
+                            Color(.black)
+                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .circular)
+                                .frame(height: 100)
+                            //.padding()
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .frame(height: 100)
+                                .foregroundStyle(LinearGradient(colors: [Color(.orange), Color(.purple)], startPoint: .top, endPoint: .bottom))
+                                .rotationEffect(.degrees(rotation))
+                                .mask {
+                                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                                        .stroke(lineWidth: 3)
+                                }
+                        }
+                    }
                 }
                 Divider()
                 
@@ -75,6 +92,11 @@ struct CardDetails: View {
             }
             .padding()
         }
+        .onAppear(perform: {
+            withAnimation(.linear(duration: 4).repeatForever(autoreverses: false)) {
+                rotation = 360
+            }
+        })
         .navigationTitle(card.name ?? "Card")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
