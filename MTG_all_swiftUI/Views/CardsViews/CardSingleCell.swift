@@ -34,23 +34,24 @@ struct CardSingleCell: View {
                 .mask {
                     RoundedRectangle(cornerRadius: 20,style: .continuous)
                         .stroke(lineWidth: 3)
-                        .frame()
+                        //.frame()
                 }
             
             ZStack {
                 HStack {
                     
                     Text(card.name ?? "")
-                        .foregroundColor(.black)
+                        .foregroundColor(.orange)
+                    
+                    
 //                    Text(card.manaCost ?? "")
 //                        .foregroundColor(.black)
-                    Image("{B}")
-                        .resizable()
-                        .frame(width: 20, height: 20)
+                    CardManaCostView(card: card)
                 }
                 
             }
         }
+        .padding()
         .onAppear(perform: {
             withAnimation(.linear(duration: 4).repeatForever(autoreverses: false)) {
                 rotation = 360
