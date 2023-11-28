@@ -12,17 +12,7 @@ struct CardSingleCell: View {
     @State private var rotation:CGFloat = 0.0
     
     var body: some View {
-//        AsyncImage(url: URL(string: card.imageURL ?? "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card")) { image in
-//            image.resizable()
-//                .aspectRatio(contentMode: .fill)
-//            //.padding()
-//                .border(.gray, width: 3)
-//        } placeholder: {
-//            Image("card_placeholder")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .border(.gray, width: 3)
-//        }
+        Color(.black)
         ZStack {
             RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .circular)
                 .frame(height: 100)
@@ -34,9 +24,7 @@ struct CardSingleCell: View {
                 .mask {
                     RoundedRectangle(cornerRadius: 20,style: .continuous)
                         .stroke(lineWidth: 3)
-                        //.frame()
                 }
-            
             ZStack {
                 HStack {
                     
