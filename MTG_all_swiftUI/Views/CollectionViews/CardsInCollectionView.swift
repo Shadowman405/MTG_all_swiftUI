@@ -41,10 +41,13 @@ struct CardsInCollectionView: View {
                 }
             }
         }
+        .transition(.slide)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    onEdit.toggle()
+                    withAnimation {
+                        onEdit.toggle()
+                    }
                 } label: {
                     Label("Edit", systemImage: "slider.horizontal.3")
                         .foregroundColor(.orange)
@@ -89,10 +92,13 @@ struct CardsInCollectionView: View {
                 }
             }
         }
+        .transition(.slide)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    onEdit.toggle()
+                    withAnimation {
+                        onEdit.toggle()
+                    }
                 } label: {
                     Label("Edit", systemImage: "slider.horizontal.3")
                         .foregroundColor(.orange)
