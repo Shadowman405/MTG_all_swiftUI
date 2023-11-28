@@ -15,11 +15,14 @@ struct CardsInCollectionView: View {
     
     
     var body: some View {
-        if onEdit {
-            onEditTrue
-        } else {
-            onEditFalse
+        ZStack {
+            if onEdit {
+                onEditTrue
+            } else {
+                onEditFalse
+            }
         }
+        .animation(.easeInOut)
     }
     
     var onEditFalse: some View {
@@ -41,7 +44,7 @@ struct CardsInCollectionView: View {
                 }
             }
         }
-        .transition(.slide)
+        //.transition(.slide)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -92,7 +95,7 @@ struct CardsInCollectionView: View {
                 }
             }
         }
-        .transition(.slide)
+        //.transition(.slide)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -119,7 +122,7 @@ struct CardsInCollectionView: View {
     }
     
     private func delaySwitch() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             vm.returnSubCollectionCard(colName: collectionName)
             onEdit.toggle()
         }
