@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HpCounterView: View {
     @State private var rotation:CGFloat = 0.0
+    @State private var playerOneHP = 20
+    @State private var playerTwoHP = 20
     
     var body: some View {
         VStack {
@@ -16,28 +18,38 @@ struct HpCounterView: View {
                 Rectangle()
                     .overlay(.black)
                     .ignoresSafeArea()
+                
+                
                 HStack {
                     Button {
                         print("Minus")
                     } label: {
                         Text("-")
                             .font(.system(size: 70))
-                            .foregroundColor(.white)
-                            .offset(x: -20, y: 10)
+                            .foregroundColor(.orange)
+                            .offset(x: -20, y: 30)
                     }
-
                     
-                    Image("{W}")
-                        .offset(y: 10)
+                    
+                    VStack {
+                        Image("{W}")
+                            .offset(y: 10)
+                        
+                        Text("\(playerOneHP)")
+                            .font(.system(size: 40))
+                            .foregroundColor(.orange)
+                    }
+                    .offset(y: 50)
+                    
                     
                     
                     Button {
-                        print("Minus")
+                        print("Plus")
                     } label: {
                         Text("+")
                             .font(.system(size: 70))
-                            .foregroundColor(.white)
-                            .offset(x: 20, y: 10)
+                            .foregroundColor(.orange)
+                            .offset(x: 20, y: 30)
                     }
                 }
                 .ignoresSafeArea()
@@ -56,10 +68,10 @@ struct HpCounterView: View {
                     Button {
                         print("HP")
                     } label: {
-                            Image("{B}")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .background(Color.orange)
+                        Image("{B}")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .background(Color.orange)
                             .clipShape(Circle())
                     }
                     AnimatedCircleView()
@@ -77,21 +89,29 @@ struct HpCounterView: View {
                     } label: {
                         Text("-")
                             .font(.system(size: 70))
-                            .foregroundColor(.white)
+                            .foregroundColor(.orange)
                             .offset(x: -20, y: -30)
                     }
-
                     
-                    Image("{G}")
-                        .offset(y: -30)
+                    
+                    VStack {
+                        Text("\(playerTwoHP)")
+                            .font(.system(size: 40))
+                            .foregroundColor(.orange)
+                            .offset(y: -10)
+                        
+                        Image("{G}")
+                            .offset(y: -30)
+                    }
+                    .offset(y: -30)
                     
                     
                     Button {
-                        print("Minus")
+                        playerTwoHP - 1
                     } label: {
                         Text("+")
                             .font(.system(size: 70))
-                            .foregroundColor(.white)
+                            .foregroundColor(.orange)
                             .offset(x: 20, y: -30)
                     }
                 }
