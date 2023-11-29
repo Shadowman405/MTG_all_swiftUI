@@ -16,8 +16,31 @@ struct HpCounterView: View {
                 Rectangle()
                     .overlay(.black)
                     .ignoresSafeArea()
-                Image("{W}")
-                    .offset(y: 10)
+                HStack {
+                    Button {
+                        print("Minus")
+                    } label: {
+                        Text("-")
+                            .font(.system(size: 70))
+                            .foregroundColor(.white)
+                            .offset(x: -20, y: 10)
+                    }
+
+                    
+                    Image("{W}")
+                        .offset(y: 10)
+                    
+                    
+                    Button {
+                        print("Minus")
+                    } label: {
+                        Text("+")
+                            .font(.system(size: 70))
+                            .foregroundColor(.white)
+                            .offset(x: 20, y: 10)
+                    }
+                }
+                .ignoresSafeArea()
             }
             
             ZStack {
@@ -47,8 +70,32 @@ struct HpCounterView: View {
                 Rectangle()
                     .overlay(.black)
                     .ignoresSafeArea()
-                Image("{G}")
-                    .offset(y: -30)
+                
+                HStack {
+                    Button {
+                        print("Minus")
+                    } label: {
+                        Text("-")
+                            .font(.system(size: 70))
+                            .foregroundColor(.white)
+                            .offset(x: -20, y: -30)
+                    }
+
+                    
+                    Image("{G}")
+                        .offset(y: -30)
+                    
+                    
+                    Button {
+                        print("Minus")
+                    } label: {
+                        Text("+")
+                            .font(.system(size: 70))
+                            .foregroundColor(.white)
+                            .offset(x: 20, y: -30)
+                    }
+                }
+                .ignoresSafeArea()
             }
         }
     }
