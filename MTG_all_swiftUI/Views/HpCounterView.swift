@@ -22,7 +22,7 @@ struct HpCounterView: View {
                 
                 HStack {
                     Button {
-                        print("Minus")
+                        playerOneHP -= 1
                     } label: {
                         Text("-")
                             .font(.system(size: 70))
@@ -44,7 +44,7 @@ struct HpCounterView: View {
                     
                     
                     Button {
-                        print("Plus")
+                        playerOneHP += 1
                     } label: {
                         Text("+")
                             .font(.system(size: 70))
@@ -85,7 +85,7 @@ struct HpCounterView: View {
                 
                 HStack {
                     Button {
-                        print("Minus")
+                        playerTwoHP -= 1
                     } label: {
                         Text("-")
                             .font(.system(size: 70))
@@ -107,7 +107,7 @@ struct HpCounterView: View {
                     
                     
                     Button {
-                        playerTwoHP - 1
+                        playerTwoHP += 1
                     } label: {
                         Text("+")
                             .font(.system(size: 70))
