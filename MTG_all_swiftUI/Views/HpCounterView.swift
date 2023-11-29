@@ -13,16 +13,23 @@ struct HpCounterView: View {
     var body: some View {
         ZStack {
             Button {
-                print("HP")
             } label: {
-                    Image("{B}")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .background(Color.orange)
-                    .clipShape(Circle())
             }
             
-            AnimatedCircleView()
+            Divider()
+                .overlay(.orange)
+            ZStack {
+                Button {
+                    print("HP")
+                } label: {
+                        Image("{B}")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .background(Color.orange)
+                        .clipShape(Circle())
+                }
+                AnimatedCircleView()
+            }
         }
     }
 }
