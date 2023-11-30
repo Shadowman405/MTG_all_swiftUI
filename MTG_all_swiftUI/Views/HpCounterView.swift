@@ -33,16 +33,10 @@ struct HpCounterView: View {
                     
                     VStack {
                         Image("{W}")
-                            .offset(y: 10)
-                        
-                        Text("\(playerOneHP)")
-                            .font(.system(size: 40))
-                            .foregroundColor(.orange)
                     }
                     .offset(y: 50)
                     
-                    
-                    
+ 
                     Button {
                         playerOneHP += 1
                     } label: {
@@ -52,8 +46,8 @@ struct HpCounterView: View {
                             .offset(x: 20, y: 30)
                     }
                 }
-                .ignoresSafeArea()
             }
+            .ignoresSafeArea()
             
             ZStack {
                 Color(.black)
@@ -61,8 +55,25 @@ struct HpCounterView: View {
                 } label: {
                 }
                 
+                
+                HStack{
+                    Text("\(playerOneHP)")
+                        .font(.system(size: 40))
+                        .foregroundColor(.orange)
+                        .offset(y: -60)
+                }
+                .ignoresSafeArea()
+                
                 Divider()
                     .overlay(.orange)
+                
+                HStack {
+                    Text("\(playerTwoHP)")
+                        .font(.system(size: 40))
+                        .foregroundColor(.orange)
+                        .offset(y: 60)
+                }
+                .ignoresSafeArea()
                 
                 ZStack {
                     Button {
@@ -95,13 +106,8 @@ struct HpCounterView: View {
                     
                     
                     VStack {
-                        Text("\(playerTwoHP)")
-                            .font(.system(size: 40))
-                            .foregroundColor(.orange)
-                            .offset(y: -10)
-                        
                         Image("{G}")
-                            .offset(y: -30)
+                        
                     }
                     .offset(y: -30)
                     
@@ -116,6 +122,8 @@ struct HpCounterView: View {
                     }
                 }
                 .ignoresSafeArea()
+                
+                
             }
         }
     }
