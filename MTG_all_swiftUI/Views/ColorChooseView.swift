@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ColorChooseView: View {
     let rows = [GridItem(.fixed(100))]
-    let colors = ["{W}","{G}","{U}", "{R}"]
+    let colors = ["{W}","{G}","{U}","{R}","{B}"]
     
     @Binding var showView: Bool
     @Binding var playerOneColor: String
@@ -19,9 +19,15 @@ struct ColorChooseView: View {
         NavigationView {
             VStack {
                 VStack {
-                    Text("Choose Color For First Player")
-                        .font(.system(size: 20))
+                    HStack {
+                        Text("First player color - ")
+                            .font(.system(size: 20))
                         .foregroundColor(.orange)
+                        
+                        Image(playerOneColor)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
@@ -40,9 +46,15 @@ struct ColorChooseView: View {
                 }
                 
                 VStack {
-                    Text("Choose Color For Second Player")
-                        .font(.system(size: 20))
+                    HStack {
+                        Text("Second player color - ")
+                            .font(.system(size: 20))
                         .foregroundColor(.orange)
+                        
+                        Image(playerTwoColor)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
@@ -66,7 +78,7 @@ struct ColorChooseView: View {
                     Button {
                         showView.toggle()
                     } label: {
-                        Text("Cancel")
+                        Text("Save")
                             .foregroundColor(.orange)
                     }
                 }
