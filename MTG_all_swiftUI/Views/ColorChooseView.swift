@@ -26,10 +26,14 @@ struct ColorChooseView: View {
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
                             ForEach(colors, id: \.self) { color in
-                                Image(color)
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-                                    .padding()
+                                Button {
+                                    playerOneColor = color
+                                } label: {
+                                    Image(color)
+                                        .resizable()
+                                        .frame(width: 120, height: 120)
+                                        .padding()
+                                }
                             }
                         }
                     }
@@ -43,10 +47,14 @@ struct ColorChooseView: View {
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
                             ForEach(colors, id: \.self) { color in
-                                Image(color)
-                                    .resizable()
-                                    .frame(width: 120, height: 120)
-                                    .padding()
+                                Button {
+                                    playerTwoColor = color
+                                } label: {
+                                    Image(color)
+                                        .resizable()
+                                        .frame(width: 120, height: 120)
+                                        .padding()
+                                }
                             }
                         }
                     }

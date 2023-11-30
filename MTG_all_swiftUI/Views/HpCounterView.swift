@@ -36,7 +36,7 @@ struct HpCounterView: View {
                         
                         
                         VStack {
-                            Image("{W}")
+                            Image(playerOneColor)
                                 .resizable()
                                 .frame(width: 150,height: 150)
                         }
@@ -114,7 +114,7 @@ struct HpCounterView: View {
                         
                         
                         VStack {
-                            Image("{G}")
+                            Image(playerTwoColor)
                                 .resizable()
                                 .frame(width: 150,height: 150)
                         }
