@@ -11,7 +11,10 @@ struct HpCounterView: View {
     @State private var rotation:CGFloat = 0.0
     @State private var playerOneHP = 20
     @State private var playerTwoHP = 20
+    
     @State private var showView = false
+    @State private var playerOneColor = "{W}"
+    @State private var playerTwoColor = "{G}"
     
     var body: some View {
         ZStack {
@@ -132,7 +135,7 @@ struct HpCounterView: View {
             }
         }
         .fullScreenCover(isPresented: $showView, content: {
-            ColorChooseView(showView: $showView)
+            ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor)
         })
     }
 }

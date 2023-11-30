@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ColorChooseView: View {
     @Binding var showView: Bool
+    @Binding var playerOneColor: String
+    @Binding var playerTwoColor: String
     
     var body: some View {
         NavigationView {
@@ -31,5 +33,5 @@ struct ColorChooseView: View {
 }
 
 #Preview {
-    ColorChooseView(showView: .constant(false))
+    ColorChooseView(showView: .constant(false), playerOneColor: .constant("{W}"), playerTwoColor: .constant("{G}"))
 }
