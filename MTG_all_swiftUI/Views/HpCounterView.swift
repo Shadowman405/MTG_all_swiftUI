@@ -11,6 +11,7 @@ struct HpCounterView: View {
     @State private var rotation:CGFloat = 0.0
     @State private var playerOneHP = 20
     @State private var playerTwoHP = 20
+    @State private var showView = false
     
     var body: some View {
         ZStack {
@@ -81,6 +82,7 @@ struct HpCounterView: View {
                     ZStack {
                         Button {
                             print("HP")
+                            showView.toggle()
                         } label: {
                             Image("{B}")
                                 .resizable()
@@ -126,10 +128,14 @@ struct HpCounterView: View {
                         }
                     }
                     .ignoresSafeArea()
-                    
-                    
                 }
             }
+        }
+        
+        if showView {
+            RoundedRectangle(cornerRadius: 30)
+                .frame(height: UIScreen.main.bounds.height * 0.5)
+                .transition(.asymmetric(insertion: .move(edge: .bottom), removal: AnyTransition.opacity.animation(.easeInOut)))
         }
     }
 }
