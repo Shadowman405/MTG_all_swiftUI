@@ -13,117 +13,122 @@ struct HpCounterView: View {
     @State private var playerTwoHP = 20
     
     var body: some View {
-        VStack {
-            ZStack {
-                Rectangle()
-                    .overlay(.black)
-                    .ignoresSafeArea()
-                
-                
-                HStack {
-                    Button {
-                        playerOneHP -= 1
-                    } label: {
-                        Text("-")
-                            .font(.system(size: 70))
-                            .foregroundColor(.orange)
-                            .offset(x: -20, y: 30)
-                    }
-                    
-                    
-                    VStack {
-                        Image("{W}")
-                    }
-                    .offset(y: 50)
-                    
- 
-                    Button {
-                        playerOneHP += 1
-                    } label: {
-                        Text("+")
-                            .font(.system(size: 70))
-                            .foregroundColor(.orange)
-                            .offset(x: 20, y: 30)
-                    }
-                }
-            }
-            .ignoresSafeArea()
-            
-            ZStack {
-                Color(.black)
-                Button {
-                } label: {
-                }
-                
-                
-                HStack{
-                    Text("\(playerOneHP)")
-                        .font(.system(size: 40))
-                        .foregroundColor(.orange)
-                        .offset(y: -60)
-                }
+        ZStack {
+            Rectangle()
+                .overlay(.black)
                 .ignoresSafeArea()
-                
-                Divider()
-                    .overlay(.orange)
-                
-                HStack {
-                    Text("\(playerTwoHP)")
-                        .font(.system(size: 40))
-                        .foregroundColor(.orange)
-                        .offset(y: 60)
+            
+            VStack {
+                ZStack {
+                    HStack {
+                        Button {
+                            playerOneHP -= 1
+                        } label: {
+                            Text("-")
+                                .font(.system(size: 70))
+                                .foregroundColor(.orange)
+                                .offset(x: -20, y: 30)
+                        }
+                        
+                        
+                        VStack {
+                            Image("{W}")
+                                .resizable()
+                                .frame(width: 150,height: 150)
+                        }
+                        .offset(y: 50)
+                        
+     
+                        Button {
+                            playerOneHP += 1
+                        } label: {
+                            Text("+")
+                                .font(.system(size: 70))
+                                .foregroundColor(.orange)
+                                .offset(x: 20, y: 30)
+                        }
+                    }
+                    .offset(y: 70)
                 }
                 .ignoresSafeArea()
                 
                 ZStack {
+                    Color(.black)
                     Button {
-                        print("HP")
                     } label: {
-                        Image("{B}")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .background(Color.orange)
-                            .clipShape(Circle())
                     }
-                    AnimatedCircleView()
-                }
-            }
-            
-            ZStack {
-                Rectangle()
-                    .overlay(.black)
+                    
+                    
+                    HStack{
+                        Text("\(playerOneHP)")
+                            .font(.system(size: 40))
+                            .foregroundColor(.orange)
+                            .offset(y: -60)
+                    }
                     .ignoresSafeArea()
-                
-                HStack {
-                    Button {
-                        playerTwoHP -= 1
-                    } label: {
-                        Text("-")
-                            .font(.system(size: 70))
+                    
+                    Divider()
+                        .overlay(.orange)
+                    
+                    HStack {
+                        Text("\(playerTwoHP)")
+                            .font(.system(size: 40))
                             .foregroundColor(.orange)
-                            .offset(x: -20, y: -30)
+                            .offset(y: 60)
                     }
+                    .ignoresSafeArea()
                     
-                    
-                    VStack {
-                        Image("{G}")
-                        
-                    }
-                    .offset(y: -30)
-                    
-                    
-                    Button {
-                        playerTwoHP += 1
-                    } label: {
-                        Text("+")
-                            .font(.system(size: 70))
-                            .foregroundColor(.orange)
-                            .offset(x: 20, y: -30)
+                    ZStack {
+                        Button {
+                            print("HP")
+                        } label: {
+                            Image("{B}")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .background(Color.orange)
+                                .clipShape(Circle())
+                        }
+                        AnimatedCircleView()
                     }
                 }
-                .ignoresSafeArea()
                 
-                
+                ZStack {
+                    Rectangle()
+                        .overlay(.black)
+                        .ignoresSafeArea()
+                    
+                    HStack {
+                        Button {
+                            playerTwoHP -= 1
+                        } label: {
+                            Text("-")
+                                .font(.system(size: 70))
+                                .foregroundColor(.orange)
+                                .offset(x: -20, y: -30)
+                        }
+                        
+                        
+                        VStack {
+                            Image("{G}")
+                                .resizable()
+                                .frame(width: 150,height: 150)
+                        }
+                        .offset(y: -30)
+                        
+                        
+                        Button {
+                            playerTwoHP += 1
+                        } label: {
+                            Text("+")
+                                .font(.system(size: 70))
+                                .foregroundColor(.orange)
+                                .offset(x: 20, y: -30)
+                        }
+                    }
+                    .ignoresSafeArea()
+                    
+                    
+                }
             }
         }
     }
