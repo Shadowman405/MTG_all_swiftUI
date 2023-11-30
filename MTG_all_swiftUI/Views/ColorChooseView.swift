@@ -12,16 +12,19 @@ struct ColorChooseView: View {
     
     var body: some View {
         ZStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("Choose Color")
+            Button {
+                showView.toggle()
+            } label: {
+                Text("Cancel")
+            }
         }
+        .navigationTitle("Color Choose")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    showView.toggle()
-                } label: {
-                    Text("Cancel")
-                }
-
+            Button {
+                showView.toggle()
+            } label: {
+                Text("Cancel")
             }
         }
     }

@@ -39,7 +39,7 @@ struct HpCounterView: View {
                         }
                         .offset(y: 50)
                         
-     
+                        
                         Button {
                             playerOneHP += 1
                         } label: {
@@ -131,6 +131,9 @@ struct HpCounterView: View {
                 }
             }
         }
+        .fullScreenCover(isPresented: $showView, content: {
+            ColorChooseView(showView: $showView)
+        })
     }
 }
 
