@@ -11,21 +11,21 @@ struct ColorChooseView: View {
     @Binding var showView: Bool
     
     var body: some View {
-        ZStack {
-            Text("Choose Color")
-            Button {
-                showView.toggle()
-            } label: {
-                Text("Cancel")
+        NavigationView {
+            VStack {
+                Text("Choose Color")
             }
+            .navigationTitle("Color Choose")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showView.toggle()
+                    } label: {
+                        Text("Cancel")
+                            .foregroundColor(.orange)
+                    }
+                }
         }
-        .navigationTitle("Color Choose")
-        .toolbar {
-            Button {
-                showView.toggle()
-            } label: {
-                Text("Cancel")
-            }
         }
     }
 }
