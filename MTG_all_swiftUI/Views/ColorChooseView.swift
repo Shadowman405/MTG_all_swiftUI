@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ColorChooseView: View {
+    let rows = [GridItem(.fixed(100))]
+    let colors = ["{W}","{G}","{U}", "{R}"]
+    
     @Binding var showView: Bool
     @Binding var playerOneColor: String
     @Binding var playerTwoColor: String
@@ -15,7 +18,39 @@ struct ColorChooseView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Choose Color")
+                VStack {
+                    Text("Choose Color For First Player")
+                        .font(.system(size: 20))
+                        .foregroundColor(.orange)
+                    
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: rows) {
+                            ForEach(colors, id: \.self) { color in
+                                Image(color)
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .padding()
+                            }
+                        }
+                    }
+                }
+                
+                VStack {
+                    Text("Choose Color For Second Player")
+                        .font(.system(size: 20))
+                        .foregroundColor(.orange)
+                    
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: rows) {
+                            ForEach(colors, id: \.self) { color in
+                                Image(color)
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .padding()
+                            }
+                        }
+                    }
+                }
             }
             .navigationTitle("Color Choose")
             .toolbar {
