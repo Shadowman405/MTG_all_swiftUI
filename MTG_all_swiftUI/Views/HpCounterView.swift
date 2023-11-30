@@ -131,12 +131,6 @@ struct HpCounterView: View {
                 }
             }
         }
-        
-        if showView {
-            RoundedRectangle(cornerRadius: 30)
-                .frame(height: UIScreen.main.bounds.height * 0.5)
-                .transition(.asymmetric(insertion: .move(edge: .bottom), removal: AnyTransition.opacity.animation(.easeInOut)))
-        }
     }
 }
 
