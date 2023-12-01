@@ -39,10 +39,9 @@ struct CardDetails: View {
                         ZStack{
                             Color(.black)
                             RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .circular)
-                                .frame(height: 100)
-                            //.padding()
+                                .frame(width: 265, height: 370)
                             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                                .frame(height: 100)
+                                .frame(width: 265, height: 370)
                                 .foregroundStyle(LinearGradient(colors: [Color(.orange), Color(.purple)], startPoint: .top, endPoint: .bottom))
                                 .rotationEffect(.degrees(rotation))
                                 .mask {
