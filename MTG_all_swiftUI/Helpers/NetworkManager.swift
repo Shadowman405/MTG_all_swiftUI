@@ -53,7 +53,7 @@ class CardViewModel: ObservableObject {
     
     
     @Published var fileteredCardData = [Card]()
-    @Published var fileteredCardDataSearch = [Card]()
+    //@Published var fileteredCardDataSearch = [Card]()
     
     //MARK: - CARDS
     private var cardsUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
@@ -79,14 +79,14 @@ class CardViewModel: ObservableObject {
     
     func fetchCardsSearch(searchString: String) async {
         var cardsUrlSearch = "https://api.magicthegathering.io/v1/cards?&name=" + searchString
-        guard let downloadCard: CardsMTG = await WebService().downloadData(fromURL: cardsUrl) else { return }
+        guard let downloadCard: CardsMTG = await WebService().downloadData(fromURL: cardsUrlSearch) else { return }
         cardData = downloadCard.cards
         
         DispatchQueue.main.async { [self] in
             for card in cardData {
                 if card.imageURL != nil {
                     let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? ""
-                    fileteredCardDataSearch.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
+                    fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                     print(cardString)
                 } else {
                     print(card.name)
