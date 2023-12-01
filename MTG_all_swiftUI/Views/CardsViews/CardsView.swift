@@ -11,27 +11,33 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards: [Card] = []
     @State private var searchText = ""
+    @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
     
     var body: some View {
         List(searchResults) {card  in
-            NavigationLink {
-                CardDetails(showButtons: true, card: card)
-            } label: {
-                //CardSingleCell(card: card)
-                HStack {
-                    Text(card.name ?? "")
-                    CardManaCostView(card: card)
+            if requestProgress {
+                NavigationLink {
+                    CardDetails(showButtons: true, card: card)
+                } label: {
+                    HStack {
+                        Text(card.name ?? "")
+                        CardManaCostView(card: card)
+                    }
                 }
+            } else {
+                ProgressView()
             }
         }
         .searchable(text: $searchText)
         .navigationTitle("Cards")
         .onChange(of: searchText) { value in
             Task {
+                requestProgress = false
                 vm.fileteredCardData = []
                 await vm.fetchCardsSearch(searchString: value)
                 cards = vm.fileteredCardData
+                requestProgress = true
             }
         }
         .onAppear {
