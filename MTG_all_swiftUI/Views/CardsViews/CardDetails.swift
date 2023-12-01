@@ -72,7 +72,7 @@ struct CardDetails: View {
                     }
                     
                     Divider()
-                    Text("Card description: \n" + card.text!)
+                    Text("Card description: \n" + (card.text ?? "") )
                         .font(.custom(
                                 "AmericanTypewriter",
                                 fixedSize: 24))

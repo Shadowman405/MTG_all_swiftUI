@@ -29,6 +29,7 @@ struct CardsView: View {
         .navigationTitle("Cards")
         .onChange(of: searchText) { value in
             Task {
+                vm.fileteredCardData = []
                 await vm.fetchCardsSearch(searchString: value)
                 cards = vm.fileteredCardData
             }
