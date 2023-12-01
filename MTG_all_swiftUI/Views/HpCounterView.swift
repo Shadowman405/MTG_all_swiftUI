@@ -39,6 +39,7 @@ struct HpCounterView: View {
                             Image(playerOneColor)
                                 .resizable()
                                 .frame(width: 150,height: 150)
+                                .rotationEffect(Angle(degrees: 180))
                         }
                         .offset(y: 50)
                         
@@ -67,9 +68,10 @@ struct HpCounterView: View {
                         Text("\(playerOneHP)")
                             .font(.system(size: 40))
                             .foregroundColor(.orange)
-                            .offset(y: -60)
+                            .offset(y: 60)
                     }
                     .ignoresSafeArea()
+                    .rotationEffect(.degrees(180), anchor: .center)
                     
                     Divider()
                         .overlay(.orange)

@@ -12,7 +12,7 @@ struct AnimatedCircleView: View {
 
     var body: some View {
         TimelineView(.animation){ context in
-            let period = 1.0
+            let period = 5.0
             let degrees = context.date.timeIntervalSinceReferenceDate.remainder(dividingBy: period) * 360
             Circle()
                 .trim(from: 0,to: 0.8)
