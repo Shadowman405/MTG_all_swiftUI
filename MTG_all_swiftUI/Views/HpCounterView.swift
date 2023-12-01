@@ -139,7 +139,6 @@ struct HpCounterView: View {
         .fullScreenCover(isPresented: $showView, content: {
             ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor)
         })
-        .navigationTitle("Arena")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
