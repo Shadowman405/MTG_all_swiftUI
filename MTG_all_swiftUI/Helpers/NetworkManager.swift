@@ -53,6 +53,7 @@ class CardViewModel: ObservableObject {
     
     
     @Published var fileteredCardData = [Card]()
+    @Published var fileteredCardDataSearch = [Card]()
     
     //MARK: - CARDS
     private var cardsUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
@@ -73,12 +74,6 @@ class CardViewModel: ObservableObject {
                     //print(card.name)
                 }
             }
-            
-            for _ in fileteredCardData {
-                //print(image.imageURL!)
-                print(fileteredCardData.count)
-                print(cardData.count)
-            }
         }
     }
     
@@ -91,17 +86,12 @@ class CardViewModel: ObservableObject {
             for card in cardData {
                 if card.imageURL != nil {
                     let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? ""
-                    fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
+                    fileteredCardDataSearch.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                     print(cardString)
                 } else {
                     print(card.name)
+                    print(cardsUrlSearch)
                 }
-            }
-            
-            for _ in fileteredCardData {
-                //print(image.imageURL!)
-                print(fileteredCardData.count)
-                print(cardData.count)
             }
         }
     }

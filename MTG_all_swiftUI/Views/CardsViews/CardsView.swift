@@ -14,7 +14,7 @@ struct CardsView: View {
     let columns = [GridItem(.flexible())]
     
     var body: some View {
-        List(searchResults) {card  in
+        List(cards) {card  in
             NavigationLink {
                 CardDetails(showButtons: true, card: card)
             } label: {
@@ -27,11 +27,21 @@ struct CardsView: View {
         }
         .searchable(text: $searchText)
         .navigationTitle("Cards")
+        .onChange(of: searchText) { value in
+            Task {
+                await vm.fetchCardsSearch(searchString: value)
+                cards = vm.fileteredCardData
+            }
+        }
         .onAppear {
             if vm.fileteredCardData.isEmpty  {
                 Task{
+                    cards = []
                     await vm.fetchCards()
                     cards = vm.fileteredCardData
+                    for i in cards {
+                        print(i.name)
+                    }
                 }
             }
         }
