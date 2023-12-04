@@ -17,18 +17,6 @@ struct AdvancedSearchView: View {
                 Text(set.name ?? "")
 
             }
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        Task{
-                            await vm.fetchSets()
-                        }
-                    } label: {
-                        Text("Fetch")
-                            .foregroundColor(.orange)
-                    }
-                }
-        }
             .onAppear {
                 Task{
                     print("Sets")
