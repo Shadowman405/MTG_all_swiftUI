@@ -44,6 +44,7 @@
 		BFE66B222B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */; };
 		BFE66B302B013CC000EC9AAB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B2F2B013CC000EC9AAB /* Card.swift */; };
 		BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B312B0141AA00EC9AAB /* CardsView.swift */; };
+		BFF7B9022B1DEEA000A36A94 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B9012B1DEEA000A36A94 /* Set.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		BFE66B212B013C4600EC9AAB /* MTG_all_swiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BFE66B2F2B013CC000EC9AAB /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		BFE66B312B0141AA00EC9AAB /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		BFF7B9012B1DEEA000A36A94 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			children = (
 				BFE66B2F2B013CC000EC9AAB /* Card.swift */,
 				BFC344D62B038D2D00CBAF1D /* Collection.swift */,
+				BFF7B9012B1DEEA000A36A94 /* Set.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF7B9022B1DEEA000A36A94 /* Set.swift in Sources */,
 				BFC344FF2B06336F00CBAF1D /* CardSingleCell.swift in Sources */,
 				BFC344F62B04F44800CBAF1D /* FirebaseManager.swift in Sources */,
 				BFC344D72B038D2D00CBAF1D /* Collection.swift in Sources */,
