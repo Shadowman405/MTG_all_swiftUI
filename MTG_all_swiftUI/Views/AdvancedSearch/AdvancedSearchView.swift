@@ -10,22 +10,36 @@ import SwiftUI
 struct AdvancedSearchView: View {
     @StateObject var vm = CardViewModel()
     @State private var sets: [SetMTG] = []
+    @State private var searchText = ""
+    @State private var requestProgress = true
     
     var body: some View {
         VStack {
-            List(vm.fileteredSetsData, id: \.self) { set in
-                Text(set.name ?? "")
-
-            }
-            .onAppear {
-                Task{
-                    print("Sets")
-                    await vm.fetchSets()
-                    sets = vm.fileteredSetsData
-                    print(sets)
+            if requestProgress {
+                List(searchResults, id: \.self) { set in
+                    Text(set.name ?? "")
                 }
+            } else {
+                ProgressView()
             }
-            .navigationTitle("Advanced Search")
+        }
+        .onAppear {
+            Task{
+                print("Sets")
+                await vm.fetchSets()
+                sets = vm.fileteredSetsData
+                print(sets)
+            }
+        }
+        .navigationTitle("Advanced Search")
+        .searchable(text: $searchText)
+    }
+    
+    var searchResults: [SetMTG] {
+        if searchText.isEmpty {
+            return sets
+        } else {
+            return sets.filter{$0.name!.contains(searchText) }
         }
     }
 }
