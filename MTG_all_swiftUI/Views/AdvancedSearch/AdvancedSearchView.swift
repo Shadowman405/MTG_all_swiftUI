@@ -11,13 +11,23 @@ struct AdvancedSearchView: View {
     @StateObject var vm = CardViewModel()
     @State private var sets: [SetMTG] = []
     @State private var searchText = ""
+    @State private var selectedElement = ""
     @State private var requestProgress = true
+    var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     
     var body: some View {
         VStack {
+            Picker("Category", selection: $selectedElement) {
+                ForEach(searchSegments, id: \.self) {
+                    Text($0)
+                        .foregroundStyle(.orange)
+                }
+            }
+            .pickerStyle(.segmented)
             if requestProgress {
                 List(searchResults, id: \.self) { set in
                     Text(set.name ?? "")
+                        .foregroundStyle(.orange)
                 }
             } else {
                 ProgressView()
