@@ -49,11 +49,11 @@ class WebService{
 class CardViewModel: ObservableObject {
     //MARK: - URLS
     private var cardsUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
-    let testUrlSets = "https://api.magicthegathering.io/v1/sets"
-    let testUrlSubtypes = "https://api.magicthegathering.io/v1/subtypes"
-    let testUrlTypes = "https://api.magicthegathering.io/v1/types"
-    let testUrlSupertypes = "https://api.magicthegathering.io/v1/supertypes"
-    let testUrlFormats = "https://api.magicthegathering.io/v1/formats"
+    let setsUrl = "https://api.magicthegathering.io/v1/sets"
+    let subtypesUrl = "https://api.magicthegathering.io/v1/subtypes"
+    let typesUrl = "https://api.magicthegathering.io/v1/types"
+    let supertypesUrl = "https://api.magicthegathering.io/v1/supertypes"
+    let formatsUrl = "https://api.magicthegathering.io/v1/formats"
     
     var cardData = [Card]()
     var setsData = [Set]()
@@ -62,7 +62,6 @@ class CardViewModel: ObservableObject {
     
     
     @Published var fileteredCardData = [Card]()
-    @Published var fileteredSetsData = [Set]()
     //@Published var fileteredCardDataSearch = [Card]()
     
     //MARK: - CARDS
@@ -290,8 +289,10 @@ class CardViewModel: ObservableObject {
     }
     
     //MARK: - Sets
+    @Published var fileteredSetsData = [Set]()
+    
     func fetchSets() async {
-        guard let downloadSets: SetsMTG = await WebService().downloadData(fromURL: cardsUrl) else { return }
+        guard let downloadSets: SetsMTG = await WebService().downloadData(fromURL: setsUrl) else { return }
         setsData = downloadSets.sets
         
         DispatchQueue.main.async { [self] in
