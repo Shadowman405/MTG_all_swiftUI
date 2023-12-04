@@ -13,10 +13,10 @@ struct SetsMTG: Codable {
 
 // MARK: - Set
 struct Set: Codable, Hashable {
-    let code, name, type: String
-    let booster: [Booster]
-    let releaseDate, block: String
-    let onlineOnly: Bool
+    let code, name, type: String?
+    let booster: [Booster]?
+    let releaseDate, block: String?
+    let onlineOnly: Bool?
 }
 
 enum Booster: String, Codable {

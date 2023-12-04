@@ -13,13 +13,16 @@ struct AdvancedSearchView: View {
     
     var body: some View {
         List(sets, id: \.self) { set in
-            Text(set.name)
+            Text(set.name ?? "")
         }
+        .navigationTitle("Advanced Search")
         .onAppear {
             if vm.setsData.isEmpty  {
                 Task{
+                    print("Sets")
                     await vm.fetchSets()
-                    sets = vm.setsData
+                    sets = vm.fileteredSetsData
+                    print(sets)
                 }
             }
         }

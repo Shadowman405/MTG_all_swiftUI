@@ -148,7 +148,7 @@ struct HpCounterView: View {
                     Text("Refresh HP")
                         .foregroundColor(.orange)
                 }
-            }
+            } 
     }
     }
 }

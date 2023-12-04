@@ -48,6 +48,16 @@ struct CardsView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    AdvancedSearchView()
+                } label: {
+                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                        .foregroundColor(.orange)
+                }
+            }
+    }
     }
     
     var searchResults: [Card] {
