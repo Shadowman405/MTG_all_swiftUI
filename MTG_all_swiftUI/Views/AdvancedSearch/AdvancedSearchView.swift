@@ -12,12 +12,24 @@ struct AdvancedSearchView: View {
     @State private var sets: [Set] = []
     
     var body: some View {
-        List(sets, id: \.self) { set in
-            Text(set.name ?? "")
+        VStack {
+            List(vm.fileteredSetsData, id: \.self) { set in
+                Text(set.name ?? "")
+
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        Task{
+                            await vm.fetchSets()
+                        }
+                    } label: {
+                        Text("Fetch")
+                            .foregroundColor(.orange)
+                    }
+                }
         }
-        .navigationTitle("Advanced Search")
-        .onAppear {
-            if vm.setsData.isEmpty  {
+            .onAppear {
                 Task{
                     print("Sets")
                     await vm.fetchSets()
@@ -25,9 +37,11 @@ struct AdvancedSearchView: View {
                     print(sets)
                 }
             }
+            .navigationTitle("Advanced Search")
         }
     }
 }
+
 
 #Preview {
     AdvancedSearchView()

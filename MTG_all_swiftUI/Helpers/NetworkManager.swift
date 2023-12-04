@@ -292,8 +292,10 @@ class CardViewModel: ObservableObject {
     @Published var fileteredSetsData = [Set]()
     
     func fetchSets() async {
+        print("start fetching")
         guard let downloadSets: SetsMTG = await WebService().downloadData(fromURL: setsUrl) else { return }
         setsData = downloadSets.sets
+        print(downloadSets)
         
         DispatchQueue.main.async { [self] in
             for set in setsData {
