@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AdvancedSearchView: View {
     @StateObject var vm = CardViewModel()
-    @State private var sets: [Set] = []
+    @State private var sets: [SetMTG] = []
     
     var body: some View {
         VStack {

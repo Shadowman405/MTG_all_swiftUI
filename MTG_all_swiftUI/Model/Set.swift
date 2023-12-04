@@ -8,13 +8,13 @@
 import Foundation
 
 struct SetsMTG: Codable {
-    let sets: [Set]
+    let sets: [SetMTG]
 }
 
 // MARK: - Set
-struct Set: Codable, Hashable {
+struct SetMTG: Codable, Hashable {
     let code, name, type: String?
-    let booster: [Booster]?
+    //let booster: [Booster]?
     let releaseDate, block: String?
     let onlineOnly: Bool?
 }

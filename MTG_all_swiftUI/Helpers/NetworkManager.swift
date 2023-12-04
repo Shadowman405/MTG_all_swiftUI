@@ -56,7 +56,7 @@ class CardViewModel: ObservableObject {
     let formatsUrl = "https://api.magicthegathering.io/v1/formats"
     
     var cardData = [Card]()
-    var setsData = [Set]()
+    var setsData = [SetMTG]()
     
     var mockCards = [Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", id: "18468b64-37ef-5e4d-b95a-781265b533a2", uuid: ""), Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", id: "18468b64-37ef-5e4d-b95a-781265b533a2", uuid: "")]
     
@@ -289,17 +289,17 @@ class CardViewModel: ObservableObject {
     }
     
     //MARK: - Sets
-    @Published var fileteredSetsData = [Set]()
+    @Published var fileteredSetsData = [SetMTG]()
     
     func fetchSets() async {
         print("start fetching")
-        guard let downloadSets: SetsMTG = await WebService().downloadData(fromURL: setsUrl) else { return }
+        guard let downloadSets: SetsMTG = await WebService().downloadData(fromURL: setsUrl) else { print("error"); return }
         setsData = downloadSets.sets
         print(downloadSets)
         
         DispatchQueue.main.async { [self] in
             for set in setsData {
-                fileteredSetsData.append(Set(code: set.code, name: set.name, type: set.type, booster: set.booster, releaseDate: set.releaseDate, block: set.block, onlineOnly: set.onlineOnly))
+                fileteredSetsData.append(SetMTG(code: set.code, name: set.name, type: set.type, releaseDate: set.releaseDate, block: set.block, onlineOnly: set.onlineOnly))
             }
         }
     }
