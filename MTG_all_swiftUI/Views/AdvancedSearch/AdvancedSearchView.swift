@@ -11,6 +11,7 @@ struct AdvancedSearchView: View {
     @StateObject var vm = CardViewModel()
     @State private var sets: [SetMTG] = []
     @State private var subtypes: Subtype = Subtype(subtypes: [""])
+    @State private var types: TypesMTG = TypesMTG(types: [""])
     @State private var searchText = ""
     @State private var selectedElement = "Set"
     @State private var requestProgress = true
@@ -32,9 +33,14 @@ struct AdvancedSearchView: View {
                     Text(set.name ?? "")
                         .foregroundStyle(.orange)
                 }
-            } else if selectedElement ==  "Subtypes"{
+            } else if selectedElement ==  "Subtypes" {
                 List(subtypes.subtypes, id: \.self) { subtype in
                     Text(subtype)
+                        .foregroundStyle(.orange)
+                }
+            } else if selectedElement == "Types" {
+                List(types.types, id: \.self) { type in
+                    Text(type)
                         .foregroundStyle(.orange)
                 }
             }
@@ -45,6 +51,8 @@ struct AdvancedSearchView: View {
                 sets = vm.fileteredSetsData
                 await vm.fetchSubtypes()
                 subtypes = vm.fileteredSubtypesData ?? Subtype(subtypes: [""])
+                await vm.fetchTypes()
+                types = vm.fileteredTypesData ?? TypesMTG(types: [""])
             }
         }
         .navigationTitle("Advanced Search")
