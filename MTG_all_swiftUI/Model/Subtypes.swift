@@ -8,6 +8,6 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct Subtype: Codable {
     let subtypes: [String]
 }
