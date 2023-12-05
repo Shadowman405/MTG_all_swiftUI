@@ -10,8 +10,9 @@ import SwiftUI
 struct AdvancedSearchView: View {
     @StateObject var vm = CardViewModel()
     @State private var sets: [SetMTG] = []
-    @State private var subtypes: Subtype = Subtype(subtypes: [""])
-    @State private var types: TypesMTG = TypesMTG(types: [""])
+    @State private var subtypes = Subtype(subtypes: [""])
+    @State private var types = TypesMTG(types: [""])
+    @State private var supertypes = SupertypesMTG(supertypes: [""])
     @State private var searchText = ""
     @State private var selectedElement = "Set"
     @State private var requestProgress = true
@@ -43,6 +44,11 @@ struct AdvancedSearchView: View {
                     Text(type)
                         .foregroundStyle(.orange)
                 }
+            } else if selectedElement == "Supertypes" {
+                List(supertypes.supertypes, id: \.self) { supertype in
+                    Text(supertype)
+                        .foregroundStyle(.orange)
+                }
             }
         }
         .onAppear {
@@ -53,6 +59,8 @@ struct AdvancedSearchView: View {
                 subtypes = vm.fileteredSubtypesData ?? Subtype(subtypes: [""])
                 await vm.fetchTypes()
                 types = vm.fileteredTypesData ?? TypesMTG(types: [""])
+                await vm.fetchSupertypes()
+                supertypes = vm.fileteredSupertypesData ?? SupertypesMTG(supertypes: [""])
             }
         }
         .navigationTitle("Advanced Search")
