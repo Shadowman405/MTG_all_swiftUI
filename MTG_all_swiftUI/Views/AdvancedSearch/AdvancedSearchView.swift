@@ -25,6 +25,8 @@ struct AdvancedSearchView: View {
                 }
             }
             .pickerStyle(.segmented)
+            
+            
             if selectedElement == "Set" {
                 List(searchResults, id: \.self) { set in
                     Text(set.name ?? "")

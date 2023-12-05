@@ -307,8 +307,9 @@ class CardViewModel: ObservableObject {
     @Published var fileteredSubtypesData: Subtype?
     
     func fetchSubtypes() async {
-        guard let downloadSubtypes: Subtype = await WebService().downloadData(fromURL: setsUrl) else { print("error"); return }
+        guard let downloadSubtypes: Subtype = await WebService().downloadData(fromURL: subtypesUrl) else { print("error"); return }
         subtypesData = downloadSubtypes
+        
         
         DispatchQueue.main.async { [self] in
             fileteredSubtypesData = subtypesData ?? Subtype(subtypes: [""])
