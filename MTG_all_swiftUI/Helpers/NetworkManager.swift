@@ -57,9 +57,10 @@ class CardViewModel: ObservableObject {
     
     var cardData = [Card]()
     var setsData = [SetMTG]()
-    var subtypesData: Subtype?
-    var typesData: TypesMTG?
-    var superTypesData: SupertypesMTG?
+    var subtypesData = Subtype(subtypes: [""])
+    var typesData = TypesMTG(types: [""])
+    var superTypesData = SupertypesMTG(supertypes: [""])
+    var formatsData = FormatsMTG(formats: [""])
     
     var mockCards = [Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", id: "18468b64-37ef-5e4d-b95a-781265b533a2", uuid: ""), Card(name: "Abzan Falconer", manaCost: "{2}{W}", cmc: 3, colors: ["W"], colorIdentity: ["W"], type: "Creature — Human Soldier", types: ["Creature"], subtypes: ["Human", "Soldier"], rarity: "Uncommon", setCode: "2X2", setName: "Double Masters 2022", text: "Beep", flavor: "", artist: "", number: "", power: "", toughness: "", layout: "", multiverseid: "", imageURL: "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=571337&type=card", printings: [""], originalText: "", originalType: "", id: "18468b64-37ef-5e4d-b95a-781265b533a2", uuid: "")]
     
@@ -305,7 +306,7 @@ class CardViewModel: ObservableObject {
         }
     }
     //MARK: - Subtypes
-    @Published var fileteredSubtypesData: Subtype?
+    @Published var fileteredSubtypesData = Subtype(subtypes: [""])
     
     func fetchSubtypes() async {
         guard let downloadSubtypes: Subtype = await WebService().downloadData(fromURL: subtypesUrl) else { print("error"); return }
@@ -313,11 +314,11 @@ class CardViewModel: ObservableObject {
         
         
         DispatchQueue.main.async { [self] in
-            fileteredSubtypesData = subtypesData ?? Subtype(subtypes: [""])
+            fileteredSubtypesData = subtypesData
         }
     }
     //MARK: - Types
-    @Published var fileteredTypesData: TypesMTG?
+    @Published var fileteredTypesData = TypesMTG(types: [""])
     
     func fetchTypes() async {
         guard let downloadTypes: TypesMTG = await WebService().downloadData(fromURL: typesUrl) else { print("error"); return }
@@ -325,11 +326,11 @@ class CardViewModel: ObservableObject {
         
         
         DispatchQueue.main.async { [self] in
-            fileteredTypesData = typesData ?? TypesMTG(types: [""])
+            fileteredTypesData = typesData
         }
     }
     //MARK: - Supertypes
-    @Published var fileteredSupertypesData: SupertypesMTG?
+    @Published var fileteredSupertypesData = SupertypesMTG(supertypes: [""])
     
     func fetchSupertypes() async {
         guard let downloadSupertypes: SupertypesMTG = await WebService().downloadData(fromURL: supertypesUrl) else { print("error"); return }
@@ -337,7 +338,19 @@ class CardViewModel: ObservableObject {
         
         
         DispatchQueue.main.async { [self] in
-            fileteredSupertypesData = superTypesData ?? SupertypesMTG(supertypes: [""])
+            fileteredSupertypesData = superTypesData
+        }
+    }
+    //MARK: - Formats
+    @Published var fileteredFormatsData = FormatsMTG(formats: [""])
+    
+    func fetchFormats() async {
+        guard let downloadFormats: FormatsMTG = await WebService().downloadData(fromURL: formatsUrl) else { print("error"); return }
+        formatsData = downloadFormats
+        
+        
+        DispatchQueue.main.async { [self] in
+            fileteredFormatsData = formatsData
         }
     }
 }

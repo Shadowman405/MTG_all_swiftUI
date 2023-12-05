@@ -49,6 +49,7 @@
 		BFF7B9072B1F425D00A36A94 /* Subtypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B9062B1F425D00A36A94 /* Subtypes.swift */; };
 		BFF7B9092B1F46A700A36A94 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B9082B1F46A700A36A94 /* Types.swift */; };
 		BFF7B90B2B1F482A00A36A94 /* Supertypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B90A2B1F482A00A36A94 /* Supertypes.swift */; };
+		BFF7B90D2B1F49C400A36A94 /* Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B90C2B1F49C400A36A94 /* Formats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		BFF7B9062B1F425D00A36A94 /* Subtypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtypes.swift; sourceTree = "<group>"; };
 		BFF7B9082B1F46A700A36A94 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		BFF7B90A2B1F482A00A36A94 /* Supertypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supertypes.swift; sourceTree = "<group>"; };
+		BFF7B90C2B1F49C400A36A94 /* Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				BFF7B9062B1F425D00A36A94 /* Subtypes.swift */,
 				BFF7B9082B1F46A700A36A94 /* Types.swift */,
 				BFF7B90A2B1F482A00A36A94 /* Supertypes.swift */,
+				BFF7B90C2B1F49C400A36A94 /* Formats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */,
 				BF4304002B0CDFFC00677D24 /* SaveToCollection.swift in Sources */,
 				BFC344D92B03905E00CBAF1D /* CardsInCollectionView.swift in Sources */,
+				BFF7B90D2B1F49C400A36A94 /* Formats.swift in Sources */,
 				BFD260E22B077AE200F1BE40 /* CardManaCostView.swift in Sources */,
 				BFC344F42B04EAE700CBAF1D /* LoginView.swift in Sources */,
 				BFC2C97F2B02119400B5A2C1 /* CardDetails.swift in Sources */,

@@ -13,6 +13,7 @@ struct AdvancedSearchView: View {
     @State private var subtypes = Subtype(subtypes: [""])
     @State private var types = TypesMTG(types: [""])
     @State private var supertypes = SupertypesMTG(supertypes: [""])
+    @State private var formats = FormatsMTG(formats: [""])
     @State private var searchText = ""
     @State private var selectedElement = "Set"
     @State private var requestProgress = true
@@ -23,7 +24,6 @@ struct AdvancedSearchView: View {
             Picker("Category", selection: $selectedElement) {
                 ForEach(searchSegments, id: \.self) {
                     Text($0)
-                        .foregroundStyle(.orange)
                 }
             }
             .pickerStyle(.segmented)
@@ -49,6 +49,11 @@ struct AdvancedSearchView: View {
                     Text(supertype)
                         .foregroundStyle(.orange)
                 }
+            } else {
+                List(formats.formats, id: \.self) { format in
+                    Text(format)
+                        .foregroundStyle(.orange)
+                }
             }
         }
         .onAppear {
@@ -56,11 +61,13 @@ struct AdvancedSearchView: View {
                 await vm.fetchSets()
                 sets = vm.fileteredSetsData
                 await vm.fetchSubtypes()
-                subtypes = vm.fileteredSubtypesData ?? Subtype(subtypes: [""])
+                subtypes = vm.fileteredSubtypesData
                 await vm.fetchTypes()
-                types = vm.fileteredTypesData ?? TypesMTG(types: [""])
+                types = vm.fileteredTypesData
                 await vm.fetchSupertypes()
-                supertypes = vm.fileteredSupertypesData ?? SupertypesMTG(supertypes: [""])
+                supertypes = vm.fileteredSupertypesData
+                await vm.fetchFormats()
+                formats = vm.fileteredFormatsData
             }
         }
         .navigationTitle("Advanced Search")
