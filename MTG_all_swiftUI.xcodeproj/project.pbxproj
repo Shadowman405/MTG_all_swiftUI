@@ -46,6 +46,7 @@
 		BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B312B0141AA00EC9AAB /* CardsView.swift */; };
 		BFF7B9022B1DEEA000A36A94 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B9012B1DEEA000A36A94 /* Set.swift */; };
 		BFF7B9052B1DF12900A36A94 /* AdvancedSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B9042B1DF12900A36A94 /* AdvancedSearchView.swift */; };
+		BFF7B9072B1F425D00A36A94 /* Subtypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7B9062B1F425D00A36A94 /* Subtypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		BFE66B312B0141AA00EC9AAB /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		BFF7B9012B1DEEA000A36A94 /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		BFF7B9042B1DF12900A36A94 /* AdvancedSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchView.swift; sourceTree = "<group>"; };
+		BFF7B9062B1F425D00A36A94 /* Subtypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				BFE66B2F2B013CC000EC9AAB /* Card.swift */,
 				BFC344D62B038D2D00CBAF1D /* Collection.swift */,
 				BFF7B9012B1DEEA000A36A94 /* Set.swift */,
+				BFF7B9062B1F425D00A36A94 /* Subtypes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				BFC344D52B038C2300CBAF1D /* HpCounterView.swift in Sources */,
 				BFC344D32B038C0700CBAF1D /* CollectionsView.swift in Sources */,
 				BFE66B302B013CC000EC9AAB /* Card.swift in Sources */,
+				BFF7B9072B1F425D00A36A94 /* Subtypes.swift in Sources */,
 				BFC344FA2B062F1000CBAF1D /* NavBarExtension.swift in Sources */,
 				BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */,
 				BFE66B322B0141AA00EC9AAB /* CardsView.swift in Sources */,
