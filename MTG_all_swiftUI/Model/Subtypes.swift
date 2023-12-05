@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Subtype: Codable {
+struct SubtypeMTG: Codable {
     let subtypes: [String]
 }

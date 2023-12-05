@@ -10,10 +10,10 @@ import SwiftUI
 struct AdvancedSearchView: View {
     @StateObject var vm = CardViewModel()
     @State private var sets: [SetMTG] = []
-    @State private var subtypes = Subtype(subtypes: [""])
-    @State private var types = TypesMTG(types: [""])
-    @State private var supertypes = SupertypesMTG(supertypes: [""])
-    @State private var formats = FormatsMTG(formats: [""])
+    @State private var subtypes = SubtypeMTG(subtypes: [String]())
+    @State private var types = TypesMTG(types: [String]())
+    @State private var supertypes = SupertypesMTG(supertypes: [String]())
+    @State private var formats = FormatsMTG(formats: [String]())
     @State private var searchText = ""
     @State private var selectedElement = "Set"
     @State private var requestProgress = true
