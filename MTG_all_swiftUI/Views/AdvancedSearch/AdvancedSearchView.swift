@@ -19,6 +19,7 @@ struct AdvancedSearchView: View {
     @State private var requestProgress = true
     var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     //
+    @State private var setSelected = ""
     
     var body: some View {
         VStack {
@@ -31,16 +32,19 @@ struct AdvancedSearchView: View {
             
             
             if selectedElement == "Set" {
-                List(searchResultsSets, id: \.self) { set in
-//                    Text(set.name ?? "")
-//                        .foregroundStyle(.orange)
-                    Button {
-                        print(set.code ?? "")
-                    } label: {
-                        Text(set.name ?? "")
-                            .foregroundStyle(.orange)
+                VStack {
+                    Text("Selected set: \(setSelected)")
+                        .foregroundStyle(.orange)
+                    List(searchResultsSets, id: \.self) { set in
+                        Button {
+                            setSelected = set.name ?? ""
+                        } label: {
+                            Text(set.name ?? "")
+                                .foregroundStyle(.orange)
+                        }
+                        .buttonStyle(.borderless)
                     }
-                    .buttonStyle(.borderless)
+                    .cornerRadius(10)
                 }
             } else if selectedElement ==  "Subtypes" {
                 List(searchResultsSubs, id: \.self) { subtype in
