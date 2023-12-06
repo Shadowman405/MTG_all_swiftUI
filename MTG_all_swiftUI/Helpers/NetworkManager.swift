@@ -44,7 +44,7 @@ class WebService{
         return nil
     }
 }
-
+ 
 
 class CardViewModel: ObservableObject {
     //MARK: - URLS
@@ -72,8 +72,8 @@ class CardViewModel: ObservableObject {
     
     
     //MARK: - Fetching
-    func fetchCards() async {
-        guard let downloadCard: CardsMTG = await WebService().downloadData(fromURL: cardsUrl) else { return }
+    func fetchCards(with mainUrl: String) async {
+        guard let downloadCard: CardsMTG = await WebService().downloadData(fromURL: mainUrl) else { return }
         cardData = downloadCard.cards
         
         DispatchQueue.main.async { [self] in

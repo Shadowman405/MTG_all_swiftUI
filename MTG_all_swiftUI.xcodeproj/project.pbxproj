@@ -147,10 +147,10 @@
 		BFC344D12B038BE700CBAF1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BFF7B9032B1DF11600A36A94 /* AdvancedSearch */,
 				BFC344F32B04EAE700CBAF1D /* LoginView.swift */,
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
 				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
+				BFF7B9032B1DF11600A36A94 /* AdvancedSearch */,
 				BFC345002B06362200CBAF1D /* CollectionViews */,
 				BFC344FD2B06334000CBAF1D /* CardsViews */,
 				BF026FB12B176A07007C6C20 /* AnimatedCircleView.swift */,
