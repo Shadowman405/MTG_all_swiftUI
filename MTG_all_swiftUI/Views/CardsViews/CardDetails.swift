@@ -48,6 +48,7 @@ struct CardDetails: View {
                     }
                 }
                 Divider()
+                    .overlay(.orange)
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Name: " + card.name!)
@@ -67,6 +68,7 @@ struct CardDetails: View {
                     }
                     
                     Divider()
+                        .overlay(.orange)
                     Text("Card description: \n" + (card.text ?? "") )
                         .font(.custom(
                             "AmericanTypewriter",
@@ -131,6 +133,7 @@ struct CardDetails: View {
                     }
                 }
                 Divider()
+                    .overlay(.orange)
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Name: " + card.name!)
@@ -150,6 +153,7 @@ struct CardDetails: View {
                     }
                     
                     Divider()
+                        .overlay(.orange)
                     Text("Card description: \n" + card.text!)
                         .font(.custom(
                             "AmericanTypewriter",
