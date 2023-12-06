@@ -40,7 +40,7 @@ struct AdvancedSearchView: View {
                         Text(set.name ?? "")
                             .foregroundStyle(.orange)
                     }
-
+                    .buttonStyle(.borderless)
                 }
             } else if selectedElement ==  "Subtypes" {
                 List(searchResultsSubs, id: \.self) { subtype in
