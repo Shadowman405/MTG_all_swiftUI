@@ -30,12 +30,12 @@ struct AdvancedSearchView: View {
             
             
             if selectedElement == "Set" {
-                List(searchResults, id: \.self) { set in
+                List(searchResultsSets, id: \.self) { set in
                     Text(set.name ?? "")
                         .foregroundStyle(.orange)
                 }
             } else if selectedElement ==  "Subtypes" {
-                List(subtypes.subtypes, id: \.self) { subtype in
+                List(searchResultsSubs, id: \.self) { subtype in
                     Text(subtype)
                         .foregroundStyle(.orange)
                 }
@@ -73,17 +73,27 @@ struct AdvancedSearchView: View {
         .navigationTitle("Advanced Search")
         .searchable(text: $searchText)
     }
-    
-    var searchResults: [SetMTG] {
+}
+
+
+#Preview {
+    AdvancedSearchView()
+}
+
+extension AdvancedSearchView {
+    var searchResultsSets: [SetMTG] {
         if searchText.isEmpty {
             return sets
         } else {
             return sets.filter{$0.name!.contains(searchText) }
         }
     }
-}
-
-
-#Preview {
-    AdvancedSearchView()
+    
+    var searchResultsSubs: [String] {
+        if searchText.isEmpty {
+            return subtypes.subtypes
+        } else {
+            return subtypes.subtypes.filter{$0.contains(searchText) }
+        }
+    }
 }
