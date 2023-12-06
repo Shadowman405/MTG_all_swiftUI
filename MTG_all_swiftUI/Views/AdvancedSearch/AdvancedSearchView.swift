@@ -40,17 +40,17 @@ struct AdvancedSearchView: View {
                         .foregroundStyle(.orange)
                 }
             } else if selectedElement == "Types" {
-                List(types.types, id: \.self) { type in
+                List(searchResultsTypes, id: \.self) { type in
                     Text(type)
                         .foregroundStyle(.orange)
                 }
             } else if selectedElement == "Supertypes" {
-                List(supertypes.supertypes, id: \.self) { supertype in
+                List(searchResultsSupertypes, id: \.self) { supertype in
                     Text(supertype)
                         .foregroundStyle(.orange)
                 }
             } else {
-                List(formats.formats, id: \.self) { format in
+                List(searchResultsFormats, id: \.self) { format in
                     Text(format)
                         .foregroundStyle(.orange)
                 }
@@ -80,7 +80,12 @@ struct AdvancedSearchView: View {
     AdvancedSearchView()
 }
 
+
+//MARK: - Extension
 extension AdvancedSearchView {
+    //MARK: - search variables
+    
+    //Sets
     var searchResultsSets: [SetMTG] {
         if searchText.isEmpty {
             return sets
@@ -88,12 +93,36 @@ extension AdvancedSearchView {
             return sets.filter{$0.name!.contains(searchText) }
         }
     }
-    
+    //Subtypes
     var searchResultsSubs: [String] {
         if searchText.isEmpty {
             return subtypes.subtypes
         } else {
             return subtypes.subtypes.filter{$0.contains(searchText) }
+        }
+    }
+    //Types
+    var searchResultsTypes: [String] {
+        if searchText.isEmpty {
+            return types.types
+        } else {
+            return types.types.filter{$0.contains(searchText) }
+        }
+    }
+    //Supertypes
+    var searchResultsSupertypes: [String] {
+        if searchText.isEmpty {
+            return supertypes.supertypes
+        } else {
+            return supertypes.supertypes.filter{$0.contains(searchText) }
+        }
+    }
+    //Formats
+    var searchResultsFormats: [String] {
+        if searchText.isEmpty {
+            return formats.formats
+        } else {
+            return formats.formats.filter{$0.contains(searchText) }
         }
     }
 }
