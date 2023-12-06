@@ -31,10 +31,6 @@ struct CardDetails: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400 ,height: 400)
                 } placeholder: {
-//                    Image("card_placeholder")
-//                        .resizable()
-//                        .frame(width: 265 ,height: 370)
-//                        .aspectRatio(contentMode: .fit)
                     ProgressView() {
                         ZStack{
                             Color(.black)
@@ -56,36 +52,36 @@ struct CardDetails: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Name: " + card.name!)
                         .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
+                            "AmericanTypewriter",
+                            fixedSize: 24))
                     Text("Set: " + card.setName!)
                         .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
+                            "AmericanTypewriter",
+                            fixedSize: 24))
                     HStack {
                         Text("Mana Cost: ")
                             .font(.custom(
-                                    "AmericanTypewriter",
-                                    fixedSize: 24))
+                                "AmericanTypewriter",
+                                fixedSize: 24))
                         CardManaCostView(card: card)
                     }
                     
                     Divider()
                     Text("Card description: \n" + (card.text ?? "") )
                         .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
-
+                            "AmericanTypewriter",
+                            fixedSize: 24))
+                    
                 }
                 .padding()
                 
                 NavigationLink {
                     SaveToCollection(card: card)
                 } label: {
-                        HStack {
-                            Text("Add to Collection")
-                            Image(systemName: "rectangle.stack.fill.badge.plus")
-                        }
+                    HStack {
+                        Text("Add to Collection")
+                        Image(systemName: "rectangle.stack.fill.badge.plus")
+                    }
                 }
                 .padding()
             }
@@ -118,42 +114,53 @@ struct CardDetails: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400 ,height: 400)
                 } placeholder: {
-                    Image("card_placeholder")
-                        .resizable()
-                        .frame(width: 400 ,height: 400)
-                        .aspectRatio(contentMode: .fit)
+                    ProgressView() {
+                        ZStack{
+                            Color(.black)
+                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .circular)
+                                .frame(width: 265, height: 370)
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .frame(width: 265, height: 370)
+                                .foregroundStyle(LinearGradient(colors: [Color(.orange), Color(.purple)], startPoint: .top, endPoint: .bottom))
+                                .rotationEffect(.degrees(rotation))
+                                .mask {
+                                    RoundedRectangle(cornerRadius: 20,style: .continuous)
+                                        .stroke(lineWidth: 3)
+                                }
+                        }
+                    }
                 }
                 Divider()
                 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Name: " + card.name!)
                         .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
+                            "AmericanTypewriter",
+                            fixedSize: 24))
                     Text("Set: " + card.setName!)
                         .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
+                            "AmericanTypewriter",
+                            fixedSize: 24))
                     HStack {
                         Text("Mana Cost: ")
                             .font(.custom(
-                                    "AmericanTypewriter",
-                                    fixedSize: 24))
+                                "AmericanTypewriter",
+                                fixedSize: 24))
                         CardManaCostView(card: card)
                     }
                     
                     Divider()
                     Text("Card description: \n" + card.text!)
                         .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 24))
-
+                            "AmericanTypewriter",
+                            fixedSize: 24))
+                    
                 }
                 .padding()
             }
             .padding()
         }
-        .navigationTitle(card.name ?? "Card") 
+        .navigationTitle(card.name ?? "Card")
     }
 }
 
