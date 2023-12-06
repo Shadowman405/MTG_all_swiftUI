@@ -18,9 +18,12 @@ struct AdvancedSearchView: View {
     @State private var selectedElement = "Set"
     @State private var requestProgress = true
     var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
+    //
+    @State private var setSelection: String? 
     
     var body: some View {
         VStack {
+            Text(setSelection ?? "")
             Picker("Category", selection: $selectedElement) {
                 ForEach(searchSegments, id: \.self) {
                     Text($0)
@@ -30,7 +33,7 @@ struct AdvancedSearchView: View {
             
             
             if selectedElement == "Set" {
-                List(searchResultsSets, id: \.self) { set in
+                List(searchResultsSets, id: \.self, selection: $setSelection) { set in
                     Text(set.name ?? "")
                         .foregroundStyle(.orange)
                 }
