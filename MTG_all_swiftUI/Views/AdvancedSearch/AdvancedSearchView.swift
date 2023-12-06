@@ -19,11 +19,9 @@ struct AdvancedSearchView: View {
     @State private var requestProgress = true
     var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     //
-    @State private var setSelection: String? 
     
     var body: some View {
         VStack {
-            Text(setSelection ?? "")
             Picker("Category", selection: $selectedElement) {
                 ForEach(searchSegments, id: \.self) {
                     Text($0)
@@ -33,9 +31,16 @@ struct AdvancedSearchView: View {
             
             
             if selectedElement == "Set" {
-                List(searchResultsSets, id: \.self, selection: $setSelection) { set in
-                    Text(set.name ?? "")
-                        .foregroundStyle(.orange)
+                List(searchResultsSets, id: \.self) { set in
+//                    Text(set.name ?? "")
+//                        .foregroundStyle(.orange)
+                    Button {
+                        print(set.code ?? "")
+                    } label: {
+                        Text(set.name ?? "")
+                            .foregroundStyle(.orange)
+                    }
+
                 }
             } else if selectedElement ==  "Subtypes" {
                 List(searchResultsSubs, id: \.self) { subtype in
