@@ -46,6 +46,7 @@ struct CardsView: View {
                 Task{
                     await vm.fetchCards(with: mainUrl)
                     cards = vm.fileteredCardData
+                    print(mainUrl)
                 }
             }
         }
