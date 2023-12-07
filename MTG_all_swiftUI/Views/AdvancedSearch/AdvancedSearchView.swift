@@ -26,7 +26,6 @@ struct AdvancedSearchView: View {
     @State private var typeSelected = ""
     @State private var superTypeSelected = ""
     @State private var formatSelected = ""
-    var onDismiss: ((_ model: String) -> Void)?
     
     var body: some View {
         VStack {
@@ -46,8 +45,7 @@ struct AdvancedSearchView: View {
                         Button {
                             setSelected = set.name ?? ""
                             setCodeSelected = set.code ?? ""
-                            searhUrlString = "https://api.magicthegathering.io/v1/cards?&set=\(set.code ?? ""))"
-                            onDismiss?(searhUrlString)
+                            searhUrlString = "https://api.magicthegathering.io/v1/cards?&set=\(set.code ?? "")"
                         } label: {
                             Text(set.name ?? "")
                                 .foregroundStyle(.orange)

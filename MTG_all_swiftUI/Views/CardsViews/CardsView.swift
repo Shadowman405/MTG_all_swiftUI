@@ -12,6 +12,7 @@ struct CardsView: View {
     @State private var cards: [Card] = []
     @State private var searchText = ""
     @State private var mainUrl = "https://api.magicthegathering.io/v1/cards"
+    @State private var showAdvancedSearch = false
     @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
     
@@ -42,22 +43,37 @@ struct CardsView: View {
             }
         }
         .onAppear {
-            if vm.fileteredCardData.isEmpty  {
                 Task{
                     await vm.fetchCards(with: mainUrl)
                     cards = vm.fileteredCardData
                     print(mainUrl)
                 }
-            }
         }
+        .onChange(of: mainUrl, perform: { value in
+            Task{
+                await vm.fetchCards(with: value)
+                cards = vm.fileteredCardData
+                print(mainUrl)
+            }
+        })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    AdvancedSearchView(searhUrlString: $mainUrl)
+//                NavigationLink {
+//                    AdvancedSearchView(searhUrlString: $mainUrl)
+//                } label: {
+//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+//                        .foregroundColor(.orange)
+//                }
+                Button  {
+                    showAdvancedSearch.toggle()
+                    print(mainUrl)
                 } label: {
                     Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
                         .foregroundColor(.orange)
                 }
+                .sheet(isPresented: $showAdvancedSearch, content: {
+                    AdvancedSearchView(searhUrlString: $mainUrl)
+                })
             }
     }
     }
