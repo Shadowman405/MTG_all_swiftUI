@@ -11,7 +11,7 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards: [Card] = []
     @State private var searchText = ""
-    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
+    @Binding var mainUrl: String
     @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
     
@@ -71,5 +71,5 @@ struct CardsView: View {
 }
 
 #Preview {
-    CardsView()
+    CardsView( mainUrl: .constant(""))
 }

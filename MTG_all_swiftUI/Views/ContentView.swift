@@ -10,6 +10,7 @@ import Firebase
 
 struct ContentView: View {
     @Binding var logedIn : Bool
+    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards?&set=40K"
     
     var body: some View {
         if logedIn {
@@ -33,7 +34,7 @@ struct ContentView: View {
                 
                 VStack {
                     NavigationLink {
-                        CardsView()
+                        CardsView(mainUrl: $mainUrl)
                     } label: {
                         Text("Cards")
                             .font(.system(size: 30))
