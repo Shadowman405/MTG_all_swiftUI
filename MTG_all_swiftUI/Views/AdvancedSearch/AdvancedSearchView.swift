@@ -19,6 +19,7 @@ struct AdvancedSearchView: View {
     @State private var requestProgress = true
     var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     //
+    @Binding var searhUrlString: String
     @State private var setSelected = ""
     @State private var setCodeSelected = ""
     @State private var subtypeSelected = ""
@@ -130,7 +131,7 @@ struct AdvancedSearchView: View {
 
 
 #Preview {
-    AdvancedSearchView()
+    AdvancedSearchView(searhUrlString: .constant(""))
 }
 
 

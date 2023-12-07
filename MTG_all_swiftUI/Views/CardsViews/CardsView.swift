@@ -11,7 +11,7 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards: [Card] = []
     @State private var searchText = ""
-    @Binding var mainUrl: String
+    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards"
     @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
     
@@ -52,7 +52,7 @@ struct CardsView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    AdvancedSearchView()
+                    AdvancedSearchView(searhUrlString: $mainUrl)
                 } label: {
                     Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
                         .foregroundColor(.orange)
@@ -71,5 +71,5 @@ struct CardsView: View {
 }
 
 #Preview {
-    CardsView( mainUrl: .constant(""))
+    CardsView()
 }
