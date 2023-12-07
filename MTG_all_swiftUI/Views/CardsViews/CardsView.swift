@@ -44,6 +44,7 @@ struct CardsView: View {
         }
         .onAppear {
                 Task{
+                    vm.fileteredCardData = []
                     await vm.fetchCards(with: mainUrl)
                     cards = vm.fileteredCardData
                     print(mainUrl)
@@ -51,29 +52,30 @@ struct CardsView: View {
         }
         .onChange(of: mainUrl, perform: { value in
             Task{
-                await vm.fetchCards(with: value)
+                vm.fileteredCardData = []
+                await vm.fetchCards(with: mainUrl)
                 cards = vm.fileteredCardData
                 print(mainUrl)
             }
         })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-//                NavigationLink {
-//                    AdvancedSearchView(searhUrlString: $mainUrl)
-//                } label: {
-//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-//                        .foregroundColor(.orange)
-//                }
-                Button  {
-                    showAdvancedSearch.toggle()
-                    print(mainUrl)
+                NavigationLink {
+                    AdvancedSearchView(searhUrlString: $mainUrl)
                 } label: {
                     Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
                         .foregroundColor(.orange)
                 }
-                .sheet(isPresented: $showAdvancedSearch, content: {
-                    AdvancedSearchView(searhUrlString: $mainUrl)
-                })
+//                Button  {
+//                    showAdvancedSearch.toggle()
+//                    print(mainUrl)
+//                } label: {
+//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+//                        .foregroundColor(.orange)
+//                }
+//                .sheet(isPresented: $showAdvancedSearch, content: {
+//                    AdvancedSearchView(searhUrlString: $mainUrl)
+//                })
             }
     }
     }
