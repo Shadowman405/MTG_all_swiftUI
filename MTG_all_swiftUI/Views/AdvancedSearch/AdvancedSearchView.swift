@@ -48,31 +48,62 @@ struct AdvancedSearchView: View {
                         }
                         .buttonStyle(.borderless)
                     }
-                    .cornerRadius(10)
                 }
             } else if selectedElement ==  "Subtypes" {
-                Text("Selected Subtype: \(subtypeSelected)")
-                List(searchResultsSubs, id: \.self) { subtype in
-                    Text(subtype)
+                VStack {
+                    Text("Selected Subtype: \(subtypeSelected)")
                         .foregroundStyle(.orange)
+                    List(searchResultsSubs, id: \.self){ sub in
+                        Button {
+                            subtypeSelected = sub
+                        } label: {
+                            Text(sub)
+                                .foregroundStyle(.orange)
+                        }
+                        .buttonStyle(.borderless)
+                    }
                 }
             } else if selectedElement == "Types" {
-                Text("Selected Type: \(typeSelected)")
-                List(searchResultsTypes, id: \.self) { type in
-                    Text(type)
+                VStack{
+                    Text("Selected Type: \(typeSelected)")
                         .foregroundStyle(.orange)
+                    List(searchResultsTypes, id: \.self) { type in
+                        Button {
+                            typeSelected = type
+                        } label: {
+                            Text(type)
+                                .foregroundStyle(.orange)
+                        }
+                        .buttonStyle(.borderless)
+                    }
                 }
             } else if selectedElement == "Supertypes" {
-                Text("Selected Supertype: \(superTypeSelected)")
-                List(searchResultsSupertypes, id: \.self) { supertype in
-                    Text(supertype)
+                VStack {
+                    Text("Selected Supertype: \(superTypeSelected)")
                         .foregroundStyle(.orange)
+                    List(searchResultsSupertypes, id: \.self) { supertype in
+                        Button {
+                            superTypeSelected = supertype
+                        } label: {
+                            Text(supertype)
+                                .foregroundStyle(.orange)
+                        }
+                        .buttonStyle(.borderless)
+                    }
                 }
             } else {
-                Text("Selected Format: \(formatSelected)")
-                List(searchResultsFormats, id: \.self) { format in
-                    Text(format)
+                VStack {
+                    Text("Selected Format: \(formatSelected)")
                         .foregroundStyle(.orange)
+                    List(searchResultsFormats, id: \.self) { format in
+                        Button {
+                            formatSelected = format
+                        } label: {
+                            Text(format)
+                                .foregroundStyle(.orange)
+                        }
+                        .buttonStyle(.borderless)
+                    }
                 }
             }
         }
