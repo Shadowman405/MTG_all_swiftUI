@@ -20,6 +20,7 @@ struct AdvancedSearchView: View {
     var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     //
     @State private var setSelected = ""
+    @State private var setCodeSelected = ""
     @State private var subtypeSelected = ""
     @State private var typeSelected = ""
     @State private var superTypeSelected = ""
@@ -42,6 +43,7 @@ struct AdvancedSearchView: View {
                     List(searchResultsSets, id: \.self) { set in
                         Button {
                             setSelected = set.name ?? ""
+                            setCodeSelected = set.code ?? ""
                         } label: {
                             Text(set.name ?? "")
                                 .foregroundStyle(.orange)
