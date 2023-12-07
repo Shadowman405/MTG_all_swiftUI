@@ -20,6 +20,10 @@ struct AdvancedSearchView: View {
     var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     //
     @State private var setSelected = ""
+    @State private var subtypeSelected = ""
+    @State private var typeSelected = ""
+    @State private var superTypeSelected = ""
+    @State private var formatSelected = ""
     
     var body: some View {
         VStack {
@@ -47,21 +51,25 @@ struct AdvancedSearchView: View {
                     .cornerRadius(10)
                 }
             } else if selectedElement ==  "Subtypes" {
+                Text("Selected Subtype: \(subtypeSelected)")
                 List(searchResultsSubs, id: \.self) { subtype in
                     Text(subtype)
                         .foregroundStyle(.orange)
                 }
             } else if selectedElement == "Types" {
+                Text("Selected Type: \(typeSelected)")
                 List(searchResultsTypes, id: \.self) { type in
                     Text(type)
                         .foregroundStyle(.orange)
                 }
             } else if selectedElement == "Supertypes" {
+                Text("Selected Supertype: \(superTypeSelected)")
                 List(searchResultsSupertypes, id: \.self) { supertype in
                     Text(supertype)
                         .foregroundStyle(.orange)
                 }
             } else {
+                Text("Selected Format: \(formatSelected)")
                 List(searchResultsFormats, id: \.self) { format in
                     Text(format)
                         .foregroundStyle(.orange)
