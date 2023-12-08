@@ -45,7 +45,7 @@ struct AdvancedSearchView: View {
                         Button {
                             setSelected = set.name ?? ""
                             setCodeSelected = set.code ?? ""
-                            searhUrlString = "https://api.magicthegathering.io/v1/cards?&set=\(set.code ?? "")"
+                            searhUrlString.append("?&set=\(set.code ?? "")")
                         } label: {
                             Text(set.name ?? "")
                                 .foregroundStyle(.orange)
