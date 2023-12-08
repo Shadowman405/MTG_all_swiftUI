@@ -60,6 +60,7 @@ struct AdvancedSearchView: View {
                     List(searchResultsSubs, id: \.self){ sub in
                         Button {
                             subtypeSelected = sub
+                            searhUrlString.append("?&subtypes=\(sub ?? "")")
                         } label: {
                             Text(sub)
                                 .foregroundStyle(.orange)
