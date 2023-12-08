@@ -45,7 +45,7 @@ struct AdvancedSearchView: View {
                         Button {
                             setSelected = set.name ?? ""
                             setCodeSelected = set.code ?? ""
-                            searhUrlString.append("?&set=\(set.code ?? "")")
+//                            searhUrlString.append("?&set=\(set.code ?? "")")
                         } label: {
                             Text(set.name ?? "")
                                 .foregroundStyle(.orange)
@@ -112,6 +112,9 @@ struct AdvancedSearchView: View {
                 }
             }
         }
+        .onDisappear(perform: {
+            searhUrlString = "https://api.magicthegathering.io/v1/cards?\("&set=" + setCodeSelected)&name="
+        })
         .onAppear {
             Task{
                 await vm.fetchSets()
