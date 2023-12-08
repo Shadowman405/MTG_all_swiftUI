@@ -44,7 +44,7 @@ struct AdvancedSearchView: View {
                     List(searchResultsSets, id: \.self) { set in
                         Button {
                             setSelected = set.name ?? ""
-                            setCodeSelected = set.code ?? ""
+                            setCodeSelected = String("&set=" + (set.code ?? ""))
 //                            searhUrlString.append("?&set=\(set.code ?? "")")
                         } label: {
                             Text(set.name ?? "")
@@ -113,7 +113,7 @@ struct AdvancedSearchView: View {
             }
         }
         .onDisappear(perform: {
-            searhUrlString = "https://api.magicthegathering.io/v1/cards?\("&set=" + setCodeSelected)&name="
+            searhUrlString = "https://api.magicthegathering.io/v1/cards?\(setCodeSelected)&name="
         })
         .onAppear {
             Task{
