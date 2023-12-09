@@ -78,14 +78,17 @@ class CardViewModel: ObservableObject {
         
         DispatchQueue.main.async { [self] in
             for card in cardData {
-                if card.imageURL != nil || card.imageURL == "" {
+                if card.imageURL != nil{
                     let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https")
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                    // print(cardString)
-                } else {
+                } else if card.imageURL == nil {
                     // print(card.name)
                     let cardString = "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/0/07/Cardback_yellow.jpg/revision/latest?cb=20130727091021"
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
+                } else {
+                    //print(card.name)
+                    //print(cardsUrlSearch)
                 }
             }
         }
@@ -98,13 +101,16 @@ class CardViewModel: ObservableObject {
         
         DispatchQueue.main.async { [self] in
             for card in cardData {
-                if card.imageURL != nil || card.imageURL == "" {
+                if card.imageURL != nil {
                     let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https")
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                     //print(cardString)
-                } else {
+                } else if card.imageURL == nil {
                     let cardString =  "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/0/07/Cardback_yellow.jpg/revision/latest?cb=20130727091021"
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
+                    //print(card.name)
+                    //print(cardsUrlSearch)
+                } else {
                     //print(card.name)
                     //print(cardsUrlSearch)
                 }
