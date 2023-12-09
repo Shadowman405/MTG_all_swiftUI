@@ -79,11 +79,11 @@ class CardViewModel: ObservableObject {
         DispatchQueue.main.async { [self] in
             for card in cardData {
                 if card.imageURL != nil {
-                    let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? ""
+                    let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? "https://en.wikipedia.org/wiki/Magic:_The_Gathering#/media/File:Magic_the_gathering-card_back.jpg"
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                    // print(cardString)
                 } else {
-                    //print(card.name)
+                    print(card.name)
                 }
             }
         }
@@ -97,11 +97,11 @@ class CardViewModel: ObservableObject {
         DispatchQueue.main.async { [self] in
             for card in cardData {
                 if card.imageURL != nil {
-                    let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? ""
+                    let cardString: String = card.imageURL!.replacingOccurrences(of: "http", with: "https") ?? "https://en.wikipedia.org/wiki/Magic:_The_Gathering#/media/File:Magic_the_gathering-card_back.jpg"
                     fileteredCardData.append(Card(name: card.name, manaCost: card.manaCost, cmc: card.cmc, colors: card.colors, colorIdentity: card.colorIdentity, type: card.type, types: card.types, subtypes: card.subtypes, rarity: card.rarity, setCode: card.setCode, setName: card.setName, text: card.text, flavor: card.flavor, artist: card.artist, number: card.number, power: card.power, toughness: card.toughness, layout: card.layout, multiverseid: card.multiverseid, imageURL: cardString, printings: card.printings, originalText: card.originalText, originalType: card.originalType, id: card.id, uuid: card.uuid))
                     //print(cardString)
                 } else {
-                    //print(card.name)
+                    print(card.name)
                     //print(cardsUrlSearch)
                 }
                 

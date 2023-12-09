@@ -11,7 +11,8 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards: [Card] = []
     @State private var searchText = ""
-    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards"
+//    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards"
+    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards?&set=30A&name="
     @State private var showAdvancedSearch = false
     @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
