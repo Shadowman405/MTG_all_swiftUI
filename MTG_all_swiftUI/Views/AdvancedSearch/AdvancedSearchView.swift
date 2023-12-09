@@ -59,8 +59,7 @@ struct AdvancedSearchView: View {
                         .foregroundStyle(.orange)
                     List(searchResultsSubs, id: \.self){ sub in
                         Button {
-                            subtypeSelected = sub
-                            searhUrlString.append("?&subtypes=\(sub ?? "")")
+                            subtypeSelected = String("&subtypes=" + (sub))
                         } label: {
                             Text(sub)
                                 .foregroundStyle(.orange)
@@ -113,7 +112,7 @@ struct AdvancedSearchView: View {
             }
         }
         .onDisappear(perform: {
-            searhUrlString = "https://api.magicthegathering.io/v1/cards?\(setCodeSelected)&name="
+            searhUrlString = "https://api.magicthegathering.io/v1/cards?\(setCodeSelected)\(subtypeSelected)&name="
         })
         .onAppear {
             Task{
