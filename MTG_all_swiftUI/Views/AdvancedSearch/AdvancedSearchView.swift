@@ -73,7 +73,7 @@ struct AdvancedSearchView: View {
                         .foregroundStyle(.orange)
                     List(searchResultsTypes, id: \.self) { type in
                         Button {
-                            typeSelected = type
+                            typeSelected = String("&types=" + (type))
                         } label: {
                             Text(type)
                                 .foregroundStyle(.orange)
@@ -87,7 +87,7 @@ struct AdvancedSearchView: View {
                         .foregroundStyle(.orange)
                     List(searchResultsSupertypes, id: \.self) { supertype in
                         Button {
-                            superTypeSelected = supertype
+                            superTypeSelected = String("&supertypes=" + (supertype))
                         } label: {
                             Text(supertype)
                                 .foregroundStyle(.orange)
@@ -101,7 +101,7 @@ struct AdvancedSearchView: View {
                         .foregroundStyle(.orange)
                     List(searchResultsFormats, id: \.self) { format in
                         Button {
-                            formatSelected = format
+                            formatSelected = String("&fromat=" + (format))
                         } label: {
                             Text(format)
                                 .foregroundStyle(.orange)
@@ -112,7 +112,7 @@ struct AdvancedSearchView: View {
             }
         }
         .onDisappear(perform: {
-            searhUrlString = "https://api.magicthegathering.io/v1/cards?\(setCodeSelected)\(subtypeSelected)&name="
+            searhUrlString = "https://api.magicthegathering.io/v1/cards?\(setCodeSelected)\(subtypeSelected)\(typeSelected)\(superTypeSelected)\(formatSelected)&name="
         })
         .onAppear {
             Task{

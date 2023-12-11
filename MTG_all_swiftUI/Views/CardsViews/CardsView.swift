@@ -61,22 +61,22 @@ struct CardsView: View {
         })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    AdvancedSearchView(searhUrlString: $mainUrl)
-                } label: {
-                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-                        .foregroundColor(.orange)
-                }
-//                Button  {
-//                    showAdvancedSearch.toggle()
-//                    print(mainUrl)
+//                NavigationLink {
+//                    AdvancedSearchView(searhUrlString: $mainUrl)
 //                } label: {
 //                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
 //                        .foregroundColor(.orange)
 //                }
-//                .sheet(isPresented: $showAdvancedSearch, content: {
-//                    AdvancedSearchView(searhUrlString: $mainUrl)
-//                })
+                Button  {
+                    showAdvancedSearch.toggle()
+                    print(mainUrl)
+                } label: {
+                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                        .foregroundColor(.orange)
+                }
+                .sheet(isPresented: $showAdvancedSearch, content: {
+                    AdvancedSearchView(searhUrlString: $mainUrl)
+                })
             }
     }
     }
