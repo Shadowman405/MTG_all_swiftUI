@@ -49,6 +49,9 @@ struct AdvancedSearchView: View {
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
+                        .onTapGesture {
+                            hapticFeedback()
+                        }
                     }
                 }
             } else if selectedElement ==  "Subtypes" {
@@ -63,6 +66,9 @@ struct AdvancedSearchView: View {
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
+                        .onTapGesture {
+                            hapticFeedback()
+                        }
                     }
                 }
             } else if selectedElement == "Types" {
@@ -77,6 +83,9 @@ struct AdvancedSearchView: View {
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
+                        .onTapGesture {
+                            hapticFeedback()
+                        }
                     }
                 }
             } else if selectedElement == "Supertypes" {
@@ -91,6 +100,9 @@ struct AdvancedSearchView: View {
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
+                        .onTapGesture {
+                            hapticFeedback()
+                        }
                     }
                 }
             } else {
@@ -105,6 +117,9 @@ struct AdvancedSearchView: View {
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
+                        .onTapGesture {
+                            hapticFeedback()
+                        }
                     }
                 }
             }
@@ -180,5 +195,10 @@ extension AdvancedSearchView {
         } else {
             return formats.formats.filter{$0.contains(searchText) }
         }
+    }
+    
+    func hapticFeedback() {
+        let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+        impactHeavy.impactOccurred()
     }
 }
