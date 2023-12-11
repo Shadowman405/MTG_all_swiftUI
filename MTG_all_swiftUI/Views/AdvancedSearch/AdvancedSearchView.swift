@@ -43,15 +43,12 @@ struct AdvancedSearchView: View {
                         Button {
                             setSelected = set.name ?? ""
                             setCodeSelected = String("&set=" + (set.code ?? ""))
-//                            searhUrlString.append("?&set=\(set.code ?? "")")
+                            hapticFeedback()
                         } label: {
                             Text(set.name ?? "")
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
-                        .onTapGesture {
-                            hapticFeedback()
-                        }
                     }
                 }
             } else if selectedElement ==  "Subtypes" {
@@ -61,14 +58,12 @@ struct AdvancedSearchView: View {
                     List(searchResultsSubs, id: \.self){ sub in
                         Button {
                             subtypeSelected = String("&subtypes=" + (sub))
+                            hapticFeedback()
                         } label: {
                             Text(sub)
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
-                        .onTapGesture {
-                            hapticFeedback()
-                        }
                     }
                 }
             } else if selectedElement == "Types" {
@@ -78,14 +73,12 @@ struct AdvancedSearchView: View {
                     List(searchResultsTypes, id: \.self) { type in
                         Button {
                             typeSelected = String("&types=" + (type))
+                            hapticFeedback()
                         } label: {
                             Text(type)
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
-                        .onTapGesture {
-                            hapticFeedback()
-                        }
                     }
                 }
             } else if selectedElement == "Supertypes" {
@@ -95,14 +88,12 @@ struct AdvancedSearchView: View {
                     List(searchResultsSupertypes, id: \.self) { supertype in
                         Button {
                             superTypeSelected = String("&supertypes=" + (supertype))
+                            hapticFeedback()
                         } label: {
                             Text(supertype)
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
-                        .onTapGesture {
-                            hapticFeedback()
-                        }
                     }
                 }
             } else {
@@ -112,14 +103,12 @@ struct AdvancedSearchView: View {
                     List(searchResultsFormats, id: \.self) { format in
                         Button {
                             formatSelected = String("&fromat=" + (format))
+                            hapticFeedback()
                         } label: {
                             Text(format)
                                 .foregroundStyle(.orange)
                         }
                         .buttonStyle(.borderless)
-                        .onTapGesture {
-                            hapticFeedback()
-                        }
                     }
                 }
             }
