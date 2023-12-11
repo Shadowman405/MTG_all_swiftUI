@@ -114,26 +114,16 @@ struct AdvancedSearchView: View {
         })
         .onAppear {
             Task{
-                if vm.fileteredSetsData.isEmpty {
-                    await vm.fetchSets()
-                    sets = vm.fileteredSetsData
-                }
-                if vm.fileteredSubtypesData.subtypes.isEmpty {
-                    await vm.fetchSubtypes()
-                    subtypes = vm.fileteredSubtypesData
-                }
-                if vm.fileteredTypesData.types.isEmpty {
-                    await vm.fetchTypes()
-                    types = vm.fileteredTypesData
-                }
-                if vm.fileteredSupertypesData.supertypes.isEmpty {
-                    await vm.fetchSupertypes()
-                    supertypes = vm.fileteredSupertypesData
-                }
-                if vm.fileteredFormatsData.formats.isEmpty {
-                    await vm.fetchFormats()
-                    formats = vm.fileteredFormatsData
-                }
+                await vm.fetchSets()
+                sets = vm.fileteredSetsData
+                await vm.fetchSubtypes()
+                subtypes = vm.fileteredSubtypesData
+                await vm.fetchTypes()
+                types = vm.fileteredTypesData
+                await vm.fetchSupertypes()
+                supertypes = vm.fileteredSupertypesData
+                await vm.fetchFormats()
+                formats = vm.fileteredFormatsData
             }
         }
         .navigationTitle("Advanced Search")
