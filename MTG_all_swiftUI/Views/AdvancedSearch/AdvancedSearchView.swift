@@ -16,8 +16,6 @@ struct AdvancedSearchView: View {
     @State private var formats = FormatsMTG(formats: [String]())
     @State private var searchText = ""
     @State private var selectedElement = "Set"
-    @State private var requestProgress = true
-    var searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     //
     @Binding var searhUrlString: String
     @State private var setSelected = ""
@@ -30,7 +28,7 @@ struct AdvancedSearchView: View {
     var body: some View {
         VStack {
             Picker("Category", selection: $selectedElement) {
-                ForEach(searchSegments, id: \.self) {
+                ForEach(vm.searchSegments, id: \.self) {
                     Text($0)
                 }
             }
@@ -116,16 +114,26 @@ struct AdvancedSearchView: View {
         })
         .onAppear {
             Task{
-                await vm.fetchSets()
-                sets = vm.fileteredSetsData
-                await vm.fetchSubtypes()
-                subtypes = vm.fileteredSubtypesData
-                await vm.fetchTypes()
-                types = vm.fileteredTypesData
-                await vm.fetchSupertypes()
-                supertypes = vm.fileteredSupertypesData
-                await vm.fetchFormats()
-                formats = vm.fileteredFormatsData
+                if vm.fileteredSetsData.isEmpty {
+                    await vm.fetchSets()
+                    sets = vm.fileteredSetsData
+                }
+                if vm.fileteredSubtypesData.subtypes.isEmpty {
+                    await vm.fetchSubtypes()
+                    subtypes = vm.fileteredSubtypesData
+                }
+                if vm.fileteredTypesData.types.isEmpty {
+                    await vm.fetchTypes()
+                    types = vm.fileteredTypesData
+                }
+                if vm.fileteredSupertypesData.supertypes.isEmpty {
+                    await vm.fetchSupertypes()
+                    supertypes = vm.fileteredSupertypesData
+                }
+                if vm.fileteredFormatsData.formats.isEmpty {
+                    await vm.fetchFormats()
+                    formats = vm.fileteredFormatsData
+                }
             }
         }
         .navigationTitle("Advanced Search")

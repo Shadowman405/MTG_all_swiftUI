@@ -54,6 +54,7 @@ class CardViewModel: ObservableObject {
     let typesUrl = "https://api.magicthegathering.io/v1/types"
     let supertypesUrl = "https://api.magicthegathering.io/v1/supertypes"
     let formatsUrl = "https://api.magicthegathering.io/v1/formats"
+    let searchSegments = ["Set","Subtypes","Types","Supertypes","Formats"]
     
     var cardData = [Card]()
     var setsData = [SetMTG]()
