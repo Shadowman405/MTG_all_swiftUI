@@ -16,18 +16,6 @@ struct CollectionsView: View {
     @State private var collectionName = ""
     
     var body: some View {
-//        List(vm.collectionData) { collection in
-//            NavigationLink {
-//                CardsInCollectionView(collectionName: collection.name)
-//            } label: {
-//                HStack {
-//                    Text(collection.name)
-//                        .font(.custom(
-//                                "AmericanTypewriter",
-//                                fixedSize: 16))
-//                        .foregroundColor(.orange)
-//                }
-//            }
         List{
             ForEach(vm.collectionData) { collection in
                 NavigationLink {
@@ -58,7 +46,7 @@ struct CollectionsView: View {
                 .alert(Text("Add New Collection"), isPresented: $showAlert) {
                     TextField("Collection name",text: $collectionName)
                         .textInputAutocapitalization(.never)
-                    Button("Save"){saveCollection()}
+                    Button("Save"){vm.saveCollection(collectionName: collectionName)}
                     Button("Cancel", role: .cancel) {}
                 }
             }
@@ -67,18 +55,6 @@ struct CollectionsView: View {
         .onAppear(perform: {
             vm.fetchCollectionFromDB()
         })
-    }
-    
-    private func saveCollection() {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
-        let uniqueID = "\(uid)\(self.collectionName)"
-        let collectionData = ["name": collectionName]
-        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).setData(collectionData) { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-            }
     }
     
     func delete(at offsets: IndexSet) {

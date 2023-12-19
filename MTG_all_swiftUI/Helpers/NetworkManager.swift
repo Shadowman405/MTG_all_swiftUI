@@ -292,6 +292,19 @@ class CardViewModel: ObservableObject {
         }
     }
     
+    //Save collection
+    func saveCollection(collectionName: String) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let uniqueID = "\(uid)\(collectionName)"
+        let collectionData = ["name": collectionName]
+        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).setData(collectionData) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+            }
+    }
+    
     //Delete collection
     func deleteCollection(collectionName: String) {
         returnSubCollectionCard(colName: collectionName)
