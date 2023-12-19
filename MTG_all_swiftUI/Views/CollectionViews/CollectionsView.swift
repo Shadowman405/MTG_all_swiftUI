@@ -16,18 +16,35 @@ struct CollectionsView: View {
     @State private var collectionName = ""
     
     var body: some View {
-        List(vm.collectionData) { collection in
-            NavigationLink {
-                CardsInCollectionView(collectionName: collection.name)
-            } label: {
-                HStack {
-                    Text(collection.name)
-                        .font(.custom(
-                                "AmericanTypewriter",
-                                fixedSize: 16))
-                        .foregroundColor(.orange)
+//        List(vm.collectionData) { collection in
+//            NavigationLink {
+//                CardsInCollectionView(collectionName: collection.name)
+//            } label: {
+//                HStack {
+//                    Text(collection.name)
+//                        .font(.custom(
+//                                "AmericanTypewriter",
+//                                fixedSize: 16))
+//                        .foregroundColor(.orange)
+//                }
+//            }
+        List{
+            ForEach(vm.collectionData) { collection in
+                NavigationLink {
+                    CardsInCollectionView(collectionName: collection.name)
+                } label: {
+                    HStack {
+                        Text(collection.name)
+                            .font(.custom(
+                                    "AmericanTypewriter",
+                                    fixedSize: 16))
+                            .foregroundColor(.orange)
+                    }
                 }
             }
+            .onDelete(perform: { indexSet in
+                
+            })
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
