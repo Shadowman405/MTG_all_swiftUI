@@ -43,7 +43,7 @@ struct CollectionsView: View {
                 }
             }
             .onDelete(perform: { indexSet in
-                
+                delete(at: indexSet)
             })
         }
         .toolbar {
@@ -79,6 +79,11 @@ struct CollectionsView: View {
                     return
                 }
             }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        let collection = vm.collectionData[offsets.first!]
+        vm.deleteCollection(collectionName: collection.name)
     }
 }
 
