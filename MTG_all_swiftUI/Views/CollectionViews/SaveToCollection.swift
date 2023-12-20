@@ -24,11 +24,8 @@ struct SaveToCollection: View {
                         let impactMed = UIImpactFeedbackGenerator(style: .heavy)
                         impactMed.impactOccurred()
                         
-                        
-                        vm.addCardToCollection(selectedCollection: collection.name, cardName: card.name ?? "", cardMana: card.manaCost ?? "", cardCMC: card.cmc ?? 1, cardColors: card.colors ?? [""], cardColorIdent: card.colorIdentity
-                                               ?? [""], cardType: card.type ?? "", cardTypes: card.types ?? [""], cardSubtypes: card.subtypes ?? [""], cardRarity: card.rarity ?? "", cardSetCode: card.setCode ?? "", cardSetName: card.setName ?? "", cardText: card.text ?? "", cardFlavor: card.flavor ?? "", cardArtist: card.artist ?? "", cardNumber: card.number ?? "", cardPower: card.power ?? "", cardTough: card.toughness ?? "", cardLayout: card.layout ?? "", cardMulti: card.multiverseid ?? "", cardImgUrl: card.imageURL ?? "", cardPrintings: card.printings ?? [""], cardOriginTxt: card.originalText ?? "", cardOriginType: card.originalType ?? "", cardId: card.id ?? "", cardUUID: card.uuid ?? "\(UUID())")
+                        saveToCollection(collection: collection, card: card)
                     }, label: {
-                        //Text("Save")
                         Image(systemName: "plus.circle")
                             .foregroundColor(.green)
                     })
@@ -38,6 +35,11 @@ struct SaveToCollection: View {
         .onAppear(perform: {
             vm.fetchCollectionFromDB()
         })
+    }
+    
+    func saveToCollection(collection: Collection, card: Card) {
+        vm.addCardToCollection(selectedCollection: collection.name, cardName: card.name ?? "", cardMana: card.manaCost ?? "", cardCMC: card.cmc ?? 1, cardColors: card.colors ?? [""], cardColorIdent: card.colorIdentity
+                               ?? [""], cardType: card.type ?? "", cardTypes: card.types ?? [""], cardSubtypes: card.subtypes ?? [""], cardRarity: card.rarity ?? "", cardSetCode: card.setCode ?? "", cardSetName: card.setName ?? "", cardText: card.text ?? "", cardFlavor: card.flavor ?? "", cardArtist: card.artist ?? "", cardNumber: card.number ?? "", cardPower: card.power ?? "", cardTough: card.toughness ?? "", cardLayout: card.layout ?? "", cardMulti: card.multiverseid ?? "", cardImgUrl: card.imageURL ?? "", cardPrintings: card.printings ?? [""], cardOriginTxt: card.originalText ?? "", cardOriginType: card.originalType ?? "", cardId: card.id ?? "", cardUUID: card.uuid ?? "\(UUID())")
     }
 }
 
