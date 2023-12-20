@@ -15,14 +15,51 @@ struct CardsInCollectionView: View {
     
     
     var body: some View {
-        ZStack {
-            if onEdit {
-                onEditTrue
-            } else {
-                onEditFalse
+//        ZStack {
+//            if onEdit {
+//                onEditTrue
+//            } else {
+//                onEditFalse
+//            }
+//        }
+//        .animation(.easeInOut)
+        List{
+            ForEach(groupByName(vm.cardsTestSubColl), id: \.0){ pair in
+                Section(header: Text(pair.0 ?? "")) {
+                    ForEach(pair.1) { card in
+                        NavigationLink {
+                            CardDetails(showButtons: false ,card: card)
+                        } label: {
+                            Text(card.name ?? "")
+                                .font(.custom(
+                                        "AmericanTypewriter",
+                                        fixedSize: 16))
+                                .foregroundColor(.orange)
+                        }
+
+                    }
+                }
             }
         }
-        .animation(.easeInOut)
+        //.transition(.slide)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    withAnimation {
+                        onEdit.toggle()
+                    }
+                } label: {
+                    Label("Edit", systemImage: "slider.horizontal.3")
+                        .foregroundColor(.orange)
+                }
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Cards in collection - \(vm.cardsTestSubColl.count)")
+        .listStyle(.sidebar)
+        .onAppear{
+            vm.returnSubCollectionCard(colName: collectionName)
+        }
     }
     
     var onEditFalse: some View {
