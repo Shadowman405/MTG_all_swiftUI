@@ -15,54 +15,14 @@ struct CardsInCollectionView: View {
     
     
     var body: some View {
-//        ZStack {
-//            if onEdit {
-//                onEditTrue
-//            } else {
-//                onEditFalse
-//            }
-//        }
-//        .animation(.easeInOut)
-        List{
-            ForEach(groupByName(vm.cardsTestSubColl), id: \.0){ pair in
-                Section(header: Text(pair.0 ?? "")) {
-                    ForEach(pair.1) { card in
-                        NavigationLink {
-                            CardDetails(showButtons: false ,card: card)
-                        } label: {
-                            Text(card.name ?? "")
-                                .font(.custom(
-                                        "AmericanTypewriter",
-                                        fixedSize: 16))
-                                .foregroundColor(.orange)
-                        }
-
-                    }
-                }
-            }
-            .onDelete(perform: { indexSet in
-                delete(at: indexSet)
-            })
-        }
-        //.transition(.slide)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    withAnimation {
-                        onEdit.toggle()
-                    }
-                } label: {
-                    Label("Edit", systemImage: "slider.horizontal.3")
-                        .foregroundColor(.orange)
-                }
+        ZStack {
+            if onEdit {
+                onEditTrue
+            } else {
+                onEditFalse
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Cards in collection - \(vm.cardsTestSubColl.count)")
-        .listStyle(.sidebar)
-        .onAppear{
-            vm.returnSubCollectionCard(colName: collectionName)
-        }
+        .animation(.easeInOut)
     }
     
     var onEditFalse: some View {
@@ -153,11 +113,7 @@ struct CardsInCollectionView: View {
         .onAppear{
             vm.returnSubCollectionCard(colName: collectionName)
         }
-    }
-    
-    func delete(at offsets: IndexSet) {
-        let collection = vm.cardsTestSubColl[offsets.first!]
-        vm.deleteFromCollection(collectionName: collectionName, cardUUID: collection.uuid ?? "")
+
     }
     
     private func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
