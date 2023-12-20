@@ -40,6 +40,9 @@ struct CardsInCollectionView: View {
                     }
                 }
             }
+            .onDelete(perform: { indexSet in
+                delete(at: indexSet)
+            })
         }
         //.transition(.slide)
         .toolbar {
@@ -150,6 +153,11 @@ struct CardsInCollectionView: View {
         .onAppear{
             vm.returnSubCollectionCard(colName: collectionName)
         }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        let collection = vm.cardsTestSubColl[offsets.first!]
+        vm.deleteFromCollection(collectionName: collectionName, cardUUID: collection.uuid ?? "")
     }
     
     private func groupByName(_ cards: [Card]) -> [(String?, [Card])]{
