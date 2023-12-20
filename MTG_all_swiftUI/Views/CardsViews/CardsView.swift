@@ -61,12 +61,12 @@ struct CardsView: View {
         })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-//                NavigationLink {
-//                    AdvancedSearchView(searhUrlString: $mainUrl)
-//                } label: {
-//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-//                        .foregroundColor(.orange)
-//                }
+                NavigationLink {
+                    AdvancedSearchView(searhUrlString: $mainUrl)
+                } label: {
+                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                        .foregroundColor(.orange)
+                }
                 Button  {
                     showAdvancedSearch.toggle()
                     print(mainUrl)
@@ -74,9 +74,9 @@ struct CardsView: View {
                     Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
                         .foregroundColor(.orange)
                 }
-                .sheet(isPresented: $showAdvancedSearch, content: {
-                    AdvancedSearchView(searhUrlString: $mainUrl)
-                })
+//                .sheet(isPresented: $showAdvancedSearch, content: {
+//                    AdvancedSearchView(searhUrlString: $mainUrl)
+//                })
             }
     }
     }
