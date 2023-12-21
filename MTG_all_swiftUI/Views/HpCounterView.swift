@@ -26,6 +26,7 @@ struct HpCounterView: View {
                 ZStack {
                     HStack {
                         Button {
+                            touchFeedback()
                             playerOneHP -= 1
                         } label: {
                             Text("-")
@@ -45,6 +46,7 @@ struct HpCounterView: View {
                         
                         
                         Button {
+                            touchFeedback()
                             playerOneHP += 1
                         } label: {
                             Text("+")
@@ -86,7 +88,7 @@ struct HpCounterView: View {
                     
                     ZStack {
                         Button {
-                            print("HP")
+                            touchFeedback()
                             showView.toggle()
                         } label: {
                             Image("{B}")
@@ -106,6 +108,7 @@ struct HpCounterView: View {
                     
                     HStack {
                         Button {
+                            touchFeedback()
                             playerTwoHP -= 1
                         } label: {
                             Text("-")
@@ -124,6 +127,7 @@ struct HpCounterView: View {
                         
                         
                         Button {
+                            touchFeedback()
                             playerTwoHP += 1
                         } label: {
                             Text("+")
@@ -150,6 +154,11 @@ struct HpCounterView: View {
                 }
             } 
     }
+    }
+    
+    private func touchFeedback() {
+        let impactMed = UIImpactFeedbackGenerator(style: .heavy)
+        impactMed.impactOccurred()
     }
 }
 
