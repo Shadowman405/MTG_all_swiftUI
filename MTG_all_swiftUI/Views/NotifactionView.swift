@@ -16,6 +16,10 @@ struct NotifactionView: View {
             RoundedRectangle(cornerRadius: 20)
                 .frame(height: 70)
                 .foregroundStyle(.black)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(.green, lineWidth: 3)
+                }
             
             Text("\(cardName) added to \(collectionName) collection")
                 .foregroundStyle(.green)
