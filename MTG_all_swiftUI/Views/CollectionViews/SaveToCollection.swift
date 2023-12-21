@@ -40,6 +40,7 @@ struct SaveToCollection: View {
             .onAppear(perform: {
                 vm.fetchCollectionFromDB()
         })
+            Spacer ()
             
             if showNotification {
                 NotifactionView(cardName: card.name ?? "", collectionName: collectionName)

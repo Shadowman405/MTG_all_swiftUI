@@ -15,6 +15,7 @@ struct NotifactionView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .frame(height: 70)
+                .foregroundStyle(.black)
             
             Text("\(cardName) added to \(collectionName) collection")
                 .foregroundStyle(.green)
