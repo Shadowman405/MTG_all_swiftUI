@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct NotifactionView: View {
-    var cardName = ""
-    var collectionName = ""
+    var cardName = "Szarekh"
+    var collectionName = "W40k"
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(height: 40)
+                .frame(height: 70)
             
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.orange)
+            Text("\(cardName) added to \(collectionName) collection")
+                .foregroundStyle(.green)
         }
         .padding()
     }
