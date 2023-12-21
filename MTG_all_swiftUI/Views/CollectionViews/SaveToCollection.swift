@@ -28,6 +28,7 @@ struct SaveToCollection: View {
                             
                             saveToCollection(collection: collection, card: card)
                            
+                            collectionName = collection.name
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                                 showNotification.toggle()
                             }
