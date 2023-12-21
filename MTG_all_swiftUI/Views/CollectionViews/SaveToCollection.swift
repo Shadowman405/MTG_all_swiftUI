@@ -27,9 +27,11 @@ struct SaveToCollection: View {
                             impactMed.impactOccurred()
                             
                             saveToCollection(collection: collection, card: card)
-                            withAnimation {
+                           
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                 showNotification.toggle()
                             }
+                            showNotification.toggle()
                         }, label: {
                             Image(systemName: "plus.circle")
                                 .foregroundColor(.green)
