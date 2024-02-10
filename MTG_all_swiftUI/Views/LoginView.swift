@@ -46,7 +46,7 @@ struct LoginView: View {
                         TextField("", text: $email, prompt: Text("Email...")
                             .foregroundColor(.orange.opacity(0.4)))
                         .textFieldStyle(.plain)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
                         
                         Divider()
                             .foregroundColor(.gray)
@@ -56,10 +56,10 @@ struct LoginView: View {
                             .foregroundColor(.white)
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                         
-                        TextField("", text: $password, prompt: Text("Password...")
+                        SecureField("", text: $password, prompt: Text("Password...")
                             .foregroundColor(.orange.opacity(0.4)))
                         .textFieldStyle(.plain)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
                         
                         Divider()
                             .foregroundColor(.gray)
