@@ -9,7 +9,8 @@ import SwiftUI
 import Firebase
 
 struct LoginView: View {
-    @State var logedIn: Bool = false
+    @State var logedIn = false
+    @State var toRegister = false
     @State private var email = ""
     @State private var password = ""
     //@State private var isLogedIn = false
@@ -68,9 +69,9 @@ struct LoginView: View {
                     
                     VStack {
                         Button {
-                            register()
+                            login()
                         } label: {
-                            Text("Sign Up")
+                            Text("Log-in")
                                 .bold()
                                 .frame(width: 300, height: 40)
                                 .background(
@@ -81,7 +82,7 @@ struct LoginView: View {
                         }
                         
                         Button {
-                            login()
+                            toRegister.toggle()
                         } label: {
                             Text("Already have an account? Login")
                         }

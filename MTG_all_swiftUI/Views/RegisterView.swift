@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct RegisterView: View {
     @State private var email = ""
@@ -40,7 +41,7 @@ struct RegisterView: View {
                 .padding()
                 
                 Button {
-                    print("beep")
+                    register()
                 } label: {
                     Text("Sign Up")
                         .bold()
@@ -54,7 +55,16 @@ struct RegisterView: View {
             }
         }
     }
+    
+    func register() {
+        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print(error?.localizedDescription ?? "Error reg")
+            }
+        }
+    }
 }
+
 
 #Preview {
     RegisterView()
