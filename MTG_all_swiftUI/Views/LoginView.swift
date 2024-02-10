@@ -84,7 +84,7 @@ struct LoginView: View {
                         Button {
                             toRegister.toggle()
                         } label: {
-                            Text("Already have an account? Login")
+                            Text("New user ?   Register here.")
                         }
                         .offset(y: 10)
                     }
