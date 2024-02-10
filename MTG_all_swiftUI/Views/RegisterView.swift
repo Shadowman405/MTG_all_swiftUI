@@ -34,11 +34,15 @@ struct RegisterView: View {
                     .foregroundColor(.white)
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                 
-                TextField("", text: $password, prompt: Text("Enter Password...")
+//                TextField("", text: $password, prompt: Text("Enter Password...")
+//                    .foregroundColor(.orange.opacity(0.4)))
+//                .textFieldStyle(.plain)
+//                .foregroundColor(.blue)
+//                .padding()
+                SecureField("Password", text: $password,prompt: Text("Enter Password...")
                     .foregroundColor(.orange.opacity(0.4)))
-                .textFieldStyle(.plain)
-                .foregroundColor(.blue)
-                .padding()
+                    .textFieldStyle(.plain)
+                    .padding()
                 
                 Button {
                     register()
