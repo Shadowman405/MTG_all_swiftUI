@@ -46,6 +46,7 @@ struct LoginView: View {
                         TextField("", text: $email, prompt: Text("Email...")
                             .foregroundColor(.orange.opacity(0.4)))
                         .textFieldStyle(.plain)
+                        .keyboardType(.emailAddress)
                         .foregroundColor(.white)
                         
                         Divider()

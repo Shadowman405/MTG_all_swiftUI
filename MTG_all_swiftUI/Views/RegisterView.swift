@@ -25,6 +25,7 @@ struct RegisterView: View {
                 TextField("", text: $email, prompt: Text("Enter Email...")
                     .foregroundColor(.orange.opacity(0.4)))
                 .textFieldStyle(.plain)
+                .keyboardType(.emailAddress)
                 .foregroundColor(.white)
                 .padding()
                 
