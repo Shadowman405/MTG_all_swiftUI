@@ -98,14 +98,9 @@ struct LoginView: View {
                 }
             }
         }
-    }
-    
-    func register() {
-        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { result, error in
-            if error != nil {
-                print(error?.localizedDescription ?? "Error reg")
-            }
-        }
+        .sheet(isPresented: $toRegister, content: {
+            RegisterView()
+        })
     }
     
     func login() {
