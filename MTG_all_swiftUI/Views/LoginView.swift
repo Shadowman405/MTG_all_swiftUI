@@ -83,7 +83,9 @@ struct LoginView: View {
                         }
                         .alert("Wrong credentials", isPresented: $showNotification) {
                             Button("Ok") {}
-                        } 
+                        } message: {
+                            Text("Wrong email or password, please check your login credentials. ")
+                        }
                         
                         Button {
                             toRegister.toggle()
