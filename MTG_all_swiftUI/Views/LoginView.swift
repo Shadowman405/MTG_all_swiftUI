@@ -13,7 +13,7 @@ struct LoginView: View {
     @State var toRegister = false
     @State private var email = ""
     @State private var password = ""
-    //@State private var isLogedIn = false
+    @State private var showNotification = false
     
     var body: some View {
         if logedIn {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SaveToCollection: View {
-    //@State private var collections: [Collection] = []
+    //@State private var collections: [Collection] = [] 
     @State private var showAlert = false
     @State private var showNotification = false
     @ObservedObject private var vm = CardViewModel()
