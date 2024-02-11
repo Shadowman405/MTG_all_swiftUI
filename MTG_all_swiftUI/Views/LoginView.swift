@@ -11,13 +11,13 @@ import Firebase
 struct LoginView: View {
     @State var logedIn = false
     @State var toRegister = false
+    @State private var showNotification = false
     @State private var email = ""
     @State private var password = ""
-    @State private var showNotification = false
+    @State private var errorDescription = ""
     
     var body: some View {
         if logedIn {
-           // ContentView()
             ContentView(logedIn: $logedIn)
         } else {
             content
@@ -84,7 +84,8 @@ struct LoginView: View {
                         .alert("Wrong credentials", isPresented: $showNotification) {
                             Button("Ok") {}
                         } message: {
-                            Text("Wrong email or password, please check your login credentials. ")
+//                            Text("Wrong email or password, please check your login credentials. ")
+                            Text(errorDescription)
                         }
                         
                         Button {
@@ -112,8 +113,9 @@ struct LoginView: View {
     func login() {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                print(error?.localizedDescription ?? "Error log")
+//                print(error?.localizedDescription ?? "Error log")
                 showNotification.toggle()
+                errorDescription = error?.localizedDescription ?? ""
             }else {
                 logedIn = true
             }
