@@ -69,24 +69,43 @@ struct LoginView: View {
                     .padding()
                     
                     VStack {
-                        Button {
-                            login()
-                        } label: {
-                            Text("Log-in")
-                                .bold()
-                                .frame(width: 300, height: 40)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .fill(LinearGradient(colors: [.brown, .orange], startPoint: .top, endPoint: .bottomTrailing))
-                                )
-                                .foregroundColor(.white)
-                        }
-                        .disabled(email.isEmpty)
-                        .alert("Wrong credentials", isPresented: $showNotification) {
-                            Button("Ok") {}
-                        } message: {
-//                            Text("Wrong email or password, please check your login credentials. ")
-                            Text(errorDescription)
+                        if email.isEmpty {
+                            Button {
+                                login()
+                            } label: {
+                                Text("Log-in")
+                                    .bold()
+                                    .frame(width: 300, height: 40)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .fill(LinearGradient(colors: [.gray, .white], startPoint: .top, endPoint: .bottomTrailing))
+                                    )
+                                    .foregroundColor(.black)
+                            }
+                            .disabled(email.isEmpty)
+                            .alert("Wrong credentials", isPresented: $showNotification) {
+                                Button("Ok") {}
+                            } message: {
+                                Text(errorDescription)
+                            }
+                        } else {
+                            Button {
+                                login()
+                            } label: {
+                                Text("Log-in")
+                                    .bold()
+                                    .frame(width: 300, height: 40)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .fill(LinearGradient(colors: [.brown, .orange], startPoint: .top, endPoint: .bottomTrailing))
+                                    )
+                                    .foregroundColor(.white)
+                            }
+                            .alert("Wrong credentials", isPresented: $showNotification) {
+                                Button("Ok") {}
+                            } message: {
+                                Text(errorDescription)
+                            }
                         }
                         
                         Button {
