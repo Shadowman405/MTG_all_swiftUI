@@ -81,6 +81,9 @@ struct LoginView: View {
                                 )
                                 .foregroundColor(.white)
                         }
+                        .alert("Wrong credentials", isPresented: $showNotification) {
+                            Button("Ok") {}
+                        } 
                         
                         Button {
                             toRegister.toggle()
@@ -108,6 +111,7 @@ struct LoginView: View {
         FirebaseManager.shared.auth.signIn(withEmail: email, password: password) { result, error in
             if error != nil {
                 print(error?.localizedDescription ?? "Error log")
+                showNotification.toggle()
             }else {
                 logedIn = true
             }
