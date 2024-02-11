@@ -81,6 +81,7 @@ struct LoginView: View {
                                 )
                                 .foregroundColor(.white)
                         }
+                        .disabled(email.isEmpty)
                         .alert("Wrong credentials", isPresented: $showNotification) {
                             Button("Ok") {}
                         } message: {
