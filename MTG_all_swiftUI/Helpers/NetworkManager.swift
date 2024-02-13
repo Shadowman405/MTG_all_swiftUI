@@ -155,7 +155,7 @@ class CardViewModel: ObservableObject {
             "id": cardId,
             "uuid": cardUUID
         ] as [String : Any]
-        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).setData(cardData) { error in
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).setData(cardData) { error in
             if let error = error {
                 print(error.localizedDescription)
                 return
