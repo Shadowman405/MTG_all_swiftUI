@@ -203,7 +203,7 @@ class CardViewModel: ObservableObject {
     
     func subCollectionCard(colName: String) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
-        FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -254,7 +254,7 @@ class CardViewModel: ObservableObject {
     func returnSubCollectionCard(colName: String){
         cardsTestSubColl = []
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        FirebaseManager.shared.firestore.collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -304,7 +304,7 @@ class CardViewModel: ObservableObject {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
         let uniqueID = "\(uid)\(collectionName)"
         let collectionData = ["name": collectionName]
-        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).setData(collectionData) { error in
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document(uniqueID).setData(collectionData) { error in
                 if let error = error {
                     print(error.localizedDescription)
                     return
@@ -317,7 +317,7 @@ class CardViewModel: ObservableObject {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
         let uniqueCollection = "\(uid)\(collectionName)"
         
-        FirebaseManager.shared.firestore.collection("Collections").document(uniqueCollection).delete()
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document(uniqueCollection).delete()
     }
     //MARK: - Deleting Card
     func deleteFromCollection(collectionName: String, cardUUID: String) {
@@ -326,7 +326,7 @@ class CardViewModel: ObservableObject {
         let uniqueID = "\(uid)\(collectionName)"
         let uniqueCard = "\(uid)$\(cardUUID)"
         
-        FirebaseManager.shared.firestore.collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).delete()
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document(uniqueID).collection("Cards").document(uniqueCard).delete()
         returnSubCollectionCard(colName: collectionName)
         print("Deleted - \(uniqueCard)")
     }
