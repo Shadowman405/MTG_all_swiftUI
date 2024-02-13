@@ -171,7 +171,12 @@ class CardViewModel: ObservableObject {
     
     func fetchCollectionFromDB() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
-        FirebaseManager.shared.firestore.collection("Collections").addSnapshotListener { snapshot, error in
+//        FirebaseManager.shared.firestore.collection("Collections").addSnapshotListener { snapshot, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").addSnapshotListener { snapshot, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
