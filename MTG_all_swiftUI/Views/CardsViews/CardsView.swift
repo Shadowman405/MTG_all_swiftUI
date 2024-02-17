@@ -15,6 +15,8 @@ struct CardsView: View {
 //    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards?&set=30A&name="
     @State private var showAdvancedSearch = false
     @State private var requestProgress = true
+    
+    @State private var startAppToggle = true
     private var startAppUrl = "https://api.magicthegathering.io/v1/cards"
     let columns = [GridItem(.flexible())]
     
@@ -46,11 +48,20 @@ struct CardsView: View {
         }
         .onAppear {
                 Task{
-                    vm.fileteredCardData = []
-//                    await vm.fetchCards(with: mainUrl)
-                    await vm.fetchCards(with: startAppUrl)
-                    cards = vm.fileteredCardData
-                    print(mainUrl)
+                    if startAppToggle {
+                        vm.fileteredCardData = []
+    //                    await vm.fetchCards(with: mainUrl)
+                        await vm.fetchCards(with: startAppUrl)
+                        cards = vm.fileteredCardData
+                        startAppToggle = false
+                        print(mainUrl)
+                    } else {
+                        vm.fileteredCardData = []
+                        await vm.fetchCards(with: mainUrl)
+//                        await vm.fetchCards(with: startAppUrl)
+                        cards = vm.fileteredCardData
+                        print(mainUrl)
+                    }
                 }
         }
         .onChange(of: mainUrl, perform: { value in
