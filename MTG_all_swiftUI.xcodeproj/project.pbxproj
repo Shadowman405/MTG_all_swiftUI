@@ -74,7 +74,7 @@
 /* Begin PBXFileReference section */
 		BF026FB12B176A07007C6C20 /* AnimatedCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCircleView.swift; sourceTree = "<group>"; };
 		BF026FB32B18AF5E007C6C20 /* ColorChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooseView.swift; sourceTree = "<group>"; };
-		BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MTG-all-swiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MTG-all-swiftUI-Info.plist"; path = "MTG_all_swiftUI/MTG-all-swiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BF4303FF2B0CDFFC00677D24 /* SaveToCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToCollection.swift; sourceTree = "<group>"; };
 		BF6CB36E2B3464B80082F1B2 /* NotifactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifactionView.swift; sourceTree = "<group>"; };
 		BF842E0F2B77C24900D38D11 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -229,10 +229,10 @@
 			children = (
 				BF8E95EB2B80EAB40092CD6D /* HPView */,
 				BFC344D12B038BE700CBAF1D /* Views */,
-				BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */,
 				BFC82E962B01471C00B23006 /* Helpers */,
 				BFE66B2E2B013CAC00EC9AAB /* Model */,
 				BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */,
+				BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */,
 				BFE66B082B013C4600EC9AAB /* Assets.xcassets */,
 				BFC344F12B04EAC400CBAF1D /* GoogleService-Info.plist */,
 				BFE66B0A2B013C4600EC9AAB /* Preview Content */,
