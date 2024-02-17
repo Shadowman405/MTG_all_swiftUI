@@ -96,8 +96,9 @@ class CardViewModel: ObservableObject {
         }
     }
     
-    func fetchCardsSearch(searchString: String) async {
-        var cardsUrlSearch = "https://api.magicthegathering.io/v1/cards?&name=" + searchString
+    func fetchCardsSearch(mainUrl: String,searchString: String) async {
+//        var cardsUrlSearch = "https://api.magicthegathering.io/v1/cards?&name=" + searchString
+        var cardsUrlSearch = mainUrl + searchString
         guard let downloadCard: CardsMTG = await WebService().downloadData(fromURL: cardsUrlSearch) else { return }
         cardData = downloadCard.cards
         

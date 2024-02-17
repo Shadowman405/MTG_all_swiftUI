@@ -11,7 +11,7 @@ struct CardsView: View {
     @StateObject var vm = CardViewModel()
     @State private var cards: [Card] = []
     @State private var searchText = ""
-    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards"
+    @State private var mainUrl = ""
 //    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards?&set=30A&name="
     @State private var showAdvancedSearch = false
     @State private var requestProgress = true
@@ -38,7 +38,7 @@ struct CardsView: View {
             Task {
                 requestProgress = false
                 vm.fileteredCardData = []
-                await vm.fetchCardsSearch(searchString: value)
+                await vm.fetchCardsSearch(mainUrl: mainUrl ,searchString: value)
                 cards = vm.fileteredCardData
                 requestProgress = true
             }
