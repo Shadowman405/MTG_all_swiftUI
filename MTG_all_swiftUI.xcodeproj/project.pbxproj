@@ -148,12 +148,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF8E95EB2B80EAB40092CD6D /* HPView */ = {
+			isa = PBXGroup;
+			children = (
+				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
+			);
+			path = HPView;
+			sourceTree = "<group>";
+		};
 		BFC344D12B038BE700CBAF1D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BFC344F32B04EAE700CBAF1D /* LoginView.swift */,
 				BFE66B062B013C4400EC9AAB /* ContentView.swift */,
-				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
 				BF842E0F2B77C24900D38D11 /* RegisterView.swift */,
 				BFF7B9032B1DF11600A36A94 /* AdvancedSearch */,
 				BFC345002B06362200CBAF1D /* CollectionViews */,
@@ -220,6 +227,7 @@
 		BFE66B032B013C4400EC9AAB /* MTG_all_swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BF8E95EB2B80EAB40092CD6D /* HPView */,
 				BFC344D12B038BE700CBAF1D /* Views */,
 				BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */,
 				BFC82E962B01471C00B23006 /* Helpers */,
