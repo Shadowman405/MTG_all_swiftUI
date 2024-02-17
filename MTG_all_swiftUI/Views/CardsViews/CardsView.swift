@@ -15,6 +15,7 @@ struct CardsView: View {
 //    @State private var mainUrl = "https://api.magicthegathering.io/v1/cards?&set=30A&name="
     @State private var showAdvancedSearch = false
     @State private var requestProgress = true
+    private var startAppUrl = "https://api.magicthegathering.io/v1/cards"
     let columns = [GridItem(.flexible())]
     
     var body: some View {
@@ -46,7 +47,8 @@ struct CardsView: View {
         .onAppear {
                 Task{
                     vm.fileteredCardData = []
-                    await vm.fetchCards(with: mainUrl)
+//                    await vm.fetchCards(with: mainUrl)
+                    await vm.fetchCards(with: startAppUrl)
                     cards = vm.fileteredCardData
                     print(mainUrl)
                 }
