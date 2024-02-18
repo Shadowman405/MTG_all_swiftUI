@@ -13,7 +13,7 @@ struct HpCounterView: View {
     @State private var playerTwoHP = 20
     
     @State private var showView = false
-    @State private var playerOneColor = "{W}"
+    @State private var playerOneColor = "{W}" 
     @State private var playerTwoColor = "{G}"
     
     var body: some View {
