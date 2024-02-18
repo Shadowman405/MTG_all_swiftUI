@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF026FB22B176A07007C6C20 /* AnimatedCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF026FB12B176A07007C6C20 /* AnimatedCircleView.swift */; };
 		BF026FB42B18AF5E007C6C20 /* ColorChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF026FB32B18AF5E007C6C20 /* ColorChooseView.swift */; };
+		BF11C1A22B825B5000021E18 /* HPsubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF11C1A12B825B5000021E18 /* HPsubview.swift */; };
 		BF4304002B0CDFFC00677D24 /* SaveToCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4303FF2B0CDFFC00677D24 /* SaveToCollection.swift */; };
 		BF6CB36F2B3464B80082F1B2 /* NotifactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6CB36E2B3464B80082F1B2 /* NotifactionView.swift */; };
 		BF842E102B77C24900D38D11 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF842E0F2B77C24900D38D11 /* RegisterView.swift */; };
@@ -75,6 +76,7 @@
 		BF026FB12B176A07007C6C20 /* AnimatedCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCircleView.swift; sourceTree = "<group>"; };
 		BF026FB32B18AF5E007C6C20 /* ColorChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorChooseView.swift; sourceTree = "<group>"; };
 		BF1109242B025AF8009158BE /* MTG-all-swiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MTG-all-swiftUI-Info.plist"; path = "MTG_all_swiftUI/MTG-all-swiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BF11C1A12B825B5000021E18 /* HPsubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPsubview.swift; sourceTree = "<group>"; };
 		BF4303FF2B0CDFFC00677D24 /* SaveToCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToCollection.swift; sourceTree = "<group>"; };
 		BF6CB36E2B3464B80082F1B2 /* NotifactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifactionView.swift; sourceTree = "<group>"; };
 		BF842E0F2B77C24900D38D11 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
+				BF11C1A12B825B5000021E18 /* HPsubview.swift */,
 			);
 			path = HPView;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				BFC344D92B03905E00CBAF1D /* CardsInCollectionView.swift in Sources */,
 				BFF7B90D2B1F49C400A36A94 /* Formats.swift in Sources */,
 				BFD260E22B077AE200F1BE40 /* CardManaCostView.swift in Sources */,
+				BF11C1A22B825B5000021E18 /* HPsubview.swift in Sources */,
 				BFC344F42B04EAE700CBAF1D /* LoginView.swift in Sources */,
 				BF6CB36F2B3464B80082F1B2 /* NotifactionView.swift in Sources */,
 				BFC2C97F2B02119400B5A2C1 /* CardDetails.swift in Sources */,
