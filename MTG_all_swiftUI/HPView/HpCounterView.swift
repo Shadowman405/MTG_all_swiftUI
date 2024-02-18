@@ -59,7 +59,7 @@ struct HpCounterView: View {
                     
                     HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
                 }
-                .ignoresSafeArea()
+               // .ignoresSafeArea()
                 
                 ZStack {
                     Color(.black)
@@ -104,9 +104,9 @@ struct HpCounterView: View {
                 }
                 
                 ZStack {
-                    Rectangle()
-                        .overlay(.black)
-                        .ignoresSafeArea()
+//                    Rectangle()
+//                        .overlay(.black)
+//                        .ignoresSafeArea()
                     
 //                    HStack {
 //                        Button {
@@ -141,7 +141,7 @@ struct HpCounterView: View {
                     
                     HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
                         .offset(y: -80)
-                    .ignoresSafeArea()
+                   // .ignoresSafeArea()
                 }
             }
         }
