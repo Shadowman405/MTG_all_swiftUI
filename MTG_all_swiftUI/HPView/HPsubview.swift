@@ -25,7 +25,7 @@ struct HPsubview: View {
                     Text("-")
                         .font(.system(size: 70))
                         .foregroundColor(.orange)
-                        .offset(x: -20, y: 30)
+                        .offset(x: -20, y: 20)
                 }
                 
                 
@@ -34,6 +34,11 @@ struct HPsubview: View {
                         .resizable()
                         .frame(width: 150,height: 150)
                         .rotationEffect(Angle(degrees: 180))
+                    
+                    Text("\(playerHP)")
+                        .font(.system(size: 40))
+                        .foregroundColor(.orange)
+                        .offset(y: 20)
                 }
                 .offset(y: 50)
                 
@@ -45,10 +50,9 @@ struct HPsubview: View {
                     Text("+")
                         .font(.system(size: 70))
                         .foregroundColor(.orange)
-                        .offset(x: 20, y: 30)
+                        .offset(x: 20, y: 20)
                 }
             }
-            .offset(y: 70)
             
         }
     }
