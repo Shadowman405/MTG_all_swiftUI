@@ -24,38 +24,40 @@ struct HpCounterView: View {
             
             VStack {
                 ZStack {
-                    HStack {
-                        Button {
-                            touchFeedback()
-                            playerOneHP -= 1
-                        } label: {
-                            Text("-")
-                                .font(.system(size: 70))
-                                .foregroundColor(.orange)
-                                .offset(x: -20, y: 30)
-                        }
-                        
-                        
-                        VStack {
-                            Image(playerOneColor)
-                                .resizable()
-                                .frame(width: 150,height: 150)
-                                .rotationEffect(Angle(degrees: 180))
-                        }
-                        .offset(y: 50)
-                        
-                        
-                        Button {
-                            touchFeedback()
-                            playerOneHP += 1
-                        } label: {
-                            Text("+")
-                                .font(.system(size: 70))
-                                .foregroundColor(.orange)
-                                .offset(x: 20, y: 30)
-                        }
-                    }
-                    .offset(y: 70)
+//                    HStack {
+//                        Button {
+//                            touchFeedback()
+//                            playerOneHP -= 1
+//                        } label: {
+//                            Text("-")
+//                                .font(.system(size: 70))
+//                                .foregroundColor(.orange)
+//                                .offset(x: -20, y: 30)
+//                        }
+//                        
+//                        
+//                        VStack {
+//                            Image(playerOneColor)
+//                                .resizable()
+//                                .frame(width: 150,height: 150)
+//                                .rotationEffect(Angle(degrees: 180))
+//                        }
+//                        .offset(y: 50)
+//                        
+//                        
+//                        Button {
+//                            touchFeedback()
+//                            playerOneHP += 1
+//                        } label: {
+//                            Text("+")
+//                                .font(.system(size: 70))
+//                                .foregroundColor(.orange)
+//                                .offset(x: 20, y: 30)
+//                        }
+//                    }
+//                    .offset(y: 70)
+                    
+                    HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
                 }
                 .ignoresSafeArea()
                 
@@ -66,14 +68,14 @@ struct HpCounterView: View {
                     }
                     
                     
-                    HStack{
-                        Text("\(playerOneHP)")
-                            .font(.system(size: 40))
-                            .foregroundColor(.orange)
-                            .offset(y: 60)
-                    }
-                    .ignoresSafeArea()
-                    .rotationEffect(.degrees(180), anchor: .center)
+//                    HStack{
+//                        Text("\(playerOneHP)")
+//                            .font(.system(size: 40))
+//                            .foregroundColor(.orange)
+//                            .offset(y: 60)
+//                    }
+//                    .ignoresSafeArea()
+//                    .rotationEffect(.degrees(180), anchor: .center)
                     
                     Divider()
                         .overlay(.orange)
