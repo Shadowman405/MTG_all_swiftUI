@@ -80,13 +80,13 @@ struct HpCounterView: View {
                     Divider()
                         .overlay(.orange)
                     
-                    HStack {
-                        Text("\(playerTwoHP)")
-                            .font(.system(size: 40))
-                            .foregroundColor(.orange)
-                            .offset(y: 60)
-                    }
-                    .ignoresSafeArea()
+//                    HStack {
+//                        Text("\(playerTwoHP)")
+//                            .font(.system(size: 40))
+//                            .foregroundColor(.orange)
+//                            .offset(y: 60)
+//                    }
+//                    .ignoresSafeArea()
                     
                     ZStack {
                         Button {
@@ -108,36 +108,39 @@ struct HpCounterView: View {
                         .overlay(.black)
                         .ignoresSafeArea()
                     
-                    HStack {
-                        Button {
-                            touchFeedback()
-                            playerTwoHP -= 1
-                        } label: {
-                            Text("-")
-                                .font(.system(size: 70))
-                                .foregroundColor(.orange)
-                                .offset(x: -20, y: -30)
-                        }
-                        
-                        
-                        VStack {
-                            Image(playerTwoColor)
-                                .resizable()
-                                .frame(width: 150,height: 150)
-                        }
-                        .offset(y: -30)
-                        
-                        
-                        Button {
-                            touchFeedback()
-                            playerTwoHP += 1
-                        } label: {
-                            Text("+")
-                                .font(.system(size: 70))
-                                .foregroundColor(.orange)
-                                .offset(x: 20, y: -30)
-                        }
-                    }
+//                    HStack {
+//                        Button {
+//                            touchFeedback()
+//                            playerTwoHP -= 1
+//                        } label: {
+//                            Text("-")
+//                                .font(.system(size: 70))
+//                                .foregroundColor(.orange)
+//                                .offset(x: -20, y: -30)
+//                        }
+//                        
+//                        
+//                        VStack {
+//                            Image(playerTwoColor)
+//                                .resizable()
+//                                .frame(width: 150,height: 150)
+//                        }
+//                        .offset(y: -30)
+//                        
+//                        
+//                        Button {
+//                            touchFeedback()
+//                            playerTwoHP += 1
+//                        } label: {
+//                            Text("+")
+//                                .font(.system(size: 70))
+//                                .foregroundColor(.orange)
+//                                .offset(x: 20, y: -30)
+//                        }
+//                    }
+                    
+                    HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
+                        .offset(y: -80)
                     .ignoresSafeArea()
                 }
             }
