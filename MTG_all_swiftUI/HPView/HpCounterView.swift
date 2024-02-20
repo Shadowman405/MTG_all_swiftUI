@@ -22,8 +22,32 @@ struct HpCounterView: View {
                 .overlay(.black)
                 .ignoresSafeArea()
             
-            
-            
+            VStack {
+                HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
+                
+                
+                ZStack {
+                    Divider()
+                        .overlay(.orange)
+                    
+                    Button {
+                        touchFeedback()
+                        showView.toggle()
+                    } label: {
+                        Image("{B}")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .background(Color.orange)
+                            .clipShape(Circle())
+                    }
+                    AnimatedCircleView()
+                }
+                
+                
+                HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
+                
+            }
+            .ignoresSafeArea()
 //            VStack {
 //                ZStack {
 ////                    HStack {
