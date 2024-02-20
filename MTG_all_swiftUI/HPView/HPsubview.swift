@@ -47,7 +47,8 @@ struct HPsubview: View {
                         Text("\(playerHP)")
                             .font(.system(size: 40))
                             .foregroundColor(.orange)
-                            .offset(y: 20)
+                            .offset(y: -20)
+                            .rotationEffect(.degrees(180), anchor: .center)
                     }
                 }
                 .offset(y: 50)
