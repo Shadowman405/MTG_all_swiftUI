@@ -10,6 +10,7 @@ import SwiftUI
 struct HPsubview: View {
     @Binding var playerHP: Int
     @Binding var playerColor: String
+    @Binding var changeHpTextPosition: Bool
     
     var body: some View {
         ZStack {
@@ -30,15 +31,24 @@ struct HPsubview: View {
                 
                 
                 VStack {
+                    if changeHpTextPosition == false {
+                        Text("\(playerHP)")
+                            .font(.system(size: 40))
+                            .foregroundColor(.orange)
+                            .offset(y: -20)
+                    }
+                    
                     Image(playerColor)
                         .resizable()
                         .frame(width: 150,height: 150)
                         .rotationEffect(Angle(degrees: 180))
                     
-                    Text("\(playerHP)")
-                        .font(.system(size: 40))
-                        .foregroundColor(.orange)
-                        .offset(y: 20)
+                    if changeHpTextPosition == true {
+                        Text("\(playerHP)")
+                            .font(.system(size: 40))
+                            .foregroundColor(.orange)
+                            .offset(y: 20)
+                    }
                 }
                 .offset(y: 50)
                 
@@ -66,5 +76,5 @@ struct HPsubview: View {
     
 
 #Preview {
-    HPsubview(playerHP: .constant(20), playerColor: .constant("{W}"))
+    HPsubview(playerHP: .constant(20), playerColor: .constant("{W}"), changeHpTextPosition: .constant(false))
 }

@@ -15,6 +15,8 @@ struct HpCounterView: View {
     @State private var showView = false
     @State private var playerOneColor = "{W}" 
     @State private var playerTwoColor = "{G}"
+    @State private var playerOneHpTextPosition = true
+    @State private var playerTwoHpTextPosition = false
     
     var body: some View {
         ZStack {
@@ -23,7 +25,7 @@ struct HpCounterView: View {
                 .ignoresSafeArea()
             
             VStack {
-                HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
+                HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor, changeHpTextPosition: $playerOneHpTextPosition)
                   //  .ignoresSafeArea()
                 
                 
@@ -45,7 +47,7 @@ struct HpCounterView: View {
                 }
                 
                 
-                HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
+                HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor, changeHpTextPosition: $playerTwoHpTextPosition)
                     .ignoresSafeArea()
                 
             }
