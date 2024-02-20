@@ -22,128 +22,130 @@ struct HpCounterView: View {
                 .overlay(.black)
                 .ignoresSafeArea()
             
-            VStack {
-                ZStack {
-//                    HStack {
+            
+            
+//            VStack {
+//                ZStack {
+////                    HStack {
+////                        Button {
+////                            touchFeedback()
+////                            playerOneHP -= 1
+////                        } label: {
+////                            Text("-")
+////                                .font(.system(size: 70))
+////                                .foregroundColor(.orange)
+////                                .offset(x: -20, y: 30)
+////                        }
+////                        
+////                        
+////                        VStack {
+////                            Image(playerOneColor)
+////                                .resizable()
+////                                .frame(width: 150,height: 150)
+////                                .rotationEffect(Angle(degrees: 180))
+////                        }
+////                        .offset(y: 50)
+////                        
+////                        
+////                        Button {
+////                            touchFeedback()
+////                            playerOneHP += 1
+////                        } label: {
+////                            Text("+")
+////                                .font(.system(size: 70))
+////                                .foregroundColor(.orange)
+////                                .offset(x: 20, y: 30)
+////                        }
+////                    }
+////                    .offset(y: 70)
+//                    
+//                    HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
+//                }
+//               // .ignoresSafeArea()
+//                
+//                ZStack {
+//                    Color(.black)
+//                    Button {
+//                    } label: {
+//                    }
+//                    
+//                    
+////                    HStack{
+////                        Text("\(playerOneHP)")
+////                            .font(.system(size: 40))
+////                            .foregroundColor(.orange)
+////                            .offset(y: 60)
+////                    }
+////                    .ignoresSafeArea()
+////                    .rotationEffect(.degrees(180), anchor: .center)
+//                    
+//                    Divider()
+//                        .overlay(.orange)
+//                    
+////                    HStack {
+////                        Text("\(playerTwoHP)")
+////                            .font(.system(size: 40))
+////                            .foregroundColor(.orange)
+////                            .offset(y: 60)
+////                    }
+////                    .ignoresSafeArea()
+//                    
+//                    ZStack {
 //                        Button {
 //                            touchFeedback()
-//                            playerOneHP -= 1
+//                            showView.toggle()
 //                        } label: {
-//                            Text("-")
-//                                .font(.system(size: 70))
-//                                .foregroundColor(.orange)
-//                                .offset(x: -20, y: 30)
-//                        }
-//                        
-//                        
-//                        VStack {
-//                            Image(playerOneColor)
+//                            Image("{B}")
 //                                .resizable()
-//                                .frame(width: 150,height: 150)
-//                                .rotationEffect(Angle(degrees: 180))
+//                                .frame(width: 40, height: 40)
+//                                .background(Color.orange)
+//                                .clipShape(Circle())
 //                        }
-//                        .offset(y: 50)
-//                        
-//                        
-//                        Button {
-//                            touchFeedback()
-//                            playerOneHP += 1
-//                        } label: {
-//                            Text("+")
-//                                .font(.system(size: 70))
-//                                .foregroundColor(.orange)
-//                                .offset(x: 20, y: 30)
-//                        }
+//                        AnimatedCircleView()
 //                    }
-//                    .offset(y: 70)
-                    
-                    HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
-                }
-               // .ignoresSafeArea()
-                
-                ZStack {
-                    Color(.black)
-                    Button {
-                    } label: {
-                    }
-                    
-                    
-//                    HStack{
-//                        Text("\(playerOneHP)")
-//                            .font(.system(size: 40))
-//                            .foregroundColor(.orange)
-//                            .offset(y: 60)
-//                    }
-//                    .ignoresSafeArea()
-//                    .rotationEffect(.degrees(180), anchor: .center)
-                    
-                    Divider()
-                        .overlay(.orange)
-                    
-//                    HStack {
-//                        Text("\(playerTwoHP)")
-//                            .font(.system(size: 40))
-//                            .foregroundColor(.orange)
-//                            .offset(y: 60)
-//                    }
-//                    .ignoresSafeArea()
-                    
-                    ZStack {
-                        Button {
-                            touchFeedback()
-                            showView.toggle()
-                        } label: {
-                            Image("{B}")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .background(Color.orange)
-                                .clipShape(Circle())
-                        }
-                        AnimatedCircleView()
-                    }
-                }
-                
-                ZStack {
-//                    Rectangle()
-//                        .overlay(.black)
-//                        .ignoresSafeArea()
-                    
-//                    HStack {
-//                        Button {
-//                            touchFeedback()
-//                            playerTwoHP -= 1
-//                        } label: {
-//                            Text("-")
-//                                .font(.system(size: 70))
-//                                .foregroundColor(.orange)
-//                                .offset(x: -20, y: -30)
-//                        }
-//                        
-//                        
-//                        VStack {
-//                            Image(playerTwoColor)
-//                                .resizable()
-//                                .frame(width: 150,height: 150)
-//                        }
-//                        .offset(y: -30)
-//                        
-//                        
-//                        Button {
-//                            touchFeedback()
-//                            playerTwoHP += 1
-//                        } label: {
-//                            Text("+")
-//                                .font(.system(size: 70))
-//                                .foregroundColor(.orange)
-//                                .offset(x: 20, y: -30)
-//                        }
-//                    }
-                    
-                    HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
-                        .offset(y: -80)
-                   // .ignoresSafeArea()
-                }
-            }
+//                }
+//                
+//                ZStack {
+////                    Rectangle()
+////                        .overlay(.black)
+////                        .ignoresSafeArea()
+//                    
+////                    HStack {
+////                        Button {
+////                            touchFeedback()
+////                            playerTwoHP -= 1
+////                        } label: {
+////                            Text("-")
+////                                .font(.system(size: 70))
+////                                .foregroundColor(.orange)
+////                                .offset(x: -20, y: -30)
+////                        }
+////                        
+////                        
+////                        VStack {
+////                            Image(playerTwoColor)
+////                                .resizable()
+////                                .frame(width: 150,height: 150)
+////                        }
+////                        .offset(y: -30)
+////                        
+////                        
+////                        Button {
+////                            touchFeedback()
+////                            playerTwoHP += 1
+////                        } label: {
+////                            Text("+")
+////                                .font(.system(size: 70))
+////                                .foregroundColor(.orange)
+////                                .offset(x: 20, y: -30)
+////                        }
+////                    }
+//                    
+//                    HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
+//                        .offset(y: -80)
+//                   // .ignoresSafeArea()
+//                }
+//            }
         }
         .fullScreenCover(isPresented: $showView, content: {
             ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor)
