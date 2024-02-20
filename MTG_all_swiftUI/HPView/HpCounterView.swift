@@ -24,6 +24,7 @@ struct HpCounterView: View {
             
             VStack {
                 HPsubview(playerHP: $playerOneHP, playerColor: $playerOneColor)
+                  //  .ignoresSafeArea()
                 
                 
                 ZStack {
@@ -45,6 +46,7 @@ struct HpCounterView: View {
                 
                 
                 HPsubview(playerHP: $playerTwoHP, playerColor: $playerTwoColor)
+                    .ignoresSafeArea()
                 
             }
             .ignoresSafeArea()
