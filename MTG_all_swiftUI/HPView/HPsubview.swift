@@ -41,7 +41,7 @@ struct HPsubview: View {
                     Image(playerColor)
                         .resizable()
                         .frame(width: 150,height: 150)
-                        .rotationEffect(Angle(degrees: 180))
+                        .rotationEffect(changeHpTextPosition ? Angle(degrees: 180) : Angle(degrees: 0))
                     
                     if changeHpTextPosition == true {
                         Text("\(playerHP)")
