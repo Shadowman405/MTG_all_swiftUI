@@ -51,7 +51,7 @@ struct HPsubview: View {
                             .rotationEffect(.degrees(180), anchor: .center)
                     }
                 }
-                .offset(y: 50)
+                .offset(y: (changeHpTextPosition ? CGFloat(50) : CGFloat(-20)))
                 
                 
                 Button {
