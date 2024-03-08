@@ -28,6 +28,7 @@ struct ColorChooseView: View {
                         Text("First player color - ")
                             .font(.system(size: 20))
                         .foregroundColor(.orange)
+                        .padding()
                         
                         Image(playerOneColor)
                             .resizable()
@@ -42,7 +43,7 @@ struct ColorChooseView: View {
                                 } label: {
                                     Image(color)
                                         .resizable()
-                                        .frame(width: 120, height: 120)
+                                        .frame(width: 110, height: 110)
                                         .padding()
                                 }
                             }
@@ -50,11 +51,14 @@ struct ColorChooseView: View {
                     }
                 }
                 
+                Spacer()
+                
                 VStack {
                     HStack {
                         Text("Second player color - ")
                             .font(.system(size: 20))
                         .foregroundColor(.orange)
+                        .padding()
                         
                         Image(playerTwoColor)
                             .resizable()
@@ -69,7 +73,7 @@ struct ColorChooseView: View {
                                 } label: {
                                     Image(color)
                                         .resizable()
-                                        .frame(width: 120, height: 120)
+                                        .frame(width: 110, height: 110)
                                         .padding()
                                 }
                             }
@@ -77,13 +81,14 @@ struct ColorChooseView: View {
                     }
                 }
                 
+                Spacer()
+                
                 VStack {
                     HStack {
                         Text("Choose players start HP")
                             .font(.system(size: 20))
                             .foregroundColor(.orange)
                     }
-                    .padding()
                     
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: rows) {
