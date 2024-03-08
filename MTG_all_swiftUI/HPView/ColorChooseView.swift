@@ -15,6 +15,7 @@ struct ColorChooseView: View {
     @Binding var showView: Bool
     @Binding var playerOneColor: String
     @Binding var playerTwoColor: String
+    @Binding var startPlayerHP: Int
     @Binding var playerOneHP: Int
     @Binding var playerTwoHP: Int
 
@@ -88,7 +89,7 @@ struct ColorChooseView: View {
                         LazyHGrid(rows: rows) {
                             ForEach(playerHP, id: \.self) { hp in
                                 Button{
-                                    
+                                  startPlayerHP = hp
                                 } label: {
                                     Text(String(hp))
                                         .frame(width: 120, height: 120)
@@ -114,5 +115,5 @@ struct ColorChooseView: View {
 }
 
 #Preview {
-    ColorChooseView(showView: .constant(false), playerOneColor: .constant("{W}"), playerTwoColor: .constant("{G}"), playerOneHP: .constant(20), playerTwoHP: .constant(20))
+    ColorChooseView(showView: .constant(false), playerOneColor: .constant("{W}"), playerTwoColor: .constant("{G}"), startPlayerHP: .constant(20), playerOneHP: .constant(20), playerTwoHP: .constant(20))
 }

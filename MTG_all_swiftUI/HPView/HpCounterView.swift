@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HpCounterView: View {
     @State private var rotation:CGFloat = 0.0
+    @State private var starPlayersHP = 20
     @State private var playerOneHP = 20
     @State private var playerTwoHP = 20
     
@@ -53,13 +54,13 @@ struct HpCounterView: View {
             .ignoresSafeArea()
         }
         .fullScreenCover(isPresented: $showView, content: {
-            ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor, playerOneHP: $playerOneHP, playerTwoHP: $playerTwoHP)
+            ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor, startPlayerHP: $starPlayersHP, playerOneHP: $playerOneHP, playerTwoHP: $playerTwoHP)
         })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    playerOneHP = 20
-                    playerTwoHP = 20
+                    playerOneHP = starPlayersHP
+                    playerTwoHP = starPlayersHP
                 } label: {
                     Text("Refresh HP")
                         .foregroundColor(.orange)
