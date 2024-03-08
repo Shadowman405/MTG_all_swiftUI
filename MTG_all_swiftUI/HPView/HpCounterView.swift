@@ -53,7 +53,7 @@ struct HpCounterView: View {
             .ignoresSafeArea()
         }
         .fullScreenCover(isPresented: $showView, content: {
-            ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor)
+            ColorChooseView(showView: $showView, playerOneColor: $playerOneColor, playerTwoColor: $playerTwoColor, playerOneHP: $playerOneHP, playerTwoHP: $playerTwoHP)
         })
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

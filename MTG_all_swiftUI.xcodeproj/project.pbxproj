@@ -155,6 +155,7 @@
 			children = (
 				BFC344D42B038C2300CBAF1D /* HpCounterView.swift */,
 				BF11C1A12B825B5000021E18 /* HPsubview.swift */,
+				BF026FB32B18AF5E007C6C20 /* ColorChooseView.swift */,
 			);
 			path = HPView;
 			sourceTree = "<group>";
@@ -169,7 +170,6 @@
 				BFC345002B06362200CBAF1D /* CollectionViews */,
 				BFC344FD2B06334000CBAF1D /* CardsViews */,
 				BF026FB12B176A07007C6C20 /* AnimatedCircleView.swift */,
-				BF026FB32B18AF5E007C6C20 /* ColorChooseView.swift */,
 				BF6CB36E2B3464B80082F1B2 /* NotifactionView.swift */,
 			);
 			path = Views;
