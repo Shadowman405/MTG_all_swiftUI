@@ -90,6 +90,8 @@ struct ColorChooseView: View {
                             ForEach(playerHP, id: \.self) { hp in
                                 Button{
                                   startPlayerHP = hp
+                                    playerOneHP = hp
+                                    playerTwoHP = hp
                                 } label: {
                                     Text(String(hp))
                                         .frame(width: 120, height: 120)
