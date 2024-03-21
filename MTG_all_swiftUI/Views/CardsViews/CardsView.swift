@@ -89,7 +89,11 @@ struct CardsView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink {
-                    AddOwnCardView()
+                    if #available(iOS 17.0, *) {
+                        AddOwnCardView()
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 } label: {
                     Label("Add Own Card", systemImage: "menucard")
                         .foregroundColor(.orange)

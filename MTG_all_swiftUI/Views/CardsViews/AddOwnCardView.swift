@@ -8,7 +8,7 @@
 import SwiftUI
 import PhotosUI
 
-@available(iOS 16.0, *)
+@available(iOS 17.0, *)
 struct AddOwnCardView: View {
     @State private var photoItem: PhotosPickerItem?
     @State private var selectedPhoto: Image?
@@ -18,12 +18,27 @@ struct AddOwnCardView: View {
             Text("Select photo")
             
             VStack {
-                PhotosPicker(selection: $photoItem, matching: .images) {
-                    
-                    selectedPhoto?
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 400, height: 400)
+                PhotosPicker(selection: $photoItem) {
+                    if selectedPhoto == nil {
+                        Image("card_placeholder")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 400, height: 400)
+                    } else {
+                        selectedPhoto?
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 400, height: 400)
+                    }
+                }
+                .onChange(of: photoItem) {
+                    Task {
+                        if let loaded = try? await photoItem?.loadTransferable(type: Image.self) {
+                            selectedPhoto = loaded
+                        } else {
+                            selectedPhoto = Image("card_placeholder")
+                        }
+                    }
                 }
             }
         }
@@ -33,9 +48,9 @@ struct AddOwnCardView: View {
 }
 
 #Preview {
-    if #available(iOS 16.0, *) {
+    if #available(iOS 17.0, *) {
         AddOwnCardView()
     } else {
-        // Fallback on earlier versions
+        EmptyView()
     }
 }
