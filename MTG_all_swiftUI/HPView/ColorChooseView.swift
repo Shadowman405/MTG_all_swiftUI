@@ -51,7 +51,7 @@ struct ColorChooseView: View {
                     }
                 }
                 
-                Spacer()
+                Spacer() 
                 
                 VStack {
                     HStack {
