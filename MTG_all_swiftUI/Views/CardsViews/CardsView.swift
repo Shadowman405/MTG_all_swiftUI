@@ -65,11 +65,17 @@ struct CardsView: View {
                 print(mainUrl)
             }
         })
+        .background(
+            NavigationLink(destination: AdvancedSearchView(searhUrlString: $mainUrl), label: {
+                Text("")
+            })
+        )
         .toolbar {
              ToolbarItem(placement: .navigationBarTrailing) {
                  Menu(content: {
-                     NavigationLink {
-                         AdvancedSearchView(searhUrlString: $mainUrl)
+                     Button  {
+                         showAdvancedSearch.toggle()
+                         print(mainUrl)
                      } label: {
                          Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
                              .foregroundColor(.orange)
