@@ -66,22 +66,37 @@ struct CardsView: View {
             }
         })
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    AdvancedSearchView(searhUrlString: $mainUrl)
-                } label: {
-                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-                        .foregroundColor(.orange)
-                }
-                Button  {
-                    showAdvancedSearch.toggle()
-                    print(mainUrl)
-                } label: {
-                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-                        .foregroundColor(.orange)
-                }
-            }
-    }
+             ToolbarItem(placement: .navigationBarTrailing) {
+                 Menu(content: {
+                     NavigationLink {
+                         AdvancedSearchView(searhUrlString: $mainUrl)
+                     } label: {
+                         Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                             .foregroundColor(.orange)
+                     }
+                     Text("Create own card")
+                 }, label: {                    
+                     Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                     .foregroundColor(.orange)})
+              }
+          }
+//        .toolbar {
+//            ToolbarItem(placement: .topBarTrailing) {
+//                NavigationLink {
+//                    AdvancedSearchView(searhUrlString: $mainUrl)
+//                } label: {
+//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+//                        .foregroundColor(.orange)
+//                }
+//                Button  {
+//                    showAdvancedSearch.toggle()
+//                    print(mainUrl)
+//                } label: {
+//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+//                        .foregroundColor(.orange)
+//                }
+//            }
+//    }
     }
     
     var searchResults: [Card] {
