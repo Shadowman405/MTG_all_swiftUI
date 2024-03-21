@@ -23,12 +23,12 @@ struct AddOwnCardView: View {
                         Image("card_placeholder")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 400, height: 400)
+                            .frame(width: 300, height: 300)
                     } else {
                         selectedPhoto?
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 400, height: 400)
+                            .frame(width: 300, height: 300)
                     }
                 }
                 .onChange(of: photoItem) {
