@@ -38,6 +38,7 @@
 		BFC344FF2B06336F00CBAF1D /* CardSingleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */; };
 		BFC82E982B01472E00B23006 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC82E972B01472E00B23006 /* NetworkManager.swift */; };
 		BFD260E22B077AE200F1BE40 /* CardManaCostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD260E12B077AE200F1BE40 /* CardManaCostView.swift */; };
+		BFD61B512BAC78A000020038 /* AddOwnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD61B502BAC78A000020038 /* AddOwnCardView.swift */; };
 		BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */; };
 		BFE66B072B013C4400EC9AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE66B062B013C4400EC9AAB /* ContentView.swift */; };
 		BFE66B092B013C4600EC9AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE66B082B013C4600EC9AAB /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSingleCell.swift; sourceTree = "<group>"; };
 		BFC82E972B01472E00B23006 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BFD260E12B077AE200F1BE40 /* CardManaCostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManaCostView.swift; sourceTree = "<group>"; };
+		BFD61B502BAC78A000020038 /* AddOwnCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOwnCardView.swift; sourceTree = "<group>"; };
 		BFE66B012B013C4400EC9AAB /* MTG_all_swiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTG_all_swiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE66B042B013C4400EC9AAB /* MTG_all_swiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTG_all_swiftUIApp.swift; sourceTree = "<group>"; };
 		BFE66B062B013C4400EC9AAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				BFC2C97E2B02119400B5A2C1 /* CardDetails.swift */,
 				BFC344FE2B06336F00CBAF1D /* CardSingleCell.swift */,
 				BFD260E12B077AE200F1BE40 /* CardManaCostView.swift */,
+				BFD61B502BAC78A000020038 /* AddOwnCardView.swift */,
 			);
 			path = CardsViews;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				BFD260E22B077AE200F1BE40 /* CardManaCostView.swift in Sources */,
 				BF11C1A22B825B5000021E18 /* HPsubview.swift in Sources */,
 				BFC344F42B04EAE700CBAF1D /* LoginView.swift in Sources */,
+				BFD61B512BAC78A000020038 /* AddOwnCardView.swift in Sources */,
 				BF6CB36F2B3464B80082F1B2 /* NotifactionView.swift in Sources */,
 				BFC2C97F2B02119400B5A2C1 /* CardDetails.swift in Sources */,
 				BFE66B052B013C4400EC9AAB /* MTG_all_swiftUIApp.swift in Sources */,

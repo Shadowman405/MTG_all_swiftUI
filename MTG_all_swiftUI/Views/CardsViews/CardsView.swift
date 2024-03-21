@@ -13,6 +13,7 @@ struct CardsView: View {
     @State private var searchText = ""
     @State private var mainUrl = ""
     @State private var showAdvancedSearch = false
+    @State private var showAddOwnCard = false
     @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
     
@@ -71,38 +72,37 @@ struct CardsView: View {
             })
         )
         .toolbar {
-             ToolbarItem(placement: .navigationBarTrailing) {
-                 Menu(content: {
-                     Button  {
-                         showAdvancedSearch.toggle()
-                         print(mainUrl)
-                     } label: {
-                         Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-                             .foregroundColor(.orange)
-                     }
-                     Text("Create own card")
-                 }, label: {                    
-                     Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-                     .foregroundColor(.orange)})
-              }
-          }
-//        .toolbar {
-//            ToolbarItem(placement: .topBarTrailing) {
-//                NavigationLink {
-//                    AdvancedSearchView(searhUrlString: $mainUrl)
-//                } label: {
-//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-//                        .foregroundColor(.orange)
-//                }
-//                Button  {
-//                    showAdvancedSearch.toggle()
-//                    print(mainUrl)
-//                } label: {
-//                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
-//                        .foregroundColor(.orange)
-//                }
-//            }
-//    }
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    AdvancedSearchView(searhUrlString: $mainUrl)
+                } label: {
+                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                        .foregroundColor(.orange)
+                }
+                Button  {
+                    showAdvancedSearch.toggle()
+                    print(mainUrl)
+                } label: {
+                    Label("Advanced Search", systemImage: "magnifyingglass.circle.fill")
+                        .foregroundColor(.orange)
+                }
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink {
+                    AddOwnCardView()
+                } label: {
+                    Label("Add Own Card", systemImage: "menucard")
+                        .foregroundColor(.orange)
+                }
+                Button  {
+                    showAddOwnCard.toggle()
+                } label: {
+                    Label("Advanced Search", systemImage: "menucard")
+                        .foregroundColor(.orange)
+                }
+            }
+
+    }
     }
     
     var searchResults: [Card] {
