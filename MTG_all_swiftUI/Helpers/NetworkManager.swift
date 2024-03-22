@@ -220,7 +220,7 @@ class CardViewModel: ObservableObject {
             
             guard let documents = snapshot?.documents else {return}
             
-            self.collectionData = documents.map { (querrySnapshot) -> Collection in
+            self.myOwnCollectionData = documents.map { (querrySnapshot) -> Collection in
                 let data = querrySnapshot.data()
                 let colName = data["name"] as? String ?? ""
                 //let cards = data["cards"] as? [Card]

@@ -33,6 +33,7 @@ struct MyOwnCollections: View {
             .onDelete(perform: { indexSet in
                 delete(at: indexSet)
             })
+        }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
@@ -54,7 +55,6 @@ struct MyOwnCollections: View {
             .onAppear(perform: {
                 vm.fetchOwnCollectionFromDB()
             })
-        }
     }
     
     func delete(at offsets: IndexSet) {
