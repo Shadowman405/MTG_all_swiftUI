@@ -42,7 +42,7 @@ struct MyOwnCollections: View {
                 .alert(Text("Add New Collection"), isPresented: $showAlert) {
                     TextField("Collection name",text: $collectionName)
                         .textInputAutocapitalization(.never)
-                    Button("Save"){vm.saveCollection(collectionName: collectionName)}
+//                    Button("Save"){vm.saveCollection(collectionName: collectionName)}  - need to update in NW manager
                     Button("Cancel", role: .cancel) {}
                 }
             }
