@@ -19,7 +19,7 @@ struct AddOwnCardView: View {
 
     
     var body: some View {
-        ZStack {
+        VStack {
             Text("Select photo")
             
             VStack {
@@ -46,9 +46,56 @@ struct AddOwnCardView: View {
                     }
                 }
             }
+            Divider()
             
             VStack {
+                Text("Enter card name: ")
+                    .font(.custom(
+                        "AmericanTypewriter",
+                        fixedSize: 20))
+                TextField("    Card name...", text: $cardName)
+                    .background(Color.gray)
+                    .cornerRadius(5)
+                    .padding()
                 
+                Text("Enter card set: ")
+                    .font(.custom(
+                        "AmericanTypewriter",
+                        fixedSize: 24))
+                TextField("    Card set...", text: $cardName)
+                    .background(Color.gray)
+                    .cornerRadius(5)
+                    .padding()
+
+                Text("Enter mana cost: ")
+                    .font(.custom(
+                        "AmericanTypewriter",
+                        fixedSize: 24))
+                TextField("    Mana cost...", text: $cardName)
+                    .background(Color.gray)
+                    .cornerRadius(5)
+                    .padding()
+                
+                Text("Enter card Description: ")
+                    .font(.custom(
+                        "AmericanTypewriter",
+                        fixedSize: 24))
+                TextField("    Card description...", text: $cardName)
+                    .background(Color.gray)
+                    .cornerRadius(5)
+                    .padding()
+
+                
+                Button {
+                    print("Save")
+                } label: {
+                    Text("Save card")
+                }
+                .frame(width: 90, height: 30)
+                .background(Color.orange)
+                .foregroundStyle(Color.black)
+                .cornerRadius(10)
+
             }
         }
         .ignoresSafeArea()
