@@ -167,6 +167,7 @@ class CardViewModel: ObservableObject {
     
     //MARK: - Collections
     @Published var collectionData = [Collection]()
+    @Published var myOwnCollectionData = [Collection]()
     @Published var subCollectionCards = [Card]()
     @Published var cardsTestSubColl = [Card]()
     
