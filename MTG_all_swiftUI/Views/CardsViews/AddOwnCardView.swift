@@ -12,6 +12,11 @@ import PhotosUI
 struct AddOwnCardView: View {
     @State private var photoItem: PhotosPickerItem?
     @State private var selectedPhoto: Image?
+    @State private var cardName = ""
+    @State private var cardSet = ""
+    @State private var cardManaCost = ""
+    @State private var cardDescription = ""
+
     
     var body: some View {
         ZStack {
@@ -41,9 +46,13 @@ struct AddOwnCardView: View {
                     }
                 }
             }
+            
+            VStack {
+                
+            }
         }
         .ignoresSafeArea()
-        .navigationTitle("Add your own card")
+        .navigationTitle("Create card")
     }
 }
 
