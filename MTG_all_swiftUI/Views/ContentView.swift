@@ -42,9 +42,9 @@ struct ContentView: View {
                     .padding()
                     
                     NavigationLink {
-                        MyOwnCards()
+                        MyOwnCollections()
                     } label: {
-                        Text("My Own Cards")
+                        Text("Own Cards & Collections")
                             .font(.system(size: 30))
                             .foregroundStyle(.orange)
                     }

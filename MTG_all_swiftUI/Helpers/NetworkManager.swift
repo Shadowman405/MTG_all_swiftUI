@@ -203,6 +203,40 @@ class CardViewModel: ObservableObject {
         }
     }
     
+    //Fetch own collection
+    
+    func fetchOwnCollectionFromDB() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
+//        FirebaseManager.shared.firestore.collection("Collections").addSnapshotListener { snapshot, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Personal Collections").addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {return}
+            
+            self.collectionData = documents.map { (querrySnapshot) -> Collection in
+                let data = querrySnapshot.data()
+                let colName = data["name"] as? String ?? ""
+                //let cards = data["cards"] as? [Card]
+                //let newCollection = Collection(name: name, cards: cards ?? [self.mockCards[0]])
+                //print(newCollection)
+                
+                
+                //self.subCollectionCard(colName: colName)
+                self.subCollectionCard(colName: colName)
+                let newCollection = Collection(name: colName, cards: self.subCollectionCards)
+                print(self.subCollectionCards)
+                return newCollection
+            }
+        }
+    }
+    
     func subCollectionCard(colName: String) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return}
         FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document("\(uid)\(colName)").collection("Cards").addSnapshotListener { cardsSnapshot, error in
@@ -303,6 +337,19 @@ class CardViewModel: ObservableObject {
         let uniqueID = "\(uid)\(collectionName)"
         let collectionData = ["name": collectionName]
         FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Collections").document(uniqueID).setData(collectionData) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+            }
+    }
+    
+    //Save Own Collection
+    func saveOwnCollection(collectionName: String) {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {return}
+        let uniqueID = "\(uid)\(collectionName)"
+        let collectionData = ["name": collectionName]
+        FirebaseManager.shared.firestore.collection("Users").document(uid).collection("Personal Collections").document(uniqueID).setData(collectionData) { error in
                 if let error = error {
                     print(error.localizedDescription)
                     return

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 struct MyOwnCollections: View {
     @State private var myOwncollections: [Collection] = []
@@ -42,15 +44,14 @@ struct MyOwnCollections: View {
                 .alert(Text("Add New Collection"), isPresented: $showAlert) {
                     TextField("Collection name",text: $collectionName)
                         .textInputAutocapitalization(.never)
-//                    Button("Save"){vm.saveCollection(collectionName: collectionName)}  - need to update in NW manager
+                    Button("Save"){vm.saveOwnCollection(collectionName: collectionName)}
                     Button("Cancel", role: .cancel) {}
                 }
             }
         }
         .navigationTitle("Collections")
         .onAppear(perform: {
-           // vm.fetchCollectionFromDB()
-            // need to update this call in Network manager for new FB collection
+            vm.fetchOwnCollectionFromDB()
         })
     }
     
