@@ -35,10 +35,20 @@ struct ContentView: View {
                     NavigationLink {
                         CardsView()
                     } label: {
-                        Text("Cards")
+                        Text("Search Cards")
                             .font(.system(size: 30))
                             .foregroundStyle(.orange)
                     }
+                    .padding()
+                    
+                    NavigationLink {
+                        MyOwnCards()
+                    } label: {
+                        Text("My Own Cards")
+                            .font(.system(size: 30))
+                            .foregroundStyle(.orange)
+                    }
+                    .padding()
                     
                     NavigationLink {
                         CollectionsView()
@@ -56,6 +66,7 @@ struct ContentView: View {
                             .font(.system(size: 30))
                             .foregroundStyle(.orange)
                     }
+                    .padding()
                 }
             }
             //.navigationBarTitleDisplayMode(.inline)

@@ -7,6 +7,9 @@
 
 import SwiftUI
 import PhotosUI
+import Firebase
+import FirebaseFirestore
+
 
 @available(iOS 17.0, *)
 struct AddOwnCardView: View {
