@@ -13,7 +13,6 @@ struct CardsView: View {
     @State private var searchText = ""
     @State private var mainUrl = ""
     @State private var showAdvancedSearch = false
-    @State private var showAddOwnCard = false
     @State private var requestProgress = true
     let columns = [GridItem(.flexible())]
     
@@ -87,26 +86,7 @@ struct CardsView: View {
                         .foregroundColor(.orange)
                 }
             }
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    if #available(iOS 17.0, *) {
-                        AddOwnCardView()
-                    } else {
-                        // Fallback on earlier versions
-                    }
-                } label: {
-                    Label("Add Own Card", systemImage: "menucard")
-                        .foregroundColor(.orange)
-                }
-                Button  {
-                    showAddOwnCard.toggle()
-                } label: {
-                    Label("Advanced Search", systemImage: "menucard")
-                        .foregroundColor(.orange)
-                }
-            }
-
-    }
+        }
     }
     
     var searchResults: [Card] {
